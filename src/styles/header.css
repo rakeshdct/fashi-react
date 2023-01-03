@@ -486,7 +486,7 @@
 	position: relative;
 }
 
-.nav-item .nav-menu li.active a {
+.nav-item .nav-menu li a.active {
 	background: #e7ab3c;
 }
 

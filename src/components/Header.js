@@ -1,4 +1,5 @@
 import { React, useState } from 'react'
+import { NavLink } from "react-router-dom";
 import './../styles/header.css';
 
 const Header = () => {
@@ -43,9 +44,9 @@ const Header = () => {
             <div className="row">
               <div className="col-lg-2 col-md-2">
                 <div className="logo">
-                  <a href="/">
+                  <NavLink to="/">
                     <img src="img/logo.png" alt="" />
-                  </a>
+                  </NavLink>
                 </div>
               </div>
               <div className="col-lg-7 col-md-7">
@@ -124,7 +125,7 @@ const Header = () => {
                 <i className="ti-menu"></i>
                 <span>All departments</span>
                 <ul className="depart-hover">
-                  <li className="active"><a href="./">Women’s Clothing</a></li>
+                  <li><a href="./">Women’s Clothing</a></li>
                   <li><a href="./">Men’s Clothing</a></li>
                   <li><a href="./">Underwear</a></li>
                   <li><a href="./">Kid's Clothing</a></li>
@@ -137,10 +138,10 @@ const Header = () => {
             </div>
             <nav className="nav-menu mobile-menu">
               <ul>
-                <li className="active"><a href="/">Home</a></li>
+                <li><NavLink to="/">Home</NavLink></li>
                 <li><a href="./shop">Shop</a></li>
                 <li><a href="./blog">Blog</a></li>
-                <li><a href="./contact">Contact</a></li>
+                <li><NavLink to="contact">Contact</NavLink></li>
                 <li><a href="./">Pages</a>
                   <ul className="dropdown">
                     <li><a href="./blog-details">Blog Details</a></li>
