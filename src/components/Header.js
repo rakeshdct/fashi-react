@@ -1,5 +1,5 @@
 import { React, useState } from 'react'
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import './../styles/header.css';
 
 const Header = () => {
@@ -29,12 +29,12 @@ const Header = () => {
               </div>
             </div>
             <div className="ht-right">
-              <a href="./login" className="login-panel"><i className="fa fa-user"></i>Login</a>
+              <NavLink className="login-panel" to="login"><i className="fa fa-user"></i>Login</NavLink>
               <div className="top-social">
-                <a href="./"><i className="ti-facebook"></i></a>
-                <a href="./"><i className="ti-twitter-alt"></i></a>
-                <a href="./"><i className="ti-linkedin"></i></a>
-                <a href="./"><i className="ti-pinterest"></i></a>
+                <a href="https://www.facebook.com/" target='blank'><i className="ti-facebook"></i></a>
+                <a href="https://www.instagram.com/" target='blank'><i className="ti-instagram"></i></a>
+                <a href="https://twitter.com/" target='blank'><i className="ti-twitter-alt"></i></a>
+                <a href="https://www.pinterest.com/" target='blank'><i className="ti-pinterest"></i></a>
               </div>
             </div>
           </div>
@@ -61,16 +61,16 @@ const Header = () => {
               <div className="col-lg-3 text-right col-md-3">
                 <ul className="nav-right">
                   <li className="heart-icon">
-                    <a href="./">
+                    <Link to="./shop/favourites">
                       <i className="icon_heart_alt"></i>
                       <span>1</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="cart-icon">
-                    <a href="./">
+                    <Link to="#">
                       <i className="icon_bag_alt"></i>
                       <span>3</span>
-                    </a>
+                    </Link>
                     <div className="cart-hover">
                       <div className="select-items">
                         <table>
@@ -107,8 +107,8 @@ const Header = () => {
                         <h5>$120.00</h5>
                       </div>
                       <div className="select-button">
-                        <a href="./" className="primary-btn view-card">VIEW CARD</a>
-                        <a href="./" className="primary-btn checkout-btn">CHECK OUT</a>
+                        <NavLink className="primary-btn view-card" to="shop/cart">VIEW CART</NavLink>
+                        <NavLink className="primary-btn checkout-btn" to="shop/checkout">Checkout</NavLink>
                       </div>
                     </div>
                   </li>
@@ -125,31 +125,30 @@ const Header = () => {
                 <i className="ti-menu"></i>
                 <span>All departments</span>
                 <ul className="depart-hover">
-                  <li><a href="./">Women’s Clothing</a></li>
-                  <li><a href="./">Men’s Clothing</a></li>
-                  <li><a href="./">Underwear</a></li>
-                  <li><a href="./">Kid's Clothing</a></li>
-                  <li><a href="./">Brand Fashion</a></li>
-                  <li><a href="./">Accessories/Shoes</a></li>
-                  <li><a href="./">Luxury Brands</a></li>
-                  <li><a href="./">Brand Outdoor Apparel</a></li>
+                  <li><Link href="./">Women’s Clothing</Link></li>
+                  <li><Link href="./">Men’s Clothing</Link></li>
+                  <li><Link href="./">Underwear</Link></li>
+                  <li><Link href="./">Kid's Clothing</Link></li>
+                  <li><Link href="./">Brand Fashion</Link></li>
+                  <li><Link href="./">Accessories/Shoes</Link></li>
+                  <li><Link href="./">Luxury Brands</Link></li>
+                  <li><Link href="./">Brand Outdoor Apparel</Link></li>
                 </ul>
               </div>
             </div>
             <nav className="nav-menu mobile-menu">
               <ul>
                 <li><NavLink to="/">Home</NavLink></li>
-                <li><a href="./shop">Shop</a></li>
-                <li><a href="./blog">Blog</a></li>
+                <li><NavLink to="shop">Shop</NavLink></li>
+                <li><NavLink to="blog">Blog</NavLink></li>
                 <li><NavLink to="contact">Contact</NavLink></li>
-                <li><a href="./">Pages</a>
-                  <ul className="dropdown">
-                    <li><a href="./blog-details">Blog Details</a></li>
-                    <li><a href="./shopping-cart">Shopping Cart</a></li>
-                    <li><a href="./check-out">Checkout</a></li>
-                    <li><a href="./faq">Faq</a></li>
-                    <li><a href="./register">Register</a></li>
-                    <li><a href="./login">Login</a></li>
+                <li><Link to="#">Pages</Link>
+                  <ul className="dropdown">                    
+                    <li><NavLink to="shop/cart">Shopping Cart</NavLink></li>
+                    <li><NavLink to="shop/checkout">Checkout</NavLink></li>
+                    <li><NavLink to="blog/blog-details">Blog Details</NavLink></li>
+                    <li><NavLink to="faq">Faq</NavLink></li>
+                    <li><NavLink to="login">Login</NavLink></li>
                   </ul>
                 </li>
               </ul>
@@ -166,22 +165,21 @@ const Header = () => {
                 </a>
                 <nav className="slicknav_nav" aria-hidden="false" role="menu" style={{ display: showMeNav ? "block" : "none" }} >
                   <ul>
-                    <li><a href="./" role="menuitem">Home</a></li>
-                    <li><a href="./shop" role="menuitem">Shop</a></li>
-                    <li><a href="./blog" role="menuitem">Blog</a></li>
-                    <li><a href="./contact" role="menuitem">Contact</a></li>
+                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="shop">Shop</NavLink></li>
+                    <li><NavLink to="blog">Blog</NavLink></li>
+                    <li><NavLink to="contact">Contact</NavLink></li>
                     <li className="slicknav_collapsed slicknav_parent">
                       <a href='./' className="slicknav_item slicknav_row" onClick={toggleSubNav}>
                         Pages
                         <span className="slicknav_arrow">►</span>
                       </a>
                       <ul className="dropdown slicknav_hidden" role="menu" style={{ display: showMeSubNav ? "block" : "none" }}>
-                        <li><a href="./blog-details" >Blog Details</a></li>
-                        <li><a href="./shopping-cart" >Shopping Cart</a></li>
-                        <li><a href="./check-out" >Checkout</a></li>
-                        <li><a href="./faq" >Faq</a></li>
-                        <li><a href="./register" >Register</a></li>
-                        <li><a href="./login" >Login</a></li>
+                        <li><NavLink to="shop/cart">Shopping Cart</NavLink></li>
+                        <li><NavLink to="shop/checkout">Checkout</NavLink></li>
+                        <li><NavLink to="blog/blog-details">Blog Details</NavLink></li>
+                        <li><NavLink to="faq">Faq</NavLink></li>
+                        <li><NavLink to="login">Login</NavLink></li>
                       </ul>
                     </li>
                   </ul>

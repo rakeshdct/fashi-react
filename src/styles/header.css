@@ -486,8 +486,10 @@
 	position: relative;
 }
 
-.nav-item .nav-menu li a.active {
+.nav-item .nav-menu li a.active,
+.nav-item .nav-menu li a.active:hover {
 	background: #e7ab3c;
+	color: #ffffff;
 }
 
 .nav-item .nav-menu li a {
@@ -504,7 +506,8 @@
 }
 
 .nav-item .nav-menu li:hover>a {
-	background: #e7ab3c;
+	background: transparent;
+	color: #e7ab3c;
 }
 
 .nav-item .nav-menu li:hover .dropdown {
@@ -535,6 +538,10 @@
 .nav-item .nav-menu li .dropdown li:hover>a {
 	background: transparent;
 	color: #e7ab3c;
+}
+.nav-item .nav-menu li .dropdown li:hover>a.active {
+	background: #e7ab3c;
+	color: #ffffff;
 }
 
 .nav-item .nav-menu li .dropdown li a {

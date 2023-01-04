@@ -1,4 +1,5 @@
 import { React, useEffect } from 'react'
+import { Link } from "react-router-dom";
 import './../../styles/home.css';
 
 const Home = () => {
@@ -137,9 +138,9 @@ const Home = () => {
                                             5
                                         </div>
                                     </div>
-                                    <a href="./">
+                                    <Link to="./blog/blog-details">
                                         <h4>The Best Street Style From London Fashion Week</h4>
-                                    </a>
+                                    </Link>
                                     <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
                                 </div>
                             </div>
@@ -158,9 +159,9 @@ const Home = () => {
                                             5
                                         </div>
                                     </div>
-                                    <a href="./">
+                                    <Link to="./blog/blog-details">
                                         <h4>Vogue's Ultimate Guide To Autumn/Winter 2019 Shoes</h4>
-                                    </a>
+                                    </Link>
                                     <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
                                 </div>
                             </div>
@@ -179,9 +180,9 @@ const Home = () => {
                                             5
                                         </div>
                                     </div>
-                                    <a href="./">
+                                    <Link to="./blog/blog-details">
                                         <h4>How To Brighten Your Wardrobe With A Dash Of Lime</h4>
-                                    </a>
+                                    </Link>
                                     <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
                                 </div>
                             </div>

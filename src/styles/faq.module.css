@@ -1,0 +1,64 @@
+/*---------------------
+  Faq Section
+-----------------------*/
+
+.faqSection {
+	padding-top: 80px;
+	padding-bottom: 54px;
+}
+
+.faqAccordin .card {
+	border: none;
+	margin-bottom: 22px;
+    position: relative;
+}
+
+.faqAccordin .card .cardHeading {
+	font-size: 22px;
+	color: #252525;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.faqAccordin .card .cardHeading a {
+	padding-left: 42px;
+	display: block;
+	color:black;
+}
+
+.faqAccordin .card .cardBody {
+	padding: 0;
+	padding-top: 13px;
+	padding-bottom: 10px;
+}
+
+.faqAccordin .card .cardBody p {
+	margin-bottom: 0;
+}
+
+.faqAccordin .cardHeading a:after,
+.faqAccordin .cardHeading>a.active[aria-expanded=false]:after {
+	content: "";
+	font-family: "FontAwesome";
+	font-size: 14px;
+	color: #404040;
+	height: 25px;
+	width: 25px;
+	text-align: center;
+	line-height: 25px;
+	background: #EFEFF0;
+	margin-top: 3px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.faqAccordin .cardHeading a[aria-expanded=true]:after,
+.faqAccordin .cardHeading>a.active:after {
+	content: "";
+	font-family: "FontAwesome";
+	float: left;
+	font-size: 13px;
+	color: #ffffff;
+	background: #e7ab3c;
+}

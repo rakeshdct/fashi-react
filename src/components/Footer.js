@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import './../styles/footer.css';
 
 const Footer = () => {
@@ -17,10 +18,10 @@ const Footer = () => {
                                 <li>Email: <a href="mailto:hello.colorlib@gmail.com">hello.colorlib@gmail.com</a></li>
                             </ul>
                             <div className="footer-social">
-                                <a href="./"><i className="fa fa-facebook"></i></a>
-                                <a href="./"><i className="fa fa-instagram"></i></a>
-                                <a href="./"><i className="fa fa-twitter"></i></a>
-                                <a href="./"><i className="fa fa-pinterest"></i></a>
+                                <a href="https://www.facebook.com/" target='blank'><i className="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/" target='blank'><i className="fa fa-instagram"></i></a>
+                                <a href="https://twitter.com/" target='blank'><i className="fa fa-twitter"></i></a>
+                                <a href="https://www.pinterest.com/" target='blank'><i className="fa fa-pinterest"></i></a>
                             </div>
                         </div>
                     </div>
@@ -28,10 +29,10 @@ const Footer = () => {
                         <div className="footer-widget">
                             <h5>Information</h5>
                             <ul>
-                                <li><a href="./">About Us</a></li>
-                                <li><a href="./">Checkout</a></li>
-                                <li><a href="./">Contact</a></li>
-                                <li><a href="./">Serivius</a></li>
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="shop">Shop</Link></li>
+                                <li><Link to="blog">Blog</Link></li>
+                                <li><Link to="contact">Contact</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -39,10 +40,10 @@ const Footer = () => {
                         <div className="footer-widget">
                             <h5>My Account</h5>
                             <ul>
-                                <li><a href="./">My Account</a></li>
-                                <li><a href="./">Contact</a></li>
-                                <li><a href="./">Shopping Cart</a></li>
-                                <li><a href="./">Shop</a></li>
+                                <li><Link to="shop/cart">Shopping Cart</Link></li>
+                                <li><Link to="faq">Faq</Link></li>
+                                <li><Link to="login">Login</Link></li>
+                                <li><Link to="login/register">Register</Link></li>                                
                             </ul>
                         </div>
                     </div>
