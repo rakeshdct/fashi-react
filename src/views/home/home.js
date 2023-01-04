@@ -1,5 +1,9 @@
 import { React, useEffect } from 'react'
-import { Link } from "react-router-dom";
+import Singlebanner from './singleBanner'
+import DealoftheWeek from './dealoftheWeek'
+import Instaphoto from './instaPhoto'
+import Latestblog from './latestBlog'
+import BenifitItems from './benifitItems'
 import './../../styles/home.css';
 
 const Home = () => {
@@ -10,110 +14,105 @@ const Home = () => {
         });
     })
 
+    const singleBanners = [
+        {
+            "category": "men",
+            "imgsrc": "img/banner-1.jpg"
+        },
+        {
+            "category": "Women’s",
+            "imgsrc": "img/banner-2.jpg"
+        },
+        {
+            "category": "Kid’s",
+            "imgsrc": "img/banner-3.jpg"
+        }
+    ]
+    const instaPhotos = [
+        {
+            "collection": "colorlib_Collection",
+            "imgbg": "img/insta-1.jpg"
+        },
+        {
+            "collection": "colorlib_Collection",
+            "imgbg": "img/insta-2.jpg"
+        },
+        {
+            "collection": "colorlib_Collection",
+            "imgbg": "img/insta-3.jpg"
+        },
+        {
+            "collection": "colorlib_Collection",
+            "imgbg": "img/insta-4.jpg"
+        },
+        {
+            "collection": "colorlib_Collection",
+            "imgbg": "img/insta-5.jpg"
+        },
+        {
+            "collection": "colorlib_Collection",
+            "imgbg": "img/insta-6.jpg"
+        }
+
+    ]
+    const latestBlogs = [
+        {
+            "date": "May 4,2019",
+            "commentscount": "1",
+            "title": "The Best Street Style From London Fashion Week",
+            "text": "Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat",
+            "imgsrc": "img/latest-1.jpg"
+        },
+        {
+            "date": "June 5,2020",
+            "commentscount": "2",
+            "title": "Vogue's Ultimate Guide To Autumn/Winter 2019 Shoes",
+            "text": "Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat",
+            "imgsrc": "img/latest-2.jpg"
+        },
+        {
+            "date": "July 6,2021",
+            "commentscount": "3",
+            "title": "How To Brighten Your Wardrobe",
+            "text": "Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat",
+            "imgsrc": "img/latest-3.jpg"
+        }
+    ]
+    const benefitItems = [
+        {
+            "title": "FREE SHIPPING",
+            "text": "For all order over 99$",
+            "imgsrc": "img/icon-1.png"
+        },
+        {
+            "title": "DELIVERY ON TIME",
+            "text": "If good have prolems",
+            "imgsrc": "img/icon-2.png"
+        },
+        {
+            "title": "SECURE PAYMENT",
+            "text": "100% secure payment",
+            "imgsrc": "img/icon-3.png"
+        }
+    ]
     return (
         <>
             <div className="banner-section spad">
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-lg-4">
-                            <div className="single-banner">
-                                <img src="img/banner-1.jpg" alt="" />
-                                <div className="inner-text">
-                                    <h4>Men’s</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4">
-                            <div className="single-banner">
-                                <img src="img/banner-2.jpg" alt="" />
-                                <div className="inner-text">
-                                    <h4>Women’s</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4">
-                            <div className="single-banner">
-                                <img src="img/banner-3.jpg" alt="" />
-                                <div className="inner-text">
-                                    <h4>Kid’s</h4>
-                                </div>
-                            </div>
-                        </div>
+                        {singleBanners.map((singleBanner, i) =>
+                            <Singlebanner key={i} category={singleBanner.category} imgsrc={singleBanner.imgsrc} />
+                        )}
                     </div>
                 </div>
             </div>
-            <section className="deal-of-week set-bg spad" data-setbg="img/time-bg.jpg">
-                <div className="container">
-                    <div className="col-lg-6 text-center">
-                        <div className="section-title">
-                            <h2>Deal Of The Week</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed<br /> do ipsum dolor sit amet,
-                                consectetur adipisicing elit </p>
-                            <div className="product-price">
-                                $35.00
-                                <span>/ HanBag</span>
-                            </div>
-                        </div>
-                        <div className="countdown-timer" id="countdown">
-                            <div className="cd-item">
-                                <span>56</span>
-                                <p>Days</p>
-                            </div>
-                            <div className="cd-item">
-                                <span>12</span>
-                                <p>Hrs</p>
-                            </div>
-                            <div className="cd-item">
-                                <span>40</span>
-                                <p>Mins</p>
-                            </div>
-                            <div className="cd-item">
-                                <span>52</span>
-                                <p>Secs</p>
-                            </div>
-                        </div>
-                        <a href="./" className="primary-btn">Shop Now</a>
-                    </div>
-                </div>
-            </section>
+            <DealoftheWeek />
             <div className="instagram-photo">
-                <div className="insta-item set-bg" data-setbg="img/insta-1.jpg">
-                    <div className="inside-text">
-                        <i className="ti-instagram"></i>
-                        <h5><a href="./">colorlib_Collection</a></h5>
-                    </div>
-                </div>
-                <div className="insta-item set-bg" data-setbg="img/insta-2.jpg">
-                    <div className="inside-text">
-                        <i className="ti-instagram"></i>
-                        <h5><a href="./">colorlib_Collection</a></h5>
-                    </div>
-                </div>
-                <div className="insta-item set-bg" data-setbg="img/insta-3.jpg">
-                    <div className="inside-text">
-                        <i className="ti-instagram"></i>
-                        <h5><a href="./">colorlib_Collection</a></h5>
-                    </div>
-                </div>
-                <div className="insta-item set-bg" data-setbg="img/insta-4.jpg">
-                    <div className="inside-text">
-                        <i className="ti-instagram"></i>
-                        <h5><a href="./">colorlib_Collection</a></h5>
-                    </div>
-                </div>
-                <div className="insta-item set-bg" data-setbg="img/insta-5.jpg">
-                    <div className="inside-text">
-                        <i className="ti-instagram"></i>
-                        <h5><a href="./">colorlib_Collection</a></h5>
-                    </div>
-                </div>
-                <div className="insta-item set-bg" data-setbg="img/insta-6.jpg">
-                    <div className="inside-text">
-                        <i className="ti-instagram"></i>
-                        <h5><a href="./">colorlib_Collection</a></h5>
-                    </div>
-                </div>
+                {instaPhotos.map((instaPhoto, i) =>
+                    <Instaphoto key={i} collection={instaPhoto.collection} imgbg={instaPhoto.imgbg} />
+                )}
             </div>
+
             <section className="latest-blog spad">
                 <div className="container">
                     <div className="row">
@@ -124,105 +123,15 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-lg-4 col-md-6">
-                            <div className="single-latest-blog">
-                                <img src="img/latest-1.jpg" alt="" />
-                                <div className="latest-text">
-                                    <div className="tag-list">
-                                        <div className="tag-item">
-                                            <i className="fa fa-calendar-o"></i>
-                                            May 4,2019
-                                        </div>
-                                        <div className="tag-item">
-                                            <i className="fa fa-comment-o"></i>
-                                            5
-                                        </div>
-                                    </div>
-                                    <Link to="./blog/blog-details">
-                                        <h4>The Best Street Style From London Fashion Week</h4>
-                                    </Link>
-                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="single-latest-blog">
-                                <img src="img/latest-2.jpg" alt="" />
-                                <div className="latest-text">
-                                    <div className="tag-list">
-                                        <div className="tag-item">
-                                            <i className="fa fa-calendar-o"></i>
-                                            May 4,2019
-                                        </div>
-                                        <div className="tag-item">
-                                            <i className="fa fa-comment-o"></i>
-                                            5
-                                        </div>
-                                    </div>
-                                    <Link to="./blog/blog-details">
-                                        <h4>Vogue's Ultimate Guide To Autumn/Winter 2019 Shoes</h4>
-                                    </Link>
-                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="single-latest-blog">
-                                <img src="img/latest-3.jpg" alt="" />
-                                <div className="latest-text">
-                                    <div className="tag-list">
-                                        <div className="tag-item">
-                                            <i className="fa fa-calendar-o"></i>
-                                            May 4,2019
-                                        </div>
-                                        <div className="tag-item">
-                                            <i className="fa fa-comment-o"></i>
-                                            5
-                                        </div>
-                                    </div>
-                                    <Link to="./blog/blog-details">
-                                        <h4>How To Brighten Your Wardrobe With A Dash Of Lime</h4>
-                                    </Link>
-                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                                </div>
-                            </div>
-                        </div>
+                        {latestBlogs.map((latestBlog, i) =>
+                            <Latestblog key={i} imgsrc={latestBlog.imgsrc} date={latestBlog.date} commentscount={latestBlog.commentscount} title={latestBlog.title} text={latestBlog.text} />
+                        )}
                     </div>
                     <div className="benefit-items">
                         <div className="row">
-                            <div className="col-lg-4">
-                                <div className="single-benefit">
-                                    <div className="sb-icon">
-                                        <img src="img/icon-1.png" alt="" />
-                                    </div>
-                                    <div className="sb-text">
-                                        <h6>Free Shipping</h6>
-                                        <p>For all order over 99$</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="single-benefit">
-                                    <div className="sb-icon">
-                                        <img src="img/icon-2.png" alt="" />
-                                    </div>
-                                    <div className="sb-text">
-                                        <h6>Delivery On Time</h6>
-                                        <p>If good have prolems</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="single-benefit">
-                                    <div className="sb-icon">
-                                        <img src="img/icon-1.png" alt="" />
-                                    </div>
-                                    <div className="sb-text">
-                                        <h6>Secure Payment</h6>
-                                        <p>100% secure payment</p>
-                                    </div>
-                                </div>
-                            </div>
+                            {benefitItems.map((benefitItem, i) =>
+                                <BenifitItems key={i} imgsrc={benefitItem.imgsrc} title={benefitItem.title} text={benefitItem.text} />
+                            )}
                         </div>
                     </div>
                 </div>
