@@ -1,5 +1,37 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import Countdown from "react-countdown";
+
+const Completionist = () => <span>You are good to go!</span>;
+
+const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+        // Render a complete state
+        return <Completionist />;
+    } else {
+        // Render a countdown
+        return (
+            <>
+                <div className="cd-item">
+                    <span>{days}</span>
+                    <p>Days</p>
+                </div>
+                <div className="cd-item">
+                    <span>{hours}</span>
+                    <p>Hrs</p>
+                </div>
+                <div className="cd-item">
+                    <span>{minutes}</span>
+                    <p>Mins</p>
+                </div>
+                <div className="cd-item">
+                    <span>{seconds}</span>
+                    <p>Secs</p>
+                </div>
+            </>
+        );
+    }
+};
 
 const DealoftheWeek = () => {
     return (
@@ -16,22 +48,7 @@ const DealoftheWeek = () => {
                         </div>
                     </div>
                     <div className="countdown-timer" id="countdown">
-                        <div className="cd-item">
-                            <span>56</span>
-                            <p>Days</p>
-                        </div>
-                        <div className="cd-item">
-                            <span>12</span>
-                            <p>Hrs</p>
-                        </div>
-                        <div className="cd-item">
-                            <span>40</span>
-                            <p>Mins</p>
-                        </div>
-                        <div className="cd-item">
-                            <span>52</span>
-                            <p>Secs</p>
-                        </div>
+                        <Countdown date={Date.now() + 2597000000} renderer={renderer} />
                     </div>
                     <Link to="./shop" className="primary-btn">Shop Now</Link>
                 </div>
