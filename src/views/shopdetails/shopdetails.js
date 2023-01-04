@@ -23,7 +23,7 @@ const Shopdetails = () => {
             <section className="product-shop spad page-details">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
+                        <div className="col-lg-3 col-md-6 col-sm-8 produts-sidebar-filter">
                             <div className="filter-widget">
                                 <h4 className="fw-title">Categories</h4>
                                 <ul className="filter-catagories">
@@ -145,7 +145,7 @@ const Shopdetails = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-9 order-1 order-lg-2">
+                        <div className="col-lg-9">
                             <div className="row">
                                 <div className="col-lg-6">
                                     <div className="product-pic-zoom">

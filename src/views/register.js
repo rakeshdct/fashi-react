@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import './../../styles/login.css';
+import './../styles/login.css';
 
-const Login = () => {
+const Register = () => {
   return (
     <>
       <div className="breacrumb-section">
@@ -11,7 +11,8 @@ const Login = () => {
             <div className="col-lg-12">
               <div className="breadcrumb-text">
                 <Link to="../"><i className="fa fa-home"></i> Home</Link>
-                <span>Login</span>
+                <Link to="../login">Login</Link>
+                <span>Register</span>
               </div>
             </div>
           </div>
@@ -23,8 +24,8 @@ const Login = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6 offset-lg-3">
-              <div className="login-form">
-                <h2>Login</h2>
+              <div className="register-form">
+                <h2>Register</h2>
                 <form action="#">
                   <div className="group-input">
                     <label htmlFor="username">Username or email address *</label>
@@ -34,20 +35,14 @@ const Login = () => {
                     <label htmlFor="pass">Password *</label>
                     <input type="text" id="pass" />
                   </div>
-                  <div className="group-input gi-check">
-                    <div className="gi-more">
-                      <label htmlFor="save-pass">
-                        Save Password
-                        <input type="checkbox" id="save-pass" />
-                        <span className="checkmark"></span>
-                      </label>
-                      <Link to="./forgot-password" className="forget-pass">Forget your Password</Link>
-                    </div>
+                  <div className="group-input">
+                    <label htmlFor="con-pass">Confirm Password *</label>
+                    <input type="text" id="con-pass" />
                   </div>
-                  <button type="submit" className="site-btn login-btn">Sign In</button>
+                  <button type="submit" className="site-btn register-btn">REGISTER</button>
                 </form>
                 <div className="switch-login">
-                  <Link to="./register" className="or-login">Or Create An Account</Link>
+                  <Link to="../login" className="or-login">Or Login</Link>
                 </div>
               </div>
             </div>
@@ -58,4 +53,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register

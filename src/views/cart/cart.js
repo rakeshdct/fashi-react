@@ -108,7 +108,7 @@ const Cart = () => {
                       <li className="subtotal">Subtotal <span>$240.00</span></li>
                       <li className="cart-total">Total <span>$240.00</span></li>
                     </ul>
-                    <Link to="#" className="proceed-btn">PROCEED TO CHECK OUT</Link>
+                    <Link to="../shop/checkout" className="proceed-btn">PROCEED TO CHECK OUT</Link>
                   </div>
                 </div>
               </div>

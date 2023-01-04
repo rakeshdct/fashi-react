@@ -44,7 +44,7 @@ const Favourites = () => {
                                                 </div>
                                                 <ul>
                                                     <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                                    <li className="quick-view"><Link to="shop-details">+ Quick View</Link></li>
+                                                    <li className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
                                                 </ul>
                                             </div>
                                             <div className="pi-text">
@@ -68,7 +68,7 @@ const Favourites = () => {
                                                 </div>
                                                 <ul>
                                                     <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                                    <li className="quick-view"><Link to="shop-details">+ Quick View</Link></li>
+                                                    <li className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
                                                 </ul>
                                             </div>
                                             <div className="pi-text">
@@ -92,7 +92,7 @@ const Favourites = () => {
                                                 </div>
                                                 <ul>
                                                     <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                                    <li className="quick-view"><Link to="shop-details">+ Quick View</Link></li>
+                                                    <li className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
 
                                                 </ul>
                                             </div>
@@ -117,7 +117,7 @@ const Favourites = () => {
                                                 </div>
                                                 <ul>
                                                     <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                                    <li className="quick-view"><Link to="shop-details">+ Quick View</Link></li>
+                                                    <li className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
 
                                                 </ul>
                                             </div>
@@ -142,7 +142,7 @@ const Favourites = () => {
                                                 </div>
                                                 <ul>
                                                     <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                                    <li className="quick-view"><Link to="shop-details">+ Quick View</Link></li>
+                                                    <li className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
 
                                                 </ul>
                                             </div>
@@ -167,7 +167,7 @@ const Favourites = () => {
                                                 </div>
                                                 <ul>
                                                     <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                                    <li className="quick-view"><Link to="shop-details">+ Quick View</Link></li>
+                                                    <li className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
 
                                                 </ul>
                                             </div>
@@ -193,7 +193,7 @@ const Favourites = () => {
                                                 </div>
                                                 <ul>
                                                     <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                                    <li className="quick-view"><Link to="shop-details">+ Quick View</Link></li>
+                                                    <li className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
 
                                                 </ul>
                                             </div>
@@ -218,7 +218,7 @@ const Favourites = () => {
                                                 </div>
                                                 <ul>
                                                     <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                                    <li className="quick-view"><Link to="shop-details">+ Quick View</Link></li>
+                                                    <li className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
 
                                                 </ul>
                                             </div>
@@ -243,7 +243,7 @@ const Favourites = () => {
                                                 </div>
                                                 <ul>
                                                     <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                                    <li className="quick-view"><Link to="shop-details">+ Quick View</Link></li>
+                                                    <li className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
 
                                                 </ul>
                                             </div>

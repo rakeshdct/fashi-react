@@ -1,19 +1,19 @@
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './components/pages/Home';
-import Shop from './components/pages/Shop';
-import Shopdetails from './components/pages/Shopdetails';
-import Favourites from './components/pages/Favourites';
-import Blog from './components/pages/Blog';
-import Contact from './components/pages/Contact';
-import Blogdetails from './components/pages/Blogdetails';
-import Cart from './components/pages/Cart';
-import Checkout from './components/pages/Checkout';
-import Faq from './components/pages/Faq';
-import Login from './components/pages/Login';
-import Register from './components/pages/Register';
-import Forgotpassword from './components/pages/Forgotpassword';
-import Notfound from './components/pages/Notfound';
+import Header from './views/header';
+import Footer from './views/footer';
+import Home from './views/home/home';
+import Shop from './views/shop/shop';
+import Shopdetails from './views/shopdetails/shopdetails';
+import Favourites from './views/favourites/favourites';
+import Blog from './views/blog/blog';
+import Contact from './views/contact/contact';
+import Blogdetails from './views/blogdetails/blogdetails';
+import Cart from './views/cart/cart';
+import Checkout from './views/checkout/checkout';
+import Faq from './views/faq/faq';
+import Login from './views/login';
+import Register from './views/register';
+import Forgotpassword from './views/forgotpassword';
+import Notfound from './views/notfound';
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
 

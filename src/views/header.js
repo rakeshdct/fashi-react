@@ -29,7 +29,7 @@ const Header = () => {
               </div>
             </div>
             <div className="ht-right">
-              <NavLink className="login-panel" to="login"><i className="fa fa-user"></i>Login</NavLink>
+              <Link className="login-panel" to="login"><i className="fa fa-user"></i>Login</Link>
               <div className="top-social">
                 <a href="https://www.facebook.com/" target='blank'><i className="ti-facebook"></i></a>
                 <a href="https://www.instagram.com/" target='blank'><i className="ti-instagram"></i></a>
@@ -44,9 +44,9 @@ const Header = () => {
             <div className="row">
               <div className="col-lg-2 col-md-2">
                 <div className="logo">
-                  <NavLink to="/">
+                  <Link to="/">
                     <img src="img/logo.png" alt="" />
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-7 col-md-7">
@@ -76,7 +76,7 @@ const Header = () => {
                         <table>
                           <tbody>
                             <tr>
-                              <td className="si-pic"><img src="img/select-product-1.jpg" alt="" /></td>
+                              <td className="si-pic"><img src="../img/select-product-1.jpg" alt="" /></td>
                               <td className="si-text">
                                 <div className="product-selected">
                                   <p>$60.00 x 1</p>
@@ -88,7 +88,7 @@ const Header = () => {
                               </td>
                             </tr>
                             <tr>
-                              <td className="si-pic"><img src="img/select-product-2.jpg" alt="" /></td>
+                              <td className="si-pic"><img src="../img/select-product-2.jpg" alt="" /></td>
                               <td className="si-text">
                                 <div className="product-selected">
                                   <p>$60.00 x 1</p>
@@ -125,14 +125,14 @@ const Header = () => {
                 <i className="ti-menu"></i>
                 <span>All departments</span>
                 <ul className="depart-hover">
-                  <li><Link href="./">Women’s Clothing</Link></li>
-                  <li><Link href="./">Men’s Clothing</Link></li>
-                  <li><Link href="./">Underwear</Link></li>
-                  <li><Link href="./">Kid's Clothing</Link></li>
-                  <li><Link href="./">Brand Fashion</Link></li>
-                  <li><Link href="./">Accessories/Shoes</Link></li>
-                  <li><Link href="./">Luxury Brands</Link></li>
-                  <li><Link href="./">Brand Outdoor Apparel</Link></li>
+                  <li><Link to="./">Women’s Clothing</Link></li>
+                  <li><Link to="./">Men’s Clothing</Link></li>
+                  <li><Link to="./">Underwear</Link></li>
+                  <li><Link to="./">Kid's Clothing</Link></li>
+                  <li><Link to="./">Brand Fashion</Link></li>
+                  <li><Link to="./">Accessories/Shoes</Link></li>
+                  <li><Link to="./">Luxury Brands</Link></li>
+                  <li><Link to="./">Brand Outdoor Apparel</Link></li>
                 </ul>
               </div>
             </div>
