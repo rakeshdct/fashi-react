@@ -4,7 +4,6 @@ import Singlebanner from './singleBanner'
 import DealoftheWeek from './dealoftheWeek'
 import Instaphoto from './instaPhoto'
 import Latestblog from './latestBlog'
-import Partnerlogo from './partnerLogo'
 import './../../styles/home.css';
 
 const Home = () => {
@@ -21,7 +20,6 @@ const Home = () => {
             <DealoftheWeek />
             <Instaphoto/>
             <Latestblog/>
-            <Partnerlogo />
         </>
     )
 }

@@ -121,8 +121,38 @@
 	border-left: 1px solid #e5e5e5;
 	padding-top: 18px;
 	padding-bottom: 15px;
+	position: relative;
 }
-
+.header-top .ht-right .login-panel.login:hover span.menu{
+	visibility: visible;
+	top: 54px;
+	opacity: 1;
+}
+.header-top .ht-right .login-panel.login span.loginText{
+	display: inline;
+}
+.header-top .ht-right .login-panel.login span.text,
+.header-top .ht-right .login-panel span.loginText{
+	display: none;
+}
+.header-top .ht-right .login-panel span.menu{
+	position: absolute;
+	background: #fff;
+    width: calc(100% + 16px);
+    top: 74px;
+    text-align: right;
+    padding: 10px 13px;
+    border-left: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    right: 0;
+    box-shadow: 0 13px 32px rgb(51 51 51 / 10%);
+	visibility: hidden;
+	font-size: 14px;
+	right: -16px;
+	z-index: 1;
+	transition: all 0.3s;
+	opacity: 0;
+}
 .header-top .ht-right .login-panel i {
 	margin-right: 8px;
 }
@@ -631,6 +661,16 @@
 /* Large Device: 480px */
 
 @media only screen and (max-width: 767px) {
+	.header-top .ht-right .login-panel span.menu{
+		top: 57px;
+		padding: 7px 13px;
+	}	
+	.header-top .ht-right .login-panel.login:hover span.menu{
+		top: 37px;
+	}	
+	.inner-header .nav-right li.cart-icon:hover .cart-hover{
+		top: 40px;
+	}
 	.instagram-photo .insta-item {
 		width: 50%;
 		height: 300px;

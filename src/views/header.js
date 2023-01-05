@@ -3,6 +3,10 @@ import { NavLink, Link } from "react-router-dom";
 import './../styles/header.css';
 
 const Header = () => {
+  const [login, setLogin] = useState(false);
+  function toggleLogin(status) {
+    setLogin(status);
+  }
   const [showMeNav, setShowMeNav] = useState(false);
   function toggleNav(e) {
     e.preventDefault();
@@ -29,7 +33,7 @@ const Header = () => {
               </div>
             </div>
             <div className="ht-right">
-              <Link className="login-panel" to="login"><i className="fa fa-user"></i>Login</Link>
+              <Link className={login ? "login-panel login":"login-panel"} to="#" ><i className="fa fa-user"></i><span className='text' onClick={()=>toggleLogin(true)}>Login</span><span className='loginText'>Welcome, user</span><span className='menu'><span onClick={()=>toggleLogin(false)}><i className="fa fa-sign-out"></i> Logout</span></span></Link>
               <div className="top-social">
                 <a href="https://www.facebook.com/" target='blank'><i className="ti-facebook"></i></a>
                 <a href="https://www.instagram.com/" target='blank'><i className="ti-instagram"></i></a>
