@@ -14,7 +14,7 @@ const Footer = () => {
                             </div>
                             <ul>
                                 <li>Address: 60-49 Road 11378 New York</li>
-                                <li>Phone: +65 11.188.888</li>
+                                <li>Phone: +12 34.567.890</li>
                                 <li>Email: <a href="mailto:reactjs.poc@mailinator.com">reactjs.poc@mailinator.com</a></li>
                             </ul>
                             <div className="footer-social">

@@ -25,7 +25,7 @@ const Header = () => {
               </div>
               <div className="phone-service">
                 <i className=" fa fa-phone"></i>
-                +65 11.188.888
+                +12 34.567.890
               </div>
             </div>
             <div className="ht-right">

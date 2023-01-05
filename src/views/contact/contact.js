@@ -56,7 +56,7 @@ const Contact = () => {
                   </div>
                   <div className="ci-text">
                     <span>Phone:</span>
-                    <p>+65 11.188.888</p>
+                    <p>+12 34.567.890</p>
                   </div>
                 </div>
                 <div className="cw-item">

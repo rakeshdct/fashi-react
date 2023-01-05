@@ -1,8 +1,17 @@
-import React from 'react'
+import { React, useState } from 'react'
 import { Link } from "react-router-dom";
 import './../../styles/shop.css';
 
 const Shopdetails = () => {
+    const initialState = { selected: 0 };
+    const [state, setState] = useState(initialState);
+    const handleSelection = (e, index) => {
+        e.preventDefault();
+        setState({
+            ...state,
+            selected: index
+        });
+    }
     return (
         <>
 
@@ -243,20 +252,20 @@ const Shopdetails = () => {
                             <div className="product-tab">
                                 <div className="tab-item">
                                     <ul className="nav" role="tablist">
-                                        <li>
-                                            <Link className="active" data-toggle="tab" to="#tab-1" role="tab">DESCRIPTION</Link>
+                                        <li onClick={(e) => handleSelection(e, 0)}>
+                                            <Link className={state.selected === 0 ? 'active' : ''} >DESCRIPTION</Link>
                                         </li>
-                                        <li>
-                                            <Link data-toggle="tab" to="#tab-2" role="tab">SPECIFICATIONS</Link>
+                                        <li onClick={(e) => handleSelection(e, 1)}>
+                                            <Link className={state.selected === 1 ? 'active' : ''}>SPECIFICATIONS</Link>
                                         </li>
-                                        <li>
-                                            <Link data-toggle="tab" to="#tab-3" role="tab">Customer Reviews (02)</Link>
+                                        <li onClick={(e) => handleSelection(e, 2)}>
+                                            <Link className={state.selected === 2 ? 'active' : ''}>Customer Reviews (02)</Link>
                                         </li>
                                     </ul>
                                 </div>
                                 <div className="tab-item-content">
                                     <div className="tab-content">
-                                        <div className="tab-pane fade-in active" id="tab-1" role="tabpanel">
+                                        <div className={state.selected === 0 ? 'tab-pane fade active show' : 'tab-pane fade'} id="tab-1" role="tabpanel">
                                             <div className="product-content">
                                                 <div className="row">
                                                     <div className="col-lg-7">
@@ -277,7 +286,7 @@ const Shopdetails = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="tab-pane fade" id="tab-2" role="tabpanel">
+                                        <div className={state.selected === 1 ? 'tab-pane fade active show' : 'tab-pane fade'} id="tab-2" role="tabpanel">
                                             <div className="specification-table">
                                                 <table>
                                                     <tbody>
@@ -338,7 +347,7 @@ const Shopdetails = () => {
                                                 </table>
                                             </div>
                                         </div>
-                                        <div className="tab-pane fade" id="tab-3" role="tabpanel">
+                                        <div className={state.selected === 2 ? 'tab-pane fade active show' : 'tab-pane fade'} id="tab-3" role="tabpanel">
                                             <div className="customer-review-option">
                                                 <h4>2 Comments</h4>
                                                 <div className="comment-option">
