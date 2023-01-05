@@ -21,7 +21,7 @@ const Header = () => {
             <div className="ht-left">
               <div className="mail-service">
                 <i className=" fa fa-envelope"></i>
-                <a href="mailto:hello.colorlib@gmail.com">hello.colorlib@gmail.com</a>
+                <a href="mailto:reactjs.poc@mailinator.com">reactjs.poc@mailinator.com</a>
               </div>
               <div className="phone-service">
                 <i className=" fa fa-phone"></i>

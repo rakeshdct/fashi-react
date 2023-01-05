@@ -65,7 +65,7 @@ const Contact = () => {
                   </div>
                   <div className="ci-text">
                     <span>Email:</span>
-                    <p><a href="mailto:hello.colorlib@gmail.com" >hello.colorlib@gmail.com</a></p>
+                    <p><a href="mailto:reactjs.poc@mailinator.com">reactjs.poc@mailinator.com</a></p>
                   </div>
                 </div>
               </div>

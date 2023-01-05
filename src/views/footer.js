@@ -15,7 +15,7 @@ const Footer = () => {
                             <ul>
                                 <li>Address: 60-49 Road 11378 New York</li>
                                 <li>Phone: +65 11.188.888</li>
-                                <li>Email: <a href="mailto:hello.colorlib@gmail.com">hello.colorlib@gmail.com</a></li>
+                                <li>Email: <a href="mailto:reactjs.poc@mailinator.com">reactjs.poc@mailinator.com</a></li>
                             </ul>
                             <div className="footer-social">
                                 <a href="https://www.facebook.com/" target='blank'><i className="fa fa-facebook"></i></a>

@@ -1,18 +1,28 @@
 import React from 'react'
+import { benefitItems } from './data'
 
-const BenifitItems = (props) => {
+const BenifitItems = () => {
     return (
-        <div className="col-lg-4">
-            <div className="single-benefit">
-                <div className="sb-icon">
-                    <img src={props.imgsrc} alt="" />
-                </div>
-                <div className="sb-text">
-                    <h6>{props.title}</h6>
-                    <p>{props.text}</p>
-                </div>
+        <div className="benefit-items">
+            <div className="row">
+                {benefitItems.map((benefitItem, i) =>
+                (
+                    <div className="col-lg-4" key={i}>
+                        <div className="single-benefit">
+                            <div className="sb-icon">
+                                <img src={benefitItem.imgsrc} alt="" />
+                            </div>
+                            <div className="sb-text">
+                                <h6>{benefitItem.title}</h6>
+                                <p>{benefitItem.text}</p>
+                            </div>
+                        </div>
+                    </div>
+                )
+                )}
             </div>
         </div>
+
     )
 }
 

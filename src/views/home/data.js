@@ -1,4 +1,34 @@
 
+export const heroSectionOwlConfig = {
+    loop: true,
+    margin: 0,
+    nav: true,
+    items: 1,
+    dots: false,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
+    smartSpeed: 1200,
+    autoplay: true,
+}
+export const heroSections = [
+    {
+        "imgsrc": "../img/hero-1.jpg",
+        "category": "Bag,kids",
+        "day": "Black friday",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+        "sale": "Sale",
+        "offer": "50%"
+    },
+    {
+        "imgsrc": "../img/hero-2.jpg",
+        "category": "Bag,kids",
+        "day": "Black friday",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+        "sale": "Sale",
+        "offer": "50%"
+    }
+]
 export const singleBanners = [
     {
         "category": "men",
@@ -78,5 +108,41 @@ export const benefitItems = [
         "title": "SECURE PAYMENT",
         "text": "100% secure payment",
         "imgsrc": "img/icon-3.png"
+    }
+]
+export const partnerLogosOwlConfig = {
+    loop: false,
+    margin: 30,
+    nav: false,
+    items: 5,
+    dots: false,
+    navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
+    smartSpeed: 1200,
+    mouseDrag: false,
+    autoplay: true,
+    responsive: {
+        0: {
+            items: 3,
+        },
+        768: {
+            items: 5,
+        }
+    }
+}
+export const partnerLogos = [
+    {
+        "imgsrc": "img/logo-carousel/logo-1.png"
+    },
+    {
+        "imgsrc": "img/logo-carousel/logo-2.png"
+    },
+    {
+        "imgsrc": "img/logo-carousel/logo-3.png"
+    },
+    {
+        "imgsrc": "img/logo-carousel/logo-4.png"
+    },
+    {
+        "imgsrc": "img/logo-carousel/logo-5.png"
     }
 ]

@@ -1,15 +1,25 @@
 import React from 'react'
+import { singleBanners } from './data'
 
-const Singlebanner = (props) => {
+const Singlebanner = () => {
     return (
-        <div className="col-lg-4">
-            <div className="single-banner">
-                <img src={props.imgsrc} alt="" />
-                <div className="inner-text">
-                    <h4>{props.category}</h4>
+        <div className="banner-section spad">
+            <div className="container-fluid">
+                <div className="row">
+                    {singleBanners.map((singleBanner, i) =>
+                    (<div className="col-lg-4" key={i}>
+                        <div className="single-banner">
+                            <img src={singleBanner.imgsrc} alt="" />
+                            <div className="inner-text">
+                                <h4>{singleBanner.category}</h4>
+                            </div>
+                        </div>
+                    </div>)
+                    )}
                 </div>
             </div>
         </div>
+
     )
 }
 
