@@ -1,11 +1,10 @@
 import React from 'react'
-import { benefitItems } from './data'
 
-const BenifitItems = () => {
+const BenifitItems = (props) => {
     return (
         <div className="benefit-items">
             <div className="row">
-                {benefitItems.map((benefitItem, i) =>
+                {props.benefitItems.map((benefitItem, i) =>
                 (
                     <div className="col-lg-4" key={i}>
                         <div className="single-benefit">

@@ -1,5 +1,5 @@
 import Header from './views/header';
-import Footer from './views/footer';
+import Footer from './views/footer/footer';
 import Home from './views/home/home';
 import Shop from './views/shop/shop';
 import Shopdetails from './views/shopdetails/shopdetails';

@@ -1,12 +1,11 @@
 import React from 'react'
-import { singleBanners } from './data'
 
-const Singlebanner = () => {
+const Singlebanner = (props) => {
     return (
         <div className="banner-section spad">
             <div className="container-fluid">
                 <div className="row">
-                    {singleBanners.map((singleBanner, i) =>
+                    {props.singleBanners.map((singleBanner, i) =>
                     (<div className="col-lg-4" key={i}>
                         <div className="single-banner">
                             <img src={singleBanner.imgsrc} alt="" />

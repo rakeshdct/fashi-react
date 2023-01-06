@@ -1,13 +1,12 @@
 import React from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import { Link } from "react-router-dom";
-import { heroSectionOwlConfig, heroSections } from './data'
 
-const Herosection = () => {
+const Herosection = (props) => {
     return (
         <section className="hero-section">
-            <OwlCarousel className='hero-items owl-carousel' {...heroSectionOwlConfig}>
-                {heroSections.map((heroSection, i) => (
+            <OwlCarousel className='hero-items owl-carousel' {...props.heroSectionOwlConfig}>
+                {props.heroSections.map((heroSection, i) => (
                     <div className="single-hero-items set-bg" data-setbg={heroSection.imgsrc} key={i}>
                         <div className="container">
                             <div className="row">

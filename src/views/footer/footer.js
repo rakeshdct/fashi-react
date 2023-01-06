@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import Partnerlogo from './home/partnerLogo'
-import './../styles/footer.css';
+import Partnerlogo from './partnerLogo'
+import { footerLogo } from '../footer/data'
+import './../../styles/footer.css';
 
 const Footer = () => {
     return (
         <>
-            <Partnerlogo />
+            <Partnerlogo partnerLogosOwlConfig={footerLogo.partnerLogosOwlConfig} partnerLogos={footerLogo.partnerLogos} />
             <footer className="footer-section">
                 <div className="container">
                     <div className="row">

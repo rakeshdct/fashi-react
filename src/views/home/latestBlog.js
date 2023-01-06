@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import { latestBlogs } from './data'
 import BenifitItems from './benifitItems'
 
-const Latestblog = () => {
+const Latestblog = (props) => {
     return (
         <section className="latest-blog spad">
             <div className="container">
@@ -15,7 +14,7 @@ const Latestblog = () => {
                     </div>
                 </div>
                 <div className="row">
-                    {latestBlogs.map((latestBlog, i) =>
+                    {props.latestBlogs.map((latestBlog, i) =>
                         <div className="col-lg-4 col-md-6" key={i}>
                             <div className="single-latest-blog">
                                 <img src={latestBlog.imgsrc} alt="" />
@@ -40,7 +39,7 @@ const Latestblog = () => {
 
                     )}
                 </div>
-                <BenifitItems />
+                <BenifitItems benefitItems={props.benefitItems} />
             </div>
         </section>
 

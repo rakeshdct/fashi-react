@@ -1,10 +1,9 @@
 import React from 'react'
-import { instaPhotos } from './data'
 
-const Instaphoto = () => {
+const Instaphoto = (props) => {
     return (
         <div className="instagram-photo">
-            {instaPhotos.map((instaPhoto, i) => (
+            {props.instaPhotos.map((instaPhoto, i) => (
                 <div className="insta-item set-bg" key={i} data-setbg={instaPhoto.imgbg}>
                     <div className="inside-text">
                         <i className="ti-instagram"></i>
