@@ -13,8 +13,9 @@ const Header = () => {
   useEffect(() => {
     if (localStorage.getItem("auth") === 'true') {
       setUser(localStorage.getItem("user"))
+      dispatch({ type: 'login' })
     }
-  }, [isLogged]);
+  }, [isLogged, dispatch]);
 
   function toggleLogin() {
     dispatch({ type: 'logout' })
@@ -47,7 +48,7 @@ const Header = () => {
               </div>
             </div>
             <div className="ht-right">
-              <Link className={isLogged ? "login-panel login" : "login-panel"} to="./login" ><i className="fa fa-user"></i><span className='text'>Login</span><span className='loginText'>Welcome, {user}</span><span className='menu'><span onClick={() => toggleLogin()}><i className="fa fa-sign-out"></i> Logout</span></span></Link>
+              <Link className={isLogged ? "login-panel login" : "login-panel"} to="./login" ><i className="fa fa-user"></i>{isLogged ? <span className='loginText'>Welcome, {user} !</span> : <span className='text'>Login</span>}<span className='menu'><span onClick={() => toggleLogin()}><i className="fa fa-sign-out"></i> Logout</span></span></Link>
               <div className="top-social">
                 <a href="https://www.facebook.com/" target='blank'><i className="ti-facebook"></i></a>
                 <a href="https://www.instagram.com/" target='blank'><i className="ti-instagram"></i></a>

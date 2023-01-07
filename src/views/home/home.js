@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <>
             <Herosection heroSectionOwlConfig={homeData.heroSectionOwlConfig} heroSections={homeData.heroSections}/>
-            <Singlebanner singleBanners={homeData.singleBanners} />
+            {homeData.singleBanners != null && <Singlebanner singleBanners={homeData.singleBanners} />}
             <DealoftheWeek />
             <Instaphoto instaPhotos={homeData.instaPhotos}/>
             <Latestblog latestBlogs={homeData.latestBlogs} benefitItems={homeData.benefitItems}/>

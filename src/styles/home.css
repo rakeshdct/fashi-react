@@ -1,6 +1,9 @@
 /*---------------------
   Hero Section
 -----------------------*/
+.hero-section {
+    padding: 0 0 80px;
+}
 
 .hero-items .single-hero-items {
     height: 725px;
@@ -185,7 +188,7 @@
 -----------------------*/
 
 .banner-section {
-    padding: 80px 50px;
+    padding: 0 50px 80px;
 }
 
 .single-banner {
@@ -247,7 +250,7 @@
 
 @media only screen and (max-width: 991px) {
     .banner-section {
-        padding: 80px 0 50px;
+        padding: 0 0 50px;
     }
 
     .single-banner {
@@ -320,10 +323,13 @@
 
 .instagram-photo {
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    padding-bottom: 72px;
 }
 
 .instagram-photo .insta-item {
-    float: left;
     width: 16.66%;
     height: 320px;
     text-align: center;
@@ -378,11 +384,20 @@
 .instagram-photo .insta-item .inside-text h5 a {
     color: #ffffff;
 }
-
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .instagram-photo .insta-item .inside-text h5{
+        font-size: 12px;
+    }
+}
 @media only screen and (max-width: 767px) {
+    .instagram-photo{
+        display: block;
+        justify-content: normal;
+    }
     .instagram-photo .insta-item {
         width: 50%;
         height: 300px;
+        float: left;
     }
 }
 
@@ -397,7 +412,6 @@
 -----------------------*/
 
 .latest-blog {
-    padding-top: 72px;
     padding-bottom: 80px;
 }
 

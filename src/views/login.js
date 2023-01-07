@@ -20,7 +20,7 @@ const Login = () => {
     if (user === '') return setErrMsg('Enter Username')
     else if (pwd === '') return setErrMsg('Enter Password')
     else if (pwd !== 'password') return setErrMsg('Invalid Credentails')
-    else { dispatch({ type: 'login' });localStorage.setItem('auth',true);localStorage.setItem('user',JSON.stringify(user)); navigate('../'); }
+    else { dispatch({ type: 'login' });localStorage.setItem('auth',true);localStorage.setItem('user',user); navigate('../'); }
   }
   return (
     <>

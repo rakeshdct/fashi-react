@@ -44,8 +44,10 @@ export const homeData = {
             "imgsrc": "img/banner-3.jpg"
         }
     ],
-    instaPhotos: [
-        {
+    // singleBanners: null,    
+    instaPhotos: {
+        "showphotos": "6",
+        "datas": [{
             "collection": "colorlib_Collection",
             "imgbg": "img/insta-1.jpg"
         },
@@ -68,9 +70,16 @@ export const homeData = {
         {
             "collection": "colorlib_Collection",
             "imgbg": "img/insta-6.jpg"
-        }
-
-    ],
+        },
+        {
+            "collection": "colorlib_Collection",
+            "imgbg": "img/insta-5.jpg"
+        },
+        {
+            "collection": "colorlib_Collection",
+            "imgbg": "img/insta-6.jpg"
+        }]
+    },
     latestBlogs: [
         {
             "date": "May 4,2019",
@@ -148,3 +157,12 @@ export const homeData = {
         }
     ]
 }
+
+//Json data painted for home page
+//passing data from parent to child component using props
+//Handle null for singleBanners
+//Restrict instaPhotos to 6
+//After login conditional rendering of componenets
+//Implemented react redux
+//login page validation
+//On page refresh maintain login

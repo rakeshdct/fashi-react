@@ -688,7 +688,7 @@
 
 .product-details .quantity .pro-qty input {
     text-align: center;
-    width: 52px;
+    width: 100%;
     font-size: 14px;
     font-weight: 700;
     border: none;
