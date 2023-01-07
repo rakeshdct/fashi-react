@@ -1,11 +1,25 @@
-import { React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 import { NavLink, Link } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+//import {setLogout} from '../actions'
+
 import './../styles/header.css';
 
 const Header = () => {
-  const [login, setLogin] = useState(false);
-  function toggleLogin(status) {
-    setLogin(status);
+  const isLogged = useSelector(state => state.isLogged)
+  const dispatch = useDispatch();
+  const [user, setUser] = useState('');
+
+  useEffect(() => {
+    if (localStorage.getItem("auth") === 'true') {
+      setUser(localStorage.getItem("user"))
+    }
+  }, [isLogged]);
+
+  function toggleLogin() {
+    dispatch({ type: 'logout' })
+    localStorage.setItem('auth', false);
+    localStorage.setItem('user', '');
   }
   const [showMeNav, setShowMeNav] = useState(false);
   function toggleNav(e) {
@@ -33,7 +47,7 @@ const Header = () => {
               </div>
             </div>
             <div className="ht-right">
-              <Link className={login ? "login-panel login":"login-panel"} to="#" ><i className="fa fa-user"></i><span className='text' onClick={()=>toggleLogin(true)}>Login</span><span className='loginText'>Welcome, user</span><span className='menu'><span onClick={()=>toggleLogin(false)}><i className="fa fa-sign-out"></i> Logout</span></span></Link>
+              <Link className={isLogged ? "login-panel login" : "login-panel"} to="./login" ><i className="fa fa-user"></i><span className='text'>Login</span><span className='loginText'>Welcome, {user}</span><span className='menu'><span onClick={() => toggleLogin()}><i className="fa fa-sign-out"></i> Logout</span></span></Link>
               <div className="top-social">
                 <a href="https://www.facebook.com/" target='blank'><i className="ti-facebook"></i></a>
                 <a href="https://www.instagram.com/" target='blank'><i className="ti-instagram"></i></a>
@@ -64,12 +78,14 @@ const Header = () => {
               </div>
               <div className="col-lg-3 text-right col-md-3">
                 <ul className="nav-right">
-                  <li className="heart-icon">
-                    <Link to="./shop/favourites">
-                      <i className="icon_heart_alt"></i>
-                      <span>1</span>
-                    </Link>
-                  </li>
+                  {
+                    isLogged && <li className="heart-icon">
+                      <Link to="./shop/favourites">
+                        <i className="icon_heart_alt"></i>
+                        <span>1</span>
+                      </Link>
+                    </li>
+                  }
                   <li className="cart-icon">
                     <Link to="#">
                       <i className="icon_bag_alt"></i>
@@ -147,12 +163,12 @@ const Header = () => {
                 <li><NavLink to="blog">Blog</NavLink></li>
                 <li><NavLink to="contact">Contact</NavLink></li>
                 <li><Link to="#">Pages</Link>
-                  <ul className="dropdown">                    
+                  <ul className="dropdown">
                     <li><NavLink to="shop/cart">Shopping Cart</NavLink></li>
-                    <li><NavLink to="shop/checkout">Checkout</NavLink></li>
+                    {isLogged && <li><NavLink to="shop/checkout">Checkout</NavLink></li>}
                     <li><NavLink to="blog/blog-details">Blog Details</NavLink></li>
                     <li><NavLink to="faq">Faq</NavLink></li>
-                    <li><NavLink to="login">Login</NavLink></li>
+                    {!isLogged && <li><NavLink to="login">Login</NavLink></li>}
                   </ul>
                 </li>
               </ul>

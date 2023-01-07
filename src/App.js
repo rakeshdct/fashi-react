@@ -16,23 +16,25 @@ import Forgotpassword from './views/forgotpassword';
 import Notfound from './views/notfound';
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 function App() {
+  const isLogged = useSelector(state => state.isLogged)
   let routes = (
     <Routes >
       <Route path='/' exact element={<Home />} />
       <Route path='/shop' element={<Shop />} />
       <Route path='/shop/shop-details' element={<Shopdetails />} />
-      <Route path='/shop/favourites' element={<Favourites />} />      
+      <Route path='/shop/favourites' element={!isLogged ? <Login /> : <Favourites />} />
       <Route path='/blog' element={<Blog />} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/blog/blog-details' element={<Blogdetails />} />
       <Route path='/shop/cart' element={<Cart />} />
-      <Route path='/shop/checkout' element={<Checkout />} />
+      <Route path='/shop/checkout' element={!isLogged ? <Login /> : <Checkout />} />
       <Route path='/faq' element={<Faq />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/login/register' element={<Register />} />
-      <Route path='/login/forgot-password' element={<Forgotpassword />} />           
+      <Route path='/login' element={isLogged ? <Home /> : <Login />} />
+      <Route path='/login/register' element={isLogged ? <Home /> : <Register />} />
+      <Route path='/login/forgot-password' element={isLogged ? <Home /> : <Forgotpassword />} />
       <Route path='*' element={<Notfound />} />
     </Routes >
   )

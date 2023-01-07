@@ -2,9 +2,11 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import Partnerlogo from './partnerLogo'
 import { footerLogo } from '../footer/data'
+import { useSelector } from 'react-redux';
 import './../../styles/footer.css';
 
 const Footer = () => {
+    const isLogged = useSelector(state => state.isLogged)
     return (
         <>
             <Partnerlogo partnerLogosOwlConfig={footerLogo.partnerLogosOwlConfig} partnerLogos={footerLogo.partnerLogos} />
@@ -46,8 +48,8 @@ const Footer = () => {
                                 <ul>
                                     <li><Link to="shop/cart">Shopping Cart</Link></li>
                                     <li><Link to="faq">Faq</Link></li>
-                                    <li><Link to="login">Login</Link></li>
-                                    <li><Link to="login/register">Register</Link></li>
+                                    {!isLogged && <li><Link to="login">Login</Link></li>}
+                                    {!isLogged && <li><Link to="login/register">Register</Link></li>}
                                 </ul>
                             </div>
                         </div>

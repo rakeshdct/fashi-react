@@ -196,3 +196,9 @@ ol {
 	display: inline-block;
 	color: #b2b2b2;
 }
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
