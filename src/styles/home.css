@@ -507,6 +507,7 @@
 .partner-logo {
     background: #303030;
     padding: 38px 0;
+    position: relative;
 }
 
 .logo-carousel .logo-item {

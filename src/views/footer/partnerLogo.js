@@ -5,20 +5,16 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 const Partnerlogo = (props) => {
     return (
-        <div className="partner-logo">
-            <div className="container">
-                <OwlCarousel className='logo-carousel owl-carousel' {...props.partnerLogosOwlConfig}>
-                    {props.partnerLogos.map((partnerLogo, i) => (
-                        <div className="logo-item" key={i}>
-                            <div className="tablecell-inner">
-                                <img src={partnerLogo.imgsrc} alt="" />
-                            </div>
-                        </div>
-                    )
-                    )}
-                </OwlCarousel>
-            </div>
-        </div>
+        <OwlCarousel className='logo-carousel owl-carousel' {...props.partnerLogosOwlConfig}>
+            {props.partnerLogos.map((partnerLogo, i) => (
+                <div className="logo-item" key={i}>
+                    <div className="tablecell-inner">
+                        <img src={partnerLogo.imgsrc} alt="" />
+                    </div>
+                </div>
+            )
+            )}
+        </OwlCarousel>
     )
 }
 

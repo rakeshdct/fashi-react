@@ -1,24 +1,25 @@
 import { React, useState, useEffect } from 'react'
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
+import { login,logout, headerSelector } from "./header-dux";
 //import {setLogout} from '../actions'
 
 import './../styles/header.css';
 
 const Header = () => {
-  const isLogged = useSelector(state => state.isLogged)
   const dispatch = useDispatch();
+  const { isLoggin } = useSelector(headerSelector);
   const [user, setUser] = useState('');
 
   useEffect(() => {
     if (localStorage.getItem("auth") === 'true') {
       setUser(localStorage.getItem("user"))
-      dispatch({ type: 'login' })
+      dispatch(login())
     }
-  }, [isLogged, dispatch]);
+  }, [isLoggin,dispatch]);
 
   function toggleLogin() {
-    dispatch({ type: 'logout' })
+    dispatch(logout())
     localStorage.setItem('auth', false);
     localStorage.setItem('user', '');
   }
@@ -48,7 +49,7 @@ const Header = () => {
               </div>
             </div>
             <div className="ht-right">
-              <Link className={isLogged ? "login-panel login" : "login-panel"} to="./login" ><i className="fa fa-user"></i>{isLogged ? <span className='loginText'>Welcome, {user} !</span> : <span className='text'>Login</span>}<span className='menu'><span onClick={() => toggleLogin()}><i className="fa fa-sign-out"></i> Logout</span></span></Link>
+              <Link className={isLoggin ? "login-panel login" : "login-panel"} to="./login" ><i className="fa fa-user"></i>{isLoggin ? <span className='loginText'>Welcome, {user} !</span> : <span className='text'>Login</span>}<span className='menu'><span onClick={() => toggleLogin()}><i className="fa fa-sign-out"></i> Logout</span></span></Link>
               <div className="top-social">
                 <a href="https://www.facebook.com/" target='blank'><i className="ti-facebook"></i></a>
                 <a href="https://www.instagram.com/" target='blank'><i className="ti-instagram"></i></a>
@@ -80,7 +81,7 @@ const Header = () => {
               <div className="col-lg-3 text-right col-md-3">
                 <ul className="nav-right">
                   {
-                    isLogged && <li className="heart-icon">
+                    isLoggin && <li className="heart-icon">
                       <Link to="./shop/favourites">
                         <i className="icon_heart_alt"></i>
                         <span>1</span>
@@ -166,10 +167,10 @@ const Header = () => {
                 <li><Link to="#">Pages</Link>
                   <ul className="dropdown">
                     <li><NavLink to="shop/cart">Shopping Cart</NavLink></li>
-                    {isLogged && <li><NavLink to="shop/checkout">Checkout</NavLink></li>}
+                    {isLoggin && <li><NavLink to="shop/checkout">Checkout</NavLink></li>}
                     <li><NavLink to="blog/blog-details">Blog Details</NavLink></li>
                     <li><NavLink to="faq">Faq</NavLink></li>
-                    {!isLogged && <li><NavLink to="login">Login</NavLink></li>}
+                    {!isLoggin && <li><NavLink to="login">Login</NavLink></li>}
                   </ul>
                 </li>
               </ul>

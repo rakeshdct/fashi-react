@@ -2,11 +2,11 @@ import { React, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchHomeData, homeSelector } from "./home-dux";
 import HeroSection from "./heroSection";
-/*import Singlebanner from "./singleBanner";
+import Singlebanner from "./singleBanner";
 import DealoftheWeek from "./dealoftheWeek";
 import Instaphoto from "./instaPhoto";
 import Latestblog from "./latestBlog";
-import { homeData } from "./data";*/
+import PreLoader from '../pagePreLoader'
 import "./../../styles/home.css";
 
 const Home = () => {
@@ -26,12 +26,18 @@ const Home = () => {
   return (
     <>
       {loading ? (
-        <p>Loading</p>
+        <PreLoader />
       ) : (
+        <>
           <HeroSection
             heroSectionOwlConfig={homeData.heroSectionOwlConfig}
             heroSections={homeData.heroSections}
           />
+          {homeData.singleBanners != null && <Singlebanner singleBanners={homeData.singleBanners} />}
+          <DealoftheWeek />
+          <Instaphoto instaPhotos={homeData.instaPhotos} />
+          <Latestblog latestBlogs={homeData.latestBlogs} benefitItems={homeData.benefitItems} />
+        </>
       )}
     </>
   );

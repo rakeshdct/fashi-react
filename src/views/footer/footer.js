@@ -1,15 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchfooterData, footerSelector } from "./footer-dux";
 import Partnerlogo from './partnerLogo'
-import { footerLogo } from '../footer/data'
-import { useSelector } from 'react-redux';
+import ComponentPreLoader from '../componentPreLoader';
+import { headerSelector } from "./../header-dux";
 import './../../styles/footer.css';
 
+
 const Footer = () => {
-    const isLogged = useSelector(state => state.isLogged)
+    const dispatch = useDispatch();
+    const { footerData, loading } = useSelector(footerSelector);
+
+    useEffect(() => {
+        dispatch(fetchfooterData());
+    }, [dispatch]);
+    const { isLoggin } = useSelector(headerSelector);
     return (
         <>
-            <Partnerlogo partnerLogosOwlConfig={footerLogo.partnerLogosOwlConfig} partnerLogos={footerLogo.partnerLogos} />
+            <div className="partner-logo">
+                <div className="container">
+                    {
+                        loading ? <ComponentPreLoader /> : <Partnerlogo partnerLogosOwlConfig={footerData.partnerLogosOwlConfig} partnerLogos={footerData.partnerLogos} />
+                    }
+                </div>
+            </div>
             <footer className="footer-section">
                 <div className="container">
                     <div className="row">
@@ -48,8 +63,8 @@ const Footer = () => {
                                 <ul>
                                     <li><Link to="shop/cart">Shopping Cart</Link></li>
                                     <li><Link to="faq">Faq</Link></li>
-                                    {!isLogged && <li><Link to="login">Login</Link></li>}
-                                    {!isLogged && <li><Link to="login/register">Register</Link></li>}
+                                    {!isLoggin && <li><Link to="login">Login</Link></li>}
+                                    {!isLoggin && <li><Link to="login/register">Register</Link></li>}
                                 </ul>
                             </div>
                         </div>

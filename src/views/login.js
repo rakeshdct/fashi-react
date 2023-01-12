@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-//import {setLogin} from '../actions'
+import { login } from "./header-dux";
+
 import './../styles/login.css';
 
 const Login = () => {
@@ -20,7 +21,7 @@ const Login = () => {
     if (user === '') return setErrMsg('Enter Username')
     else if (pwd === '') return setErrMsg('Enter Password')
     else if (pwd !== 'password') return setErrMsg('Invalid Credentails')
-    else { dispatch({ type: 'login' });localStorage.setItem('auth',true);localStorage.setItem('user',user); navigate('../'); }
+    else { dispatch(login());localStorage.setItem('auth',true);localStorage.setItem('user',user); navigate('../'); }
   }
   return (
     <>
