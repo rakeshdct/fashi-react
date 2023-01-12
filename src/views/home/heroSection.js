@@ -2,7 +2,7 @@ import React from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import { Link } from "react-router-dom";
 
-const Herosection = (props) => {
+const HeroSection = (props) => {
     return (
         <section className="hero-section">
             <OwlCarousel className='hero-items owl-carousel' {...props.heroSectionOwlConfig}>
@@ -30,4 +30,4 @@ const Herosection = (props) => {
     )
 }
 
-export default Herosection
+export default HeroSection
