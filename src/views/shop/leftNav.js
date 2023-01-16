@@ -1,15 +1,24 @@
-import React from 'react'
+import { React, useState } from 'react'
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { fetchproductData } from "../shop/product-dux";
 
 const LeftNav = () => {
+    const dispatch = useDispatch();
+    const [state, setState] = useState(0);
+    const handleSelection = (e, index, catagory) => {
+        e.preventDefault();
+        setState(index);
+        dispatch(fetchproductData(catagory));
+    }
     return (
         <div className="col-lg-3 col-md-6 col-sm-8 produts-sidebar-filter">
             <div className="filter-widget">
                 <h4 className="fw-title">Categories</h4>
                 <ul className="filter-catagories">
-                    <li><Link to="#">Men</Link></li>
-                    <li><Link to="#">Women</Link></li>
-                    <li><Link to="#">Kids</Link></li>
+                    <li onClick={(e) => handleSelection(e, 0, "men")} className={state === 0 ? 'active' : ''}><Link to="#">Men</Link></li>
+                    <li onClick={(e) => handleSelection(e, 1, "women")} className={state === 1 ? 'active' : ''}><Link to="#">Women</Link></li>
+                    <li onClick={(e) => handleSelection(e, 2, "kids")} className={state === 2 ? 'active' : ''}><Link to="#">Kids</Link></li>
                 </ul>
             </div>
             <div className="filter-widget">
@@ -17,35 +26,35 @@ const LeftNav = () => {
                 <div className="fw-brand-check">
                     <div className="bc-item">
                         <label htmlFor="bc-calvin">
-                            Calvin Klein
+                            HIGHLANDER
                             <input type="checkbox" id="bc-calvin" />
                             <span className="checkmark"></span>
                         </label>
                     </div>
                     <div className="bc-item">
                         <label htmlFor="bc-diesel">
-                            Diesel
+                            MONTREZ
                             <input type="checkbox" id="bc-diesel" />
                             <span className="checkmark"></span>
                         </label>
                     </div>
                     <div className="bc-item">
                         <label htmlFor="bc-polo">
-                            Polo
+                            TRIPR
                             <input type="checkbox" id="bc-polo" />
                             <span className="checkmark"></span>
                         </label>
                     </div>
                     <div className="bc-item">
                         <label htmlFor="bc-tommy">
-                            Tommy Hilfiger
+                            EyeBogler
                             <input type="checkbox" id="bc-tommy" />
                             <span className="checkmark"></span>
                         </label>
                     </div>
                 </div>
             </div>
-            <div className="filter-widget">
+            {/* <div className="filter-widget">
                 <h4 className="fw-title">Price</h4>
                 <div className="filter-range-wrap">
                     <div className="range-slider">
@@ -61,7 +70,7 @@ const LeftNav = () => {
                     </div>
                 </div>
                 <Link to="#" className="filter-btn">Filter</Link>
-            </div>
+            </div> */}
             <div className="filter-widget">
                 <h4 className="fw-title">Color</h4>
                 <div className="fw-color-choose">
@@ -91,7 +100,7 @@ const LeftNav = () => {
                     </div>
                 </div>
             </div>
-            <div className="filter-widget">
+            {/* <div className="filter-widget">
                 <h4 className="fw-title">Size</h4>
                 <div className="fw-size-choose">
                     <div className="sc-item">
@@ -111,17 +120,11 @@ const LeftNav = () => {
                         <label htmlFor="xs-size">xs</label>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className="filter-widget">
                 <h4 className="fw-title">Tags</h4>
                 <div className="fw-tags">
-                    <Link to="#">Towel</Link>
-                    <Link to="#">Shoes</Link>
                     <Link to="#">Coat</Link>
-                    <Link to="#">Dresses</Link>
-                    <Link to="#">Trousers</Link>
-                    <Link to="#">Men's hats</Link>
-                    <Link to="#">Backpack</Link>
                 </div>
             </div>
         </div>

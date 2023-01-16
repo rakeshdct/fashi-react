@@ -1,0 +1,223 @@
+{
+    "productData": {
+        "tablists": [
+            {
+                "tabname": "DESCRIPTION"
+            },
+            {
+                "tabname": "SPECIFICATIONS"
+            },
+            {
+                "tabname": "Customer Reviews (02)"
+            }
+        ],
+        "psSliderOwlConfig": {
+            "loop": false,
+            "margin": 10,
+            "nav": true,
+            "items": 3,
+            "dots": false,
+            "navText": [
+                "<i class='fa fa-angle-left'></i>",
+                "<i class='fa fa-angle-right'></i>"
+            ],
+            "smartSpeed": 1200,
+            "autoplay": true
+        },
+        "products": [
+            {
+                "id": 1,
+                "brand": "HIGHLANDER ",
+                "title": "Men Washed Jacket",
+                "rating": 3,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 549,
+                "strikeprice": "2,999",
+                "discountPercentage": "70% off",
+                "color": "blue",
+                "category": "Men",
+                "tags": "Coat",
+                "sku": "00012",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/kf1fo280hlty2aw-0/jacket/e/v/e/l-1-hljk000012-highlander-original-imafvnaym8z2mtfh.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/kf1fo280hlty2aw-0/jacket/e/v/e/l-1-hljk000012-highlander-original-imafvnaym8z2mtfh.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kf1fo280hlty2aw-0/jacket/p/k/z/l-1-hljk000012-highlander-original-imafvnayye4yrkth.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kf1fo280hlty2aw-0/jacket/y/r/c/l-1-hljk000012-highlander-original-imafvnaydtruaztf.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kf1fo280hlty2aw-0/jacket/g/k/x/l-1-hljk000012-highlander-original-imafvnayxvrfhusq.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/jz4g3gw0/jacket/b/k/v/m-hljk000012-highlander-original-imafj7ztynxgchte.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 2,
+                "brand": "HIGHLANDER ",
+                "title": "Men Solid Casual Jacket",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 689,
+                "strikeprice": "2,299",
+                "discountPercentage": "70% off",
+                "color": "brown",
+                "category": "Men",
+                "tags": "Coat",
+                "sku": "00013",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/kvlaaa80/sweatshirt/p/i/0/xl-hlss000395-highlander-original-imag8gng5fservvb.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/kvlaaa80/sweatshirt/p/i/0/xl-hlss000395-highlander-original-imag8gng5fservvb.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kvlaaa80/sweatshirt/z/x/u/xl-hlss000395-highlander-original-imag8gngcafyescz.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kvlaaa80/sweatshirt/s/r/e/xl-hlss000395-highlander-original-imag8gngnzgbexrv.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kvlaaa80/sweatshirt/v/k/z/xl-hlss000395-highlander-original-imag8gngfybye6er.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kvlaaa80/sweatshirt/9/t/i/xl-hlss000395-highlander-original-imag8gngfvzvdffp.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 3,
+                "brand": "MONTREZ ",
+                "title": "Men Solid Denim Jacket",
+                "rating": 3,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 599,
+                "strikeprice": "2,499",
+                "discountPercentage": "76% off",
+                "color": "blue",
+                "category": "Men",
+                "tags": "Coat",
+                "sku": "00014",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/xif0q/jacket/c/f/0/s-mnt-7003-montrez-original-imagffv4hs3k6quc-bb.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/jacket/c/f/0/s-mnt-7003-montrez-original-imagffv4hs3k6quc-bb.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/km2clu80/jacket/j/o/e/s-mnt-7003-montrez-original-imagffv4hjujs66v.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/km2clu80/jacket/1/c/l/s-mnt-7003-montrez-original-imagffv4shrzd63z.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/km2clu80/jacket/u/n/x/s-mnt-7003-montrez-original-imagffv4gh7yt44d.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/km2clu80/jacket/i/j/y/s-mnt-7003-montrez-original-imagffv4besgvhsy.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 4,
+                "brand": "TRIPR   ",
+                "title": "Men Full Sleeve Printed Hooded Sweatshirt",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 399,
+                "strikeprice": "1,999",
+                "discountPercentage": "80% off",
+                "color": "green",
+                "category": "Men",
+                "tags": "Coat",
+                "sku": "00015",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/xif0q/sweatshirt/o/m/g/m-togrblhdfulsweat-believer-tripr-original-imagkyc3tnba4x8x.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/sweatshirt/o/m/g/m-togrblhdfulsweat-believer-tripr-original-imagkyc3tnba4x8x.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/sweatshirt/v/0/p/m-togrblhdfulsweat-believer-tripr-original-imagkyc3qnzgwbxy.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kfpq5jk0/sweatshirt/u/c/t/3xl-togrblhdfulsweat-believer-tripr-original-imafw3cfycxs9z2m.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 5,
+                "brand": "MONTREZ    ",
+                "title": "Men Solid Denim Jacket",
+                "rating": 3,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 599,
+                "strikeprice": "2,499",
+                "discountPercentage": "76% off",
+                "color": "blue",
+                "category": "Men",
+                "tags": "Coat",
+                "sku": "00016",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/xif0q/jacket/g/3/j/l-nmnt-7003-montrez-original-imag5t3nx8xtqmh8-bb.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/jacket/g/3/j/l-nmnt-7003-montrez-original-imag5t3nx8xtqmh8-bb.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ks6ef0w0/jacket/u/h/u/l-nmnt-7003-montrez-original-imag5t3nggtkfbza.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ks6ef0w0/jacket/l/a/r/l-nmnt-7003-montrez-original-imag5t3nz5qeycwc.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ks6ef0w0/jacket/9/o/i/l-nmnt-7003-montrez-original-imag5t3n7swnrfc6.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ks6ef0w0/jacket/v/b/c/l-nmnt-7003-montrez-original-imag5t3nhkpaueqk.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 6,
+                "brand": "HIGHLANDER",
+                "title": "Men Solid Casual Jacket",
+                "rating": 3,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": "1,479",
+                "strikeprice": "3,699",
+                "discountPercentage": "60% off",
+                "color": "black",
+                "category": "Men",
+                "tags": "Coat",
+                "sku": "00017",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/kx50gi80/jacket/n/3/p/m-no-hljk000675-highlander-original-imag9ntjfh7hxmfm.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/kx50gi80/jacket/n/3/p/m-no-hljk000675-highlander-original-imag9ntjfh7hxmfm.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kx50gi80/jacket/d/k/s/m-no-hljk000675-highlander-original-imag9ntj8j7j6b4z.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kx50gi80/jacket/d/h/i/m-no-hljk000675-highlander-original-imag9ntj5uh3zbmh.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kx50gi80/jacket/7/e/k/m-no-hljk000675-highlander-original-imag9ntjgcgxamdw.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kx50gi80/jacket/4/8/4/m-no-hljk000675-highlander-original-imag9ntjgh6fvkyr.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 7,
+                "brand": "EyeBogler",
+                "title": "Men Full Sleeve Solid Hooded Sweatshirt",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": "549",
+                "strikeprice": "2,499",
+                "discountPercentage": "78% off",
+                "color": "blue",
+                "category": "Men",
+                "tags": "Coat",
+                "sku": "00018",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/xif0q/sweatshirt/o/6/q/3xl-sw40-nbmt-eyebogler-original-imagfrrdzaunx98d.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/sweatshirt/o/6/q/3xl-sw40-nbmt-eyebogler-original-imagfrrdzaunx98d.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ky90scw0/sweatshirt/9/r/3/s-sw4-nbmt-eyebogler-original-imagajy8nnfxymz2.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/l4zxn680/sweatshirt/m/p/f/xs-sw4-nbmt-eyebogler-original-imagfrrdsjgcrmkr.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 8,
+                "brand": "HIGHLANDER ",
+                "title": "Men Full Sleeve Solid Sweatshirt",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": "479",
+                "strikeprice": "1,599",
+                "discountPercentage": "70% off",
+                "color": "blue",
+                "category": "Men",
+                "tags": "Coat",
+                "sku": "00019",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/jox7xjk0-1/sweatshirt/s/h/6/m-hlss000043-highlander-original-imafb7ea5wmyexxg.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/jox7xjk0-1/sweatshirt/s/h/6/m-hlss000043-highlander-original-imafb7ea5wmyexxg.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/jox7xjk0-1/sweatshirt/s/h/6/m-hlss000043-highlander-original-imafb7eaj34zzgbf.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/jox7xjk0-1/sweatshirt/s/h/6/m-hlss000043-highlander-original-imafb7eavgvcy7ze.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/jox7xjk0-1/sweatshirt/s/h/6/m-hlss000043-highlander-original-imafb7ebjzvay5ct.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/jox7xjk0-1/sweatshirt/s/h/6/m-hlss000043-highlander-original-imafb7eb3hbkqmhq.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/jox7xjk0-1/sweatshirt/s/h/6/m-hlss000043-highlander-original-imafb7ebhrkdmnh6.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 9,
+                "brand": "TRIPR  ",
+                "title": "Men Full Sleeve Printed Hooded Sweatshirt",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": "399",
+                "strikeprice": "2,499",
+                "discountPercentage": "84% off",
+                "color": "red",
+                "category": "Men",
+                "tags": "Coat",
+                "sku": "00020",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/xif0q/sweatshirt/a/b/a/m-twtrdhdfulsweat-believer-tripr-original-imagkyczrgzbz4md.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/sweatshirt/a/b/a/m-twtrdhdfulsweat-believer-tripr-original-imagkyczrgzbz4md.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/sweatshirt/1/4/m/m-twtrdhdfulsweat-believer-tripr-original-imagkycz2s5f8mr2.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ke353m80/sweatshirt/a/y/q/4xl-twtrdhdfulsweat-believer-tripr-original-imafuuuamtzxd7ww.jpeg?q=70"
+                ]
+            }
+        ]
+    }
+}

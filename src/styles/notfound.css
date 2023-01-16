@@ -1,5 +1,5 @@
 .nextErrorH1 {
-    min-height: calc(100vh - 677px);
+    min-height: calc(100vh - 700px);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -33,4 +33,9 @@
     line-height: 49px;
     margin: 0;
     padding: 0
+}
+@media only screen and (max-width: 991px) {
+    .nextErrorH1  {
+        min-height: 300px;
+    }
 }

@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { login,logout, headerSelector } from "./header-dux";
+import { login, logout, headerSelector } from "./header-dux";
 //import {setLogout} from '../actions'
 
 import './../styles/header.css';
@@ -16,7 +16,7 @@ const Header = () => {
       setUser(localStorage.getItem("user"))
       dispatch(login())
     }
-  }, [isLoggin,dispatch]);
+  }, [isLoggin, dispatch]);
 
   function toggleLogin() {
     dispatch(logout())
@@ -147,14 +147,9 @@ const Header = () => {
                 <i className="ti-menu"></i>
                 <span>All departments</span>
                 <ul className="depart-hover">
-                  <li><Link to="./">Women’s Clothing</Link></li>
                   <li><Link to="./">Men’s Clothing</Link></li>
-                  <li><Link to="./">Underwear</Link></li>
+                  <li><Link to="./">Women’s Clothing</Link></li>
                   <li><Link to="./">Kid's Clothing</Link></li>
-                  <li><Link to="./">Brand Fashion</Link></li>
-                  <li><Link to="./">Accessories/Shoes</Link></li>
-                  <li><Link to="./">Luxury Brands</Link></li>
-                  <li><Link to="./">Brand Outdoor Apparel</Link></li>
                 </ul>
               </div>
             </div>

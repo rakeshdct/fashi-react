@@ -1,0 +1,227 @@
+{
+    "productData": {
+        "tablists": [
+            {
+                "tabname": "DESCRIPTION"
+            },
+            {
+                "tabname": "SPECIFICATIONS"
+            },
+            {
+                "tabname": "Customer Reviews (02)"
+            }
+        ],
+        "psSliderOwlConfig": {
+            "loop": false,
+            "margin": 10,
+            "nav": true,
+            "items": 3,
+            "dots": false,
+            "navText": [
+                "<i class='fa fa-angle-left'></i>",
+                "<i class='fa fa-angle-right'></i>"
+            ],
+            "smartSpeed": 1200,
+            "autoplay": true
+        },
+        "products": [
+            {
+                "id": 1,
+                "brand": "BG ONLINE  ",
+                "title": "Women Jacket Style Full Sleeve Pink Shrug",
+                "rating": 3,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 349,
+                "strikeprice": "899",
+                "discountPercentage": "61% off",
+                "color": "pink",
+                "category": "Women",
+                "tags": "Shrug",
+                "sku": "00021",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/ku8pbbk0/shrug/e/n/g/m-bg-shrug-pocket-print-baju-bg-online-original-imag7er5n3zasxje.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/ku8pbbk0/shrug/e/n/g/m-bg-shrug-pocket-print-baju-bg-online-original-imag7er5n3zasxje.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ku8pbbk0/shrug/w/e/t/m-bg-shrug-pocket-print-baju-bg-online-original-imag7er5zffk5fqz.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ku8pbbk0/shrug/c/l/b/m-bg-shrug-pocket-print-baju-bg-online-original-imag7er52ykzv3jw.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ku8pbbk0/shrug/o/i/q/m-bg-shrug-pocket-print-baju-bg-online-original-imag7er5hc6ehb2h.jpeg?q=70"                    
+                ]
+            },
+            {
+                "id": 2,
+                "brand": "POPWINGS  ",
+                "title": "Women Jacket Style Full Sleeve Black Shrug",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 299,
+                "strikeprice": "1,299",
+                "discountPercentage": "76% off",
+                "color": "black",
+                "category": "Women",
+                "tags": "Shrug",
+                "sku": "00022",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/kvcpn680/shrug/s/8/h/xxl-pops20001-popwings-original-imag89nhqzezgqmh.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/kvcpn680/shrug/y/f/w/xxl-pops20001-popwings-original-imag89nh4kzb7c3h.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kvcpn680/shrug/l/a/7/xxl-pops20001-popwings-original-imag89nhsdyw2gg2.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kvcpn680/shrug/l/a/7/xxl-pops20001-popwings-original-imag89nhsdyw2gg2.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kvcpn680/shrug/d/w/0/xxl-pops20001-popwings-original-imag89nhhaxfzybc.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kvcpn680/shrug/d/w/0/xxl-pops20001-popwings-original-imag89nhhaxfzybc.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 3,
+                "brand": "Galwiz  ",
+                "title": "Women Kimono Style 3/4th Sleeve Maroon Shrug",
+                "rating": 3,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 378,
+                "strikeprice": "999",
+                "discountPercentage": "62% off",
+                "color": "red",
+                "category": "Women",
+                "tags": "Shrug",
+                "sku": "00023",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/ky7lci80/shrug/c/z/g/free-1-gl-114srgred-galwiz-original-imagahsen8bxb2ar.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/ky7lci80/shrug/c/z/g/free-1-gl-114srgred-galwiz-original-imagahsen8bxb2ar.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ky7lci80/shrug/z/n/k/free-1-gl-114srgred-galwiz-original-imagahsezmrfsaw8.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kyxb9u80/shrug/t/e/o/xl-1-gl-114srgmrn-galwiz-original-imagbfu8dcx7j4rd.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ky7lci80/shrug/1/d/l/free-1-gl-114srgred-galwiz-original-imagahsexuc7jgr8.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kyxb9u80/shrug/f/4/6/xl-1-gl-114srgmrn-galwiz-original-imagbfu8z3qfmme8.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 4,
+                "brand": "FLYING MACHINE    ",
+                "title": "Women Solid Casual Jacket",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": "1,124",
+                "strikeprice": "2,499",
+                "discountPercentage": "55% off",
+                "color": "blue",
+                "category": "Women",
+                "tags": "Jacket",
+                "sku": "00024",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/knt7zbk0/jacket/1/j/x/m-fwjck0034-flying-machine-original-imag2emewfzyzcsa.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/knt7zbk0/jacket/1/j/x/m-fwjck0034-flying-machine-original-imag2emewfzyzcsa.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/knt7zbk0/jacket/j/q/g/m-fwjck0034-flying-machine-original-imag2emewfz9rhak.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/knt7zbk0/jacket/g/a/e/m-fwjck0034-flying-machine-original-imag2emefe6ccdnf.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/knt7zbk0/jacket/s/l/n/m-fwjck0034-flying-machine-original-imag2emerj9tyfuy.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/knt7zbk0/jacket/b/e/c/m-fwjck0034-flying-machine-original-imag2emehqzf6aaf.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 5,
+                "brand": "Breil By Fort Collins",
+                "title": "Women Solid Padded Jacket",
+                "rating": 3,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 734,
+                "strikeprice": "2,099",
+                "discountPercentage": "75% off",
+                "color": "yellow",
+                "category": "Women",
+                "tags": "Jacket",
+                "sku": "00025",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/k1pbpu80/jacket/x/w/j/m-43320fk-breil-by-fort-collins-original-imafh82nnq2gbd2s.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/k1pbpu80/jacket/x/w/j/m-43320fk-breil-by-fort-collins-original-imafh82nnq2gbd2s.jpeg?q=70 ",
+                    "https://rukminim1.flixcart.com/image/832/832/k1pbpu80/jacket/x/w/j/m-43320fk-breil-by-fort-collins-original-imafh82nh8z643tz.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/k1pbpu80/jacket/x/w/j/m-43320fk-breil-by-fort-collins-original-imafh82nq4czwbbz.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/k1pbpu80/jacket/x/w/j/m-43320fk-breil-by-fort-collins-original-imafh82nazphzday.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/k1pbpu80/jacket/x/w/j/m-43320fk-breil-by-fort-collins-original-imafh82n29mhm2u7.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/k1pbpu80/jacket/x/w/j/m-43320fk-breil-by-fort-collins-original-imafh82n85pzkhfj.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 6,
+                "brand": "Breil By Fort Collins ",
+                "title": "Women Solid Parka Jacket",
+                "rating": 3,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": "873",
+                "strikeprice": "2,499",
+                "discountPercentage": "65% off",
+                "color": "green",
+                "category": "Women",
+                "tags": "Jacket",
+                "sku": "00026",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/xif0q/jacket/g/n/1/m-1-no-17465y-breil-by-fort-collins-original-imagkzjqfdrmyecf.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/jacket/g/n/1/m-1-no-17465y-breil-by-fort-collins-original-imagkzjqfdrmyecf.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/jacket/f/x/b/m-1-no-17465y-breil-by-fort-collins-original-imagkzjqemhkefpk.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/jacket/r/f/q/m-1-no-17465y-breil-by-fort-collins-original-imagkzjqshdmngrd.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/jacket/b/w/f/m-1-no-17465y-breil-by-fort-collins-original-imagkzjq9edhhbzd.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/jacket/u/y/o/m-1-no-17465y-breil-by-fort-collins-original-imagkzjqcwgsgpqg.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/jacket/p/d/g/m-1-no-17465y-breil-by-fort-collins-original-imagkzjqb3fy5h8h.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 7,
+                "brand": "Anand Sarees ",
+                "title": "Floral Print Daily Wear Georgette Saree",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": "269",
+                "strikeprice": "1,299",
+                "discountPercentage": "79% off",
+                "color": "blue",
+                "category": "Women",
+                "tags": "Saree",
+                "sku": "00027",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/xif0q/sari/c/a/m/free-grey-wb33-1-anand-sarees-unstitched-original-imaggkn5wzgstfhs.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/sari/c/a/m/free-grey-wb33-1-anand-sarees-unstitched-original-imaggkn5wzgstfhs.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/sari/4/m/c/free-grey-wb33-1-anand-sarees-unstitched-original-imaggkn5xa9hcxgj.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/sari/q/f/j/free-grey-wb33-1-anand-sarees-unstitched-original-imaggkn5g4phxhzk.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/sari/u/y/k/free-grey-wb33-1-anand-sarees-unstitched-original-imaggkn5xaep4ygc.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 8,
+                "brand": "RHEY  ",
+                "title": "Printed Bollywood Chiffon Saree ",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": "299",
+                "strikeprice": "1,999",
+                "discountPercentage": "85% off",
+                "color": "blue",
+                "category": "Women",
+                "tags": "Saree",
+                "sku": "00028",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/kbgu1e80/sari/5/k/y/free-box05bn-rhey-unstitched-original-imafssh4zubgvwz9.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/kbgu1e80/sari/5/k/y/free-box05bn-rhey-unstitched-original-imafssh4zubgvwz9.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kbgu1e80/sari/5/k/y/free-box05bn-rhey-unstitched-original-imafssh4hzc8hzaa.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kbgu1e80/sari/5/k/y/free-box05bn-rhey-unstitched-original-imafssh4afnfs9yb.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kbgu1e80/sari/5/k/y/free-box05bn-rhey-unstitched-original-imafssh49vt6zvaw.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kbgu1e80/sari/5/k/y/free-box05bn-rhey-unstitched-original-imafssh46rbemgmc.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 9,
+                "brand": "RadadiyaTRD   ",
+                "title": "Floral Print Banarasi Cotton Blend Saree ",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": "369",
+                "strikeprice": "2,999",
+                "discountPercentage": "87% off",
+                "color": "green",
+                "category": "Women",
+                "tags": "Saree",
+                "sku": "00029",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/k23m4cw0/sari/w/5/w/free-mor-skyblue-radadiyatrd-original-imafhgqfbfq7fmck.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/k23m4cw0/sari/w/5/w/free-mor-skyblue-radadiyatrd-original-imafhgqfbfq7fmck.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/k23m4cw0/sari/w/5/w/free-mor-skyblue-radadiyatrd-original-imafhgqftwrpuh7n.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/k23m4cw0/sari/w/5/w/free-mor-skyblue-radadiyatrd-original-imafhgqfuyxkgvwz.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/k23m4cw0/sari/w/5/w/free-mor-skyblue-radadiyatrd-original-imafhgqfus3h23p7.jpeg?q=70"
+                ]
+            }
+        ]
+    }
+}

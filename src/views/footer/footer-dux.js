@@ -37,7 +37,7 @@ export function fetchfooterData() {
   return async (dispatch) => {
     dispatch(getfooterData());
     try {
-      const response = await fetch("json/footer.json");
+      const response = await fetch("../json/footer.json");
       const data = await response.json();
       dispatch(getfooterDataSuccess(data));
     } catch (error) {

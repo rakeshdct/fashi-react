@@ -1,0 +1,215 @@
+{
+    "productData": {
+        "tablists": [
+            {
+                "tabname": "DESCRIPTION"
+            },
+            {
+                "tabname": "SPECIFICATIONS"
+            },
+            {
+                "tabname": "Customer Reviews (02)"
+            }
+        ],
+        "psSliderOwlConfig": {
+            "loop": false,
+            "margin": 10,
+            "nav": true,
+            "items": 3,
+            "dots": false,
+            "navText": [
+                "<i class='fa fa-angle-left'></i>",
+                "<i class='fa fa-angle-right'></i>"
+            ],
+            "smartSpeed": 1200,
+            "autoplay": true
+        },
+        "products": [
+            {
+                "id": 1,
+                "brand": "Mars Infiniti  ",
+                "title": "Boys & Girls Casual T-shirt Pant ",
+                "rating": 3,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 400,
+                "strikeprice": "1,299",
+                "discountPercentage": "69% off",
+                "color": "blue",
+                "category": "Kids",
+                "tags": "T-shirt Pant",
+                "sku": "00031",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/ky1vl3k0/kids-apparel-combo/u/o/g/3-4-years-t-db22-navy-mars-infiniti-original-imagadayx8zrcztu.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/ky1vl3k0/kids-apparel-combo/u/o/g/3-4-years-t-db22-navy-mars-infiniti-original-imagadayx8zrcztu.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ky1vl3k0/kids-apparel-combo/3/r/w/3-4-years-t-db22-navy-mars-infiniti-original-imagadayygazg8f3.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ky1vl3k0/kids-apparel-combo/v/c/3/3-4-years-t-db22-navy-mars-infiniti-original-imagadayyg6fqaec.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ky1vl3k0/kids-apparel-combo/5/b/r/3-4-years-t-db22-navy-mars-infiniti-original-imagadayqpb8ydgt.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ky1vl3k0/kids-apparel-combo/1/p/u/3-4-years-t-db22-navy-mars-infiniti-original-imagadaycef2ghtt.jpeg?q=70"                    
+                ]
+            },
+            {
+                "id": 2,
+                "brand": "Mars Infiniti   ",
+                "title": "Baby Boys & Baby Girls Casual T-shirt Shorts  ",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 837,
+                "strikeprice": "1,499",
+                "discountPercentage": "44% off",
+                "color": "red",
+                "category": "kids",
+                "tags": "T-shirt Pant",
+                "sku": "00032",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/l3vxbbk0/kids-apparel-combo/d/c/o/3-4-years-t-db04-maroon-mars-infiniti-original-imagewm8f2zrcqw8.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/l3vxbbk0/kids-apparel-combo/d/c/o/3-4-years-t-db04-maroon-mars-infiniti-original-imagewm8f2zrcqw8.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/l3vxbbk0/kids-apparel-combo/a/p/i/3-4-years-t-db14-maroon-ind-with-mars-infiniti-original-imagewmfaxpqsawy.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/l3vxbbk0/kids-apparel-combo/d/n/a/3-4-years-t-db14-maroon-ind-with-mars-infiniti-original-imagewmfdcqpvtyq.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/l3vxbbk0/kids-apparel-combo/s/h/w/6-12-months-t-db14-maroon-ind-wo-mars-infiniti-original-imagewm22fzthzdy.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/l3vxbbk0/kids-apparel-combo/n/c/m/3-4-years-t-db14-maroon-ind-with-mars-infiniti-original-imagewmfqfqtzwck.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 3,
+                "brand": "3BROS  ",
+                "title": "Baby Boys & Baby Girls Party T-shirt Pyjama",
+                "rating": 3,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 236,
+                "strikeprice": "999",
+                "discountPercentage": "76% off",
+                "color": "black",
+                "category": "kids",
+                "tags": "T-shirt Pant",
+                "sku": "00033",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/ku04o7k0/kids-apparel-combo/w/1/w/2-3-years-grey-colored-t-shirt-pyjama-3bros-original-imag789gf7svzd2t.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/ku04o7k0/kids-apparel-combo/w/1/w/2-3-years-grey-colored-t-shirt-pyjama-3bros-original-imag789gf7svzd2t.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ku04o7k0/kids-apparel-combo/l/0/q/12-18-months-grey-colored-t-shirt-pyjama-3bros-original-imag789gfvsmanyg.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ku04o7k0/kids-apparel-combo/q/g/t/2-3-years-grey-colored-t-shirt-pyjama-3bros-original-imag789gdgkezr5p.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ku04o7k0/kids-apparel-combo/q/b/y/2-3-years-grey-colored-t-shirt-pyjama-3bros-original-imag789grjcq42h9.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ku04o7k0/kids-apparel-combo/n/j/a/2-3-years-grey-colored-t-shirt-pyjama-3bros-original-imag789gwxnd9qzg.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 4,
+                "brand": "Gkidz    ",
+                "title": " Casual T-shirt Track Pants",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 299,
+                "strikeprice": "999",
+                "discountPercentage": "70% off",
+                "color": "black",
+                "category": "kids",
+                "tags": "Track Pants",
+                "sku": "00034",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/kzpw2vk0/kids-apparel-combo/4/x/l/14-15-years-iron12-gkidz-original-imagbzc77pvzhzqu.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/kzpw2vk0/kids-apparel-combo/4/x/l/14-15-years-iron12-gkidz-original-imagbzc77pvzhzqu.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kzpw2vk0/kids-apparel-combo/k/8/e/14-15-years-iron12-gkidz-original-imagbzc76cbschph.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 5,
+                "brand": "SmartRAHO     ",
+                "title": "Casual T-shirt Track Pants ",
+                "rating": 3,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": 399,
+                "strikeprice": "1,999",
+                "discountPercentage": "80% off",
+                "color": "yellow",
+                "category": "kids",
+                "tags": "Track Pants",
+                "sku": "00035",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/kpvivm80/kids-apparel-combo/y/q/t/2-3-years-f-pant-408883-smartraho-original-imag4ykmtrcmkyqm.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/kpvivm80/kids-apparel-combo/y/q/t/2-3-years-f-pant-408883-smartraho-original-imag4ykmtrcmkyqm.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kpvivm80/kids-apparel-combo/s/u/x/2-3-years-f-pant-408883-smartraho-original-imag4ykmsfyxzzsz.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kpvivm80/kids-apparel-combo/b/f/q/2-3-years-f-pant-408883-smartraho-original-imag4ykmrxxz6hmk.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/kpvivm80/kids-apparel-combo/x/c/b/2-3-years-f-pant-408883-smartraho-original-imag4ykmr2w5hq7g.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 6,
+                "brand": "Billyball ",
+                "title": "Printed Pure Cotton T-shirt Track Pants",
+                "rating": 3,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": "305",
+                "strikeprice": "599",
+                "discountPercentage": "49% off",
+                "color": "blue",
+                "category": "kids",
+                "tags": "Track Pants",
+                "sku": "00036",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/ksnjp8w0/night-suit/z/k/a/4-5-years-boys-01-billyball-original-imag66b4zchvgaza.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/ksnjp8w0/night-suit/z/k/a/4-5-years-boys-01-billyball-original-imag66b4zchvgaza.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ksnjp8w0/night-suit/j/f/d/4-5-years-boys-01-billyball-original-imag66b4pkcyv5gz.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ksnjp8w0/night-suit/8/u/e/4-5-years-boys-01-billyball-original-imag66b42vz7j2zc.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 7,
+                "brand": "Fi Fashion ",
+                "title": "Baby Girls Party(Festive) Dress Dress",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": "249",
+                "strikeprice": "999",
+                "discountPercentage": "75% off",
+                "color": "blue",
+                "category": "kids",
+                "tags": "Party Dress",
+                "sku": "00037",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/xif0q/kids-apparel-combo/o/9/3/3-4-years-baby-beauty02a-fi-fashion-original-imagkezzwnzgsk2k.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/kids-apparel-combo/o/9/3/3-4-years-baby-beauty02a-fi-fashion-original-imagkezzwnzgsk2k.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/kids-apparel-combo/t/r/d/3-4-years-baby-beauty02a-fi-fashion-original-imagkezz7fdfsghv.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 8,
+                "brand": "Chandrika  ",
+                "title": "Girls Party(Festive) Skirt Top",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": "181",
+                "strikeprice": "1,000",
+                "discountPercentage": "81% off",
+                "color": "white",
+                "category": "kids",
+                "tags": "Party Dress",
+                "sku": "00038",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/ks7tuvk0/kids-apparel-combo/i/u/v/10-11-years-cpgl0053-navy-white-38-chandrika-original-imag5u6yagdarbcw.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/ks7tuvk0/kids-apparel-combo/i/u/v/10-11-years-cpgl0053-navy-white-38-chandrika-original-imag5u6yagdarbcw.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ks7tuvk0/kids-apparel-combo/m/4/n/10-11-years-cpgl0053-navy-white-38-chandrika-original-imag5u6yx3pbckbu.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/ks7tuvk0/kids-apparel-combo/w/n/d/10-11-years-cpgl0053-navy-white-38-chandrika-original-imag5u6yw8nzcvzh.jpeg?q=70"
+                ]
+            },
+            {
+                "id": 9,
+                "brand": "Wish and Choice   ",
+                "title": "Girls Minnie Party(Festive) Top Shorts",
+                "rating": 4,
+                "description": "Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor",
+                "price": "551",
+                "strikeprice": "1,299",
+                "discountPercentage": "57% off",
+                "color": "pink",
+                "category": "kids",
+                "tags": "Party Dress",
+                "sku": "00039",
+                "thumbnail": "https://rukminim1.flixcart.com/image/832/832/xif0q/kids-apparel-combo/v/z/p/6-9-months-l279-hp-wish-and-choice-original-imaggyn58gxzgvpp.jpeg?q=70",
+                "images": [
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/kids-apparel-combo/v/z/p/6-9-months-l279-hp-wish-and-choice-original-imaggyn58gxzgvpp.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/kids-apparel-combo/6/b/y/6-9-months-l279-hp-wish-and-choice-original-imaggyn5hy8qysgc.jpeg?q=70",
+                    "https://rukminim1.flixcart.com/image/832/832/xif0q/kids-apparel-combo/r/i/i/6-9-months-l279-hp-wish-and-choice-original-imaggyn5ehyjgpee.jpeg?q=70"
+                ]
+            }
+        ]
+    }
+}
