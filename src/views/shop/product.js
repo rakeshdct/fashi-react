@@ -1,7 +1,13 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { selectedProductIndex } from "../shop/product-dux";
 
 const Product = (props) => {
+    const dispatch = useDispatch();
+    const productIndex = (i) => {
+        dispatch(selectedProductIndex(i))
+    }
     return (
         < div className="col-lg-4 col-sm-6" >
             <div className="product-item">
@@ -13,7 +19,7 @@ const Product = (props) => {
                     </div>
                     <ul>
                         <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                        <li className="quick-view"><Link to="shop-details">+ Quick View</Link></li>
+                        <li onClick={() => productIndex(props.index)} className="quick-view"><Link to="shop-details">+ Quick View</Link></li>
                     </ul>
                 </div>
                 <div className="pi-text">
@@ -22,8 +28,8 @@ const Product = (props) => {
                         <h5>{props.product.title}</h5>
                     </Link>
                     <div className="product-price">
-                        {props.product.price}
-                        <span>{props.product.strikeprice}</span>
+                    ₹ {props.product.price}
+                        <span>₹ {props.product.strikeprice}</span>
                     </div>
                 </div>
             </div>

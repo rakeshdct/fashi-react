@@ -10,10 +10,10 @@ import ComponentPreLoader from '../componentPreLoader';
 
 const Shop = () => {
   const dispatch = useDispatch();
-  const { productData, loading } = useSelector(productSelector);
+  const { Categories, productData, loading } = useSelector(productSelector);
   useEffect(() => {
-    dispatch(fetchproductData());
-  }, [dispatch]);
+    dispatch(fetchproductData(Categories));
+  }, [dispatch, Categories]);
   return (
     <>
       <div className="breacrumb-section">
@@ -31,7 +31,7 @@ const Shop = () => {
       <section className="product-shop spad">
         <div className="container">
           <div className="row">
-            <LeftNav />
+            {!loading && <LeftNav details={productData.products} />}
             <div className="col-lg-9">
               <div className="product-show-option">
                 <div className="row">
@@ -53,7 +53,7 @@ const Shop = () => {
               <div className="product-list">
                 <div className="row">
                   {
-                    loading ? <ComponentPreLoader /> : productData.products.map((product, i) => (<Product key={i} product={product} />
+                    loading ? <ComponentPreLoader /> : productData.products.map((product, i) => (<Product key={i} index={i} product={product} />
                     ))
                   }
                 </div>

@@ -1,21 +1,17 @@
-import { React, useState, useEffect } from 'react'
+import { React, useState } from 'react'
 import { Link } from "react-router-dom";
 import { tabLists, Description, Specification, Review } from './productTabs'
 // import LeftNav from '../shop/leftNav'
 import RelatedProducts from './relatedProducts'
 import './../../styles/shop.css';
 import ProductDetails from './productDetails';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchproductData, productSelector } from "../shop/product-dux";
+import { useSelector } from 'react-redux';
+import { productSelector } from "../shop/product-dux";
 import ComponentPreLoader from '../componentPreLoader';
 
 const Shopdetails = () => {
-    const dispatch = useDispatch();
-    const { productData, loading } = useSelector(productSelector);
+    const { selectedProduct, productData, loading } = useSelector(productSelector);
     const [state, setState] = useState(0);
-    useEffect(() => {
-        dispatch(fetchproductData("men"));
-    }, [dispatch]);
     const handleSelection = (e, index) => {
         e.preventDefault();
         setState(index);
@@ -60,7 +56,7 @@ const Shopdetails = () => {
                         {/* <LeftNav /> */}
                         <div className="col-lg-12">
                             {
-                                loading ? <ComponentPreLoader /> : <ProductDetails psSliderOwlConfig={productData.psSliderOwlConfig} products={productData.products} />
+                                loading ? <ComponentPreLoader /> : <ProductDetails psSliderOwlConfig={productData.psSliderOwlConfig} products={productData.products[selectedProduct]} />
                             }
                             <div className="product-tab">
                                 <div className="tab-item">
