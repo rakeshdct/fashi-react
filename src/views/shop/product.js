@@ -23,7 +23,7 @@ const Product = (props) => {
                     </ul>
                 </div>
                 <div className="pi-text">
-                    <div className="catagory-name">{props.tags}</div>
+                    <div className="catagory-name">{props.product.brand}</div>
                     <Link to="#">
                         <h5>{props.product.title}</h5>
                     </Link>

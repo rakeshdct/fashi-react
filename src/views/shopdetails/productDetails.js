@@ -75,7 +75,7 @@ const ProductDetails = (props) => {
                         <Link to="#" className="primary-btn pd-cart">Add To Cart</Link>
                     </div>
                     <ul className="pd-tags">
-                        <li><span>CATEGORIES</span>: More Accessories, Wallets & Cases</li>
+                        <li><span>CATEGORY</span>: {props.products.category}</li>
                         <li><span>TAGS</span>: {props.products.tags}</li>
                     </ul>
                     <div className="pd-share">

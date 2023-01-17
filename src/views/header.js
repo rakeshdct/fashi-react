@@ -2,8 +2,7 @@ import { React, useState, useEffect } from 'react'
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { login, logout, headerSelector } from "./header-dux";
-//import {setLogout} from '../actions'
-
+import { selectedCategory, fetchproductData } from "./shop/product-dux";
 import './../styles/header.css';
 
 const Header = () => {
@@ -32,6 +31,10 @@ const Header = () => {
   function toggleSubNav(e) {
     e.preventDefault();
     setShowMeSubNav(!showMeSubNav);
+  }
+  const handleSelection = (catagory) => {
+    dispatch(fetchproductData(catagory));
+    dispatch(selectedCategory(catagory));
   }
   return (
     <>
@@ -147,9 +150,9 @@ const Header = () => {
                 <i className="ti-menu"></i>
                 <span>All departments</span>
                 <ul className="depart-hover">
-                  <li><Link to="./">Men’s Clothing</Link></li>
-                  <li><Link to="./">Women’s Clothing</Link></li>
-                  <li><Link to="./">Kid's Clothing</Link></li>
+                  <li><Link to="./shop" onClick={(e) => handleSelection("men")}>Men’s Clothing</Link></li>
+                  <li><Link to="./shop" onClick={(e) => handleSelection("women")}>Women’s Clothing</Link></li>
+                  <li><Link to="./shop" onClick={(e) => handleSelection("kids")}>Kid's Clothing</Link></li>
                 </ul>
               </div>
             </div>

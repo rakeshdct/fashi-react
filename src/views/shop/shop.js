@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react'
+import { React, useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import './../../styles/shop.css';
 import LeftNav from './leftNav';
@@ -10,6 +10,7 @@ import ComponentPreLoader from '../componentPreLoader';
 
 const Shop = () => {
   const dispatch = useDispatch();
+  const [brand] = useState('')
   const { Categories, productData, loading } = useSelector(productSelector);
   useEffect(() => {
     dispatch(fetchproductData(Categories));
@@ -53,8 +54,16 @@ const Shop = () => {
               <div className="product-list">
                 <div className="row">
                   {
-                    loading ? <ComponentPreLoader /> : productData.products.map((product, i) => (<Product key={i} index={i} product={product} />
-                    ))
+                    //loading ? <ComponentPreLoader /> : productData.products.map((product, i) => (<Product key={i} index={i} product={product} /> ))
+                    loading ? <ComponentPreLoader /> :
+                      productData.products.filter((val) => {
+                        if (brand === '') {
+                          return val;
+                        } else if (val.brand.toLowerCase().includes(brand.toLowerCase())) {
+                          return val;
+                        }
+                        return false
+                      }).map((product, i) => (<Product key={i} index={i} product={product} />))
                   }
                 </div>
               </div>
