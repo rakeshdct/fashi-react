@@ -3,8 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   loading: true,
   hasErrors: false,
-  Categories: "men",
+  categories: "men",
   productData: "",
+  selectedFilter: "",
   selectedProduct: 0,
 };
 
@@ -25,16 +26,19 @@ const productSlice = createSlice({
       state.hasErrors = true;
     },
     selectedCategory: (state, action) => {
-      state.Categories = action.payload
+      state.categories = action.payload
     },
     selectedProductIndex: (state, action) => {
       state.selectedProduct = action.payload
+    },
+    selectedFilters: (state, action) => {
+      state.selectedFilter = action.payload
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { selectedCategory, selectedProductIndex, getproductData, getproductDataSuccess, getproductDataFailure } = productSlice.actions;
+export const { selectedFilters, selectedCategory, selectedProductIndex, getproductData, getproductDataSuccess, getproductDataFailure } = productSlice.actions;
 
 // A selector
 export const productSelector = (state) => state.productData;

@@ -1,15 +1,15 @@
 import { React } from 'react'
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { selectedCategory, fetchproductData, productSelector } from "../shop/product-dux";
+import { selectedCategory, productSelector } from "../shop/product-dux";
 
 const LeftNav = (props) => {
     const dispatch = useDispatch();
-    const { Categories } = useSelector(productSelector);
+    const { selectedFilter, categories } = useSelector(productSelector);
+    const { onFilterChange } = props
     const tags = []
     const brands = []
     const colors = []
-
     const pushData = (detail) => {
         tags.push(detail.tags);
         brands.push(detail.brand);
@@ -19,9 +19,7 @@ const LeftNav = (props) => {
     const withoutDuplicatesbrands = [...new Set(brands)];
     const withoutDuplicatescolors = [...new Set(colors)];
     const withoutDuplicatestags = [...new Set(tags)];
-
     const handleSelection = (catagory) => {
-        dispatch(fetchproductData(catagory));
         dispatch(selectedCategory(catagory));
     }
     return (
@@ -29,9 +27,9 @@ const LeftNav = (props) => {
             <div className="filter-widget">
                 <h4 className="fw-title">Categories</h4>
                 <ul className="filter-catagories">
-                    <li onClick={(e) => handleSelection("men")} className={Categories === "men" ? 'active' : ''}><Link to="#">Men</Link></li>
-                    <li onClick={(e) => handleSelection("women")} className={Categories === "women" ? 'active' : ''}><Link to="#">Women</Link></li>
-                    <li onClick={(e) => handleSelection("kids")} className={Categories === "kids" ? 'active' : ''}><Link to="#">Kids</Link></li>
+                    <li onClick={(e) => handleSelection("men")} className={categories === "men" ? 'active' : ''}><Link to="#">Men</Link></li>
+                    <li onClick={(e) => handleSelection("women")} className={categories === "women" ? 'active' : ''}><Link to="#">Women</Link></li>
+                    <li onClick={(e) => handleSelection("kids")} className={categories === "kids" ? 'active' : ''}><Link to="#">Kids</Link></li>
                 </ul>
             </div>
             <div className="filter-widget">
@@ -41,7 +39,7 @@ const LeftNav = (props) => {
                         <div key={i} className="bc-item">
                             <label htmlFor={brand}>
                                 {brand}
-                                <input type="checkbox" id={brand} />
+                                <input onChange={onFilterChange} type="checkbox" value={brand} id={brand} />
                                 <span className="checkmark"></span>
                             </label>
                         </div>
@@ -71,8 +69,8 @@ const LeftNav = (props) => {
                     {
                         withoutDuplicatescolors.map((color, i) => (
                             <div key={i} className="cs-item">
-                                <input type="radio" id={"cs-" + color} />
-                                <label className={"cs-" + color} htmlFor={"cs-" + color}>{color}</label>
+                                <input name="color" onChange={onFilterChange} value={color} type="radio" id={"cs-" + color} />
+                                <label className={selectedFilter === color ? "active cs-" + color : "cs-" + color} htmlFor={"cs-" + color}>{color}</label>
                             </div>
                         ))
                     }
@@ -103,7 +101,10 @@ const LeftNav = (props) => {
                 <h4 className="fw-title">Tags</h4>
                 <div className="fw-tags">
                     {withoutDuplicatestags.map((tag, i) => (
-                        <Link to="#" key={i}>{tag}</Link>
+                        <span key={i}>
+                            <input name="tag" onChange={onFilterChange} value={tag} type="radio" id={tag} />
+                            <label className={selectedFilter === tag ? 'active' : ''} htmlFor={tag}>{tag}</label>
+                        </span>
                     ))}
                 </div>
             </div>
