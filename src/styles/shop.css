@@ -385,6 +385,11 @@
     background: #e7ab3c;
 }
 
+.product-item .pi-pic .icon a,
+.product-item .pi-pic .icon a:hover {
+    color: #252525;
+}
+
 .product-item .pi-pic .icon {
     font-size: 20px;
     color: #252525;
@@ -396,10 +401,6 @@
     -o-transition: all 0.3s;
     transition: all 0.3s;
     opacity: 0;
-}
-
-.favourites .product-item .pi-pic .icon {
-    display: none;
 }
 
 .product-item .pi-pic ul {
@@ -473,6 +474,11 @@
     color: #b2b2b2;
     text-decoration: line-through;
     padding: 0 0 0 5px;
+}
+
+.favourites .empty {
+    text-align: center;
+    width: 100%;
 }
 
 @media only screen and (max-width: 767px) {

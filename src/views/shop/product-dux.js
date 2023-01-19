@@ -7,6 +7,36 @@ const initialState = {
   productData: "",
   selectedFilter: "",
   selectedProduct: 0,
+  favouriteData: {
+    "tablists": [
+      {
+        "tabname": "DESCRIPTION"
+      },
+      {
+        "tabname": "SPECIFICATIONS"
+      },
+      {
+        "tabname": "Customer Reviews (02)"
+      }
+    ],
+    "psSliderOwlConfig": {
+      "loop": false,
+      "margin": 10,
+      "nav": true,
+      "items": 3,
+      "dots": false,
+      "navText": [
+        "<i class='fa fa-angle-left'></i>",
+        "<i class='fa fa-angle-right'></i>"
+      ],
+      "smartSpeed": 1200,
+      "autoplay": true
+    }, 
+    products: []
+  },
+  filterdProduct: {
+    products: {}
+  }
 };
 
 const productSlice = createSlice({
@@ -31,14 +61,26 @@ const productSlice = createSlice({
     selectedProductIndex: (state, action) => {
       state.selectedProduct = action.payload
     },
+    selectedFavourites: (state, action) => {
+      state.favouriteData.products.push(action.payload)
+    },
+    removeSelectedFavourites: (state, action) => {
+      state.favouriteData.products.splice(action.payload, 1)
+    },
+    pushFavouritestoproductData: (state, action) => {
+      state.productData = action.payload
+    },
     selectedFilters: (state, action) => {
       state.selectedFilter = action.payload
+    },
+    filterdProducts: (state, action) => {
+      state.filterdProduct = action.payload
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { selectedFilters, selectedCategory, selectedProductIndex, getproductData, getproductDataSuccess, getproductDataFailure } = productSlice.actions;
+export const { pushFavouritestoproductData, removeSelectedFavourites, selectedFavourites, filterdProducts, selectedFilters, selectedCategory, selectedProductIndex, getproductData, getproductDataSuccess, getproductDataFailure } = productSlice.actions;
 
 // A selector
 export const productSelector = (state) => state.productData;

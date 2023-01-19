@@ -8,3 +8,4 @@
 //login page validation
 //On page refresh maintain login
 //ProductDetails componenet Using memo will cause React to skip rendering a component if its props have not changed
+//set is used in Brand, Color and Tags filter to get unique values 

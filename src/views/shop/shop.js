@@ -4,38 +4,40 @@ import './../../styles/shop.css';
 import LeftNav from './leftNav';
 import Product from './product';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectedFilters, fetchproductData, productSelector } from "./product-dux";
+import { filterdProducts, selectedFilters, fetchproductData, productSelector } from "./product-dux";
 import ComponentPreLoader from '../componentPreLoader';
 
 const Shop = () => {
   const dispatch = useDispatch();
-  const { categories, productData, loading } = useSelector(productSelector);
-  const [intial, setIntial] = useState(true)
-  const [targetValue, settargetValue] = useState('')
+  const { filterdProduct, categories, productData, loading } = useSelector(productSelector);  
+  const [targetValue, settargetValue] = useState()
   useEffect(() => {
     dispatch(fetchproductData(categories));
   }, [dispatch, categories]);
 
   const [state, setState] = useState({
-    products: productData.products,
-    filters: new Set(),
+    products: {},
+    filters: new Set()
   })
   useEffect(() => {
     dispatch(selectedFilters(targetValue))
-  }, [dispatch, targetValue]);
+    dispatch(filterdProducts({ products: state.products }))
+  }, [dispatch, targetValue, state]);
   useEffect(() => {
     setState({
       products: productData.products,
       filters: new Set(),
     })
   }, [productData.products]);
+  const handleAddFavoutites = useCallback(event => {
+
+  },[])
   const handleFilterChange = useCallback(event => {
-    setIntial(false)
     setState(previousState => {
       let filters;
       let products = productData.products;
-      let cfilters = new Set();
-      let tfilters = new Set();
+      let radiofilters = new Set();
+      settargetValue('')
       if (event.target.type === "checkbox") {
         filters = new Set(previousState.filters)
         if (event.target.checked) {
@@ -48,18 +50,21 @@ const Shop = () => {
             return filters.has(product.brand)
           })
         }
+
       }
       if (event.target.name === "color") {
-        cfilters.add(event.target.value)
+        radiofilters.add(event.target.value)
         products = products.filter(product => {
-          return cfilters.has(product.color)
+          return radiofilters.has(product.color)
         })
+
       }
       if (event.target.name === "tag") {
-        tfilters.add(event.target.value)
+        radiofilters.add(event.target.value)
         products = products.filter(product => {
-          return tfilters.has(product.tags)
+          return radiofilters.has(product.tags)
         })
+
       }
       settargetValue(event.target.value)
       return {
@@ -108,8 +113,9 @@ const Shop = () => {
                 <div className="row">
                   {
                     //loading ? <ComponentPreLoader /> : productData.products.map((product, i) => (<Product key={i} index={i} product={product} /> ))
-                    loading ? <ComponentPreLoader /> :
-                      intial ? productData.products.map((product, i) => (<Product key={i} index={i} product={product} />)) : state.products.map((product, i) => (<Product key={i} index={i} product={product} />))
+                    // loading ? <ComponentPreLoader /> :
+                    //   intial ? productData.products.map((product, i) => (<Product key={i} index={i} product={product} />)) : state.products.map((product, i) => (<Product key={i} index={i} product={product} />))
+                    loading ? <ComponentPreLoader /> : filterdProduct.products === undefined ? <ComponentPreLoader /> : filterdProduct.products.map((product, i) => (<Product addFavouties={handleAddFavoutites} key={i} index={i} product={product} />))
 
                   }
                 </div>

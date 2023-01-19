@@ -2,12 +2,13 @@ import { React, useState, useEffect } from 'react'
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { login, logout, headerSelector } from "./header-dux";
-import { selectedCategory, fetchproductData } from "./shop/product-dux";
+import { selectedCategory, fetchproductData, productSelector } from "./shop/product-dux";
 import './../styles/header.css';
 
 const Header = () => {
   const dispatch = useDispatch();
   const { isLoggin } = useSelector(headerSelector);
+  const { favouriteData } = useSelector(productSelector);
   const [user, setUser] = useState('');
 
   useEffect(() => {
@@ -87,7 +88,7 @@ const Header = () => {
                     isLoggin && <li className="heart-icon">
                       <Link to="./shop/favourites">
                         <i className="icon_heart_alt"></i>
-                        <span>1</span>
+                        <span>{favouriteData.products.length}</span>
                       </Link>
                     </li>
                   }

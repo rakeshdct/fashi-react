@@ -27,7 +27,7 @@ const ProductDetails = (props) => {
                     <div className="pd-title">
                         <span>{props.products.brand}</span>
                         <h3>{props.products.title}</h3>
-                        <Link to="#" className="heart-icon"><i className="icon_heart_alt"></i></Link>
+                        {/* <Link to="#" className="heart-icon"><i className="icon_heart_alt"></i></Link> */}
                     </div>
                     <div className="pd-rating">
                         <i className="fa fa-star"></i>
