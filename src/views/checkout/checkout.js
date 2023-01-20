@@ -98,7 +98,7 @@ const Checkout = () => {
                         <li>Product <span>Total</span></li>
                         {
                           cartData.map((product, i) => (
-                            <li key={i} className="fw-normal">{product.title} x {product.qty} <span>₹ {product.total}</span></li>
+                            <li key={i} className="fw-normal"><span>{product.title} <br/>x {product.qty} </span><span><br/>₹ {product.total.toLocaleString('en-IN')}</span></li>
                           ))
                         }
                         {/* <li className="fw-normal">Combination x 1 <span>$60.00</span></li>
