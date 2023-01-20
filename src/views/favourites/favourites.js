@@ -1,19 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from "react-router-dom";
 import './../../styles/shop.css';
 import { useSelector, useDispatch } from 'react-redux';
+import { addCartData, setCartTotal } from "../cart/cart-dux";
 import { pushFavouritestoproductData, selectedProductIndex, removeSelectedFavourites, productSelector } from "../shop/product-dux";
 
 const Favourites = () => {
     const dispatch = useDispatch();
     const { favouriteData } = useSelector(productSelector);
+    useEffect(() => {
+        dispatch(pushFavouritestoproductData(favouriteData))
+    }, [dispatch, favouriteData])
+    const addToCart = (d) => {
+        dispatch(addCartData(d))
+        dispatch(setCartTotal())
+    }
     const removeFavouties = (i) => {
         dispatch(removeSelectedFavourites(i))
     }
     const productIndex = (i) => {
         dispatch(selectedProductIndex(i))
-        dispatch(pushFavouritestoproductData(favouriteData))
-
     }
     return (
         <>
@@ -54,11 +60,11 @@ const Favourites = () => {
                                                     <img src={fav.thumbnail} alt="" />
                                                     <div className="sale">Sale</div>
                                                     <div className="icon" onClick={() => removeFavouties(i)}>
-                                                        <i className="fa fa-times"></i>
+                                                        <i className="ti-close"></i>
                                                     </div>
                                                     <ul>
-                                                        <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                                        <li onClick={() => productIndex(i)} className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
+                                                        <li onClick={() => addToCart(fav)} className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
+                                                        <li onClick={() => productIndex(i)} className="quick-view"><Link to="../shop/shop-details">Quick View</Link></li>
                                                     </ul>
                                                 </div>
                                                 <div className="pi-text">
@@ -75,7 +81,7 @@ const Favourites = () => {
                                         </div>
                                     ))
                                         :
-                                        <h3 className='empty'>Your Favourites is empty</h3>
+                                        <h4 className='empty'>Your Favourites is empty</h4>
                                     }
                                 </div>
                             </div>

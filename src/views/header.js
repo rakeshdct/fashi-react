@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react'
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { login, logout, headerSelector } from "./header-dux";
+import { cartSelector, removeCartData } from "./cart/cart-dux";
 import { selectedCategory, fetchproductData, productSelector } from "./shop/product-dux";
 import './../styles/header.css';
 
@@ -9,6 +10,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const { isLoggin } = useSelector(headerSelector);
   const { favouriteData } = useSelector(productSelector);
+  const { cartData, cartTotal } = useSelector(cartSelector);
   const [user, setUser] = useState('');
 
   useEffect(() => {
@@ -17,7 +19,9 @@ const Header = () => {
       dispatch(login())
     }
   }, [isLoggin, dispatch]);
-
+  const removeCart = (i) => {
+    dispatch(removeCartData(i))
+  }
   function toggleLogin() {
     dispatch(logout())
     localStorage.setItem('auth', false);
@@ -95,47 +99,48 @@ const Header = () => {
                   <li className="cart-icon">
                     <Link to="#">
                       <i className="icon_bag_alt"></i>
-                      <span>3</span>
+                      <span> {cartData.length}</span>
                     </Link>
                     <div className="cart-hover">
-                      <div className="select-items">
-                        <table>
-                          <tbody>
-                            <tr>
-                              <td className="si-pic"><img src="../img/select-product-1.jpg" alt="" /></td>
-                              <td className="si-text">
-                                <div className="product-selected">
-                                  <p>$60.00 x 1</p>
-                                  <h6>Kabino Bedside Table</h6>
-                                </div>
-                              </td>
-                              <td className="si-close">
-                                <i className="ti-close"></i>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td className="si-pic"><img src="../img/select-product-2.jpg" alt="" /></td>
-                              <td className="si-text">
-                                <div className="product-selected">
-                                  <p>$60.00 x 1</p>
-                                  <h6>Kabino Bedside Table</h6>
-                                </div>
-                              </td>
-                              <td className="si-close">
-                                <i className="ti-close"></i>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div className="select-total">
-                        <span>total:</span>
-                        <h5>$120.00</h5>
-                      </div>
-                      <div className="select-button">
-                        <NavLink className="primary-btn view-card" to="shop/cart">VIEW CART</NavLink>
-                        <NavLink className="primary-btn checkout-btn" to="shop/checkout">Checkout</NavLink>
-                      </div>
+                      {cartData.length === 0 ? <div className="select-button">
+                        <p className='empty'>Your shopping cart is empty.</p>
+                        <NavLink className="primary-btn view-card" to="../shop">Continue Shopping</NavLink>
+                      </div> : <>
+
+
+                        <div >
+                          <div className="select-items">
+                            <table>
+                              <tbody>
+                                {
+                                  cartData.map((product, i) => (
+                                    <tr key={i}>
+                                      <td className="si-pic"><img src={product.thumbnail} alt="" /></td>
+                                      <td className="si-text">
+                                        <div className="product-selected">
+                                          <p><span>₹ {product.price.toLocaleString('en-IN')} x {product.qty}</span> <span>₹ {product.total.toLocaleString('en-IN')}</span></p>
+                                          <h6>{product.title}</h6>
+                                        </div>
+                                      </td>
+                                      <td className="si-close">
+                                        <i onClick={() => removeCart(i)} className="ti-close"></i>
+                                      </td>
+                                    </tr>
+                                  ))
+                                }
+                              </tbody>
+                            </table>
+                          </div>
+                          <div className="select-total">
+                            <span>total:</span>
+                            <h5>₹ {cartTotal.toLocaleString('en-IN')}</h5>
+                          </div>
+                          <div className="select-button">
+                            <NavLink className="primary-btn view-card" to="shop/cart">VIEW CART</NavLink>
+                            <NavLink className="primary-btn checkout-btn" to="shop/checkout">Checkout</NavLink>
+                          </div>
+                        </div>
+                      </>}
                     </div>
                   </li>
                   <li className="cart-price">$150.00</li>
@@ -166,7 +171,6 @@ const Header = () => {
                 <li><Link to="#">Pages</Link>
                   <ul className="dropdown">
                     <li><NavLink to="shop/cart">Shopping Cart</NavLink></li>
-                    {isLoggin && <li><NavLink to="shop/checkout">Checkout</NavLink></li>}
                     <li><NavLink to="blog/blog-details">Blog Details</NavLink></li>
                     <li><NavLink to="faq">Faq</NavLink></li>
                     {!isLoggin && <li><NavLink to="login">Login</NavLink></li>}

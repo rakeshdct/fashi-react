@@ -132,6 +132,8 @@
 .checkout-form .place-order .order-total .order-table li.fw-normal {
     font-weight: 400;
     text-transform: capitalize;
+    padding: 10px 0 0 0;
+    border-bottom: 0;
 }
 
 .checkout-form .place-order .order-total .order-table li.fw-normal span {

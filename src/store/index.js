@@ -5,6 +5,7 @@ import footerSlice from "../views/footer/footer-dux";
 import faqSlice from "../views/faq/faq-dux";
 import headerSlice from "../views/header-dux";
 import productSlice from "../views/shop/product-dux";
+import cartSlice from "../views/cart/cart-dux";
 
 
 export const rootReducer = combineReducers({
@@ -12,7 +13,8 @@ export const rootReducer = combineReducers({
   footerData: footerSlice,
   faqData: faqSlice,
   headerState: headerSlice,
-  productData:productSlice,
+  productData: productSlice,
+  cartData: cartSlice,
 })
 
 export default configureStore({

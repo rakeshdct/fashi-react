@@ -423,7 +423,7 @@
 .product-item .pi-pic ul li.w-icon.active a {
     background: #e7ab3c;
     color: #ffffff;
-    padding: 8px 13px 12px;
+    padding: 8px 13px 13px;
 }
 
 .product-item .pi-pic ul li.w-icon.active a i {
@@ -474,11 +474,6 @@
     color: #b2b2b2;
     text-decoration: line-through;
     padding: 0 0 0 5px;
-}
-
-.favourites .empty {
-    text-align: center;
-    width: 100%;
 }
 
 @media only screen and (max-width: 767px) {

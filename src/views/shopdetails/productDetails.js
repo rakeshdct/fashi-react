@@ -1,11 +1,36 @@
 import React, { memo } from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { addCartData, setCartTotal } from "../cart/cart-dux";
 
 
 const ProductDetails = (props) => {
+    const dispatch = useDispatch();
+    //const [qty, setQty] = useState(props.products.qty);
+    const addToCart = (d) => {
+        dispatch(addCartData(d))
+        dispatch(setCartTotal())
+    }
     const passImage = (imgurl) => {
         document.getElementById("product-big-img").src = imgurl;
+    }
+    // const changeQty = (e, i) => {
+    //     let value = e.target.value
+    //     if (value === '0' || value === '') {
+    //         value = 1;
+    //     }
+    //     setQty(value);
+    // }
+    let stars = []
+    let nostars = []
+    let rating = props.products.rating;
+    let nostar = 5 - rating;
+    for (let i = 0; i < rating; i++) {
+        stars.push(<i key={i} className="fa fa-star"></i>)
+    }
+    for (let j = 0; j < nostar; j++) {
+        nostars.push(<i key={j} className="fa fa-star-o"></i>)
     }
     return (
         <div className="row">
@@ -30,23 +55,29 @@ const ProductDetails = (props) => {
                         {/* <Link to="#" className="heart-icon"><i className="icon_heart_alt"></i></Link> */}
                     </div>
                     <div className="pd-rating">
+                        {
+                            stars
+                        }
+                        {
+                            nostars
+                        }
+                        {/* <i className="fa fa-star"></i>
                         <i className="fa fa-star"></i>
                         <i className="fa fa-star"></i>
                         <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star-o"></i>
+                        <i className="fa fa-star-o"></i> */}
                         <span>({props.products.rating})</span>
                     </div>
                     <div className="pd-desc">
                         <p>{props.products.description}</p>
-                        <h4>₹ {props.products.price} <span>₹ {props.products.strikeprice}</span><span>{props.products.discountPercentage}</span></h4>
+                        <h4>₹ {props.products.price.toLocaleString('en-IN')} <span>₹ {props.products.strikeprice}</span><span>{props.products.discountPercentage}</span></h4>
                     </div>
                     <div className="pd-color">
                         <h6>Color</h6>
                         <div className="pd-color-choose">
                             <div className="cc-item">
-                                <input type="radio" id={'cc-'+props.products.color}  />
-                                <label className={'cc-'+props.products.color} htmlFor={'cc-'+props.products.color}></label>
+                                <input type="radio" id={'cc-' + props.products.color} />
+                                <label className={'cc-' + props.products.color} htmlFor={'cc-' + props.products.color}></label>
                             </div>
                         </div>
                     </div>
@@ -69,10 +100,10 @@ const ProductDetails = (props) => {
                         </div>
                     </div>
                     <div className="quantity">
-                        <div className="pro-qty">
-                            <input type="text" maxLength={4} />
-                        </div>
-                        <Link to="#" className="primary-btn pd-cart">Add To Cart</Link>
+                        {/* <div className="pro-qty">
+                            <input type="text" value={qty} onChange={(e) => changeQty(e)} maxLength={4} />
+                        </div> */}
+                        <Link onClick={() => addToCart(props.products)} to="#" className="primary-btn pd-cart">Add To Cart</Link>
                     </div>
                     <ul className="pd-tags">
                         <li><span>CATEGORY</span>: {props.products.category}</li>
