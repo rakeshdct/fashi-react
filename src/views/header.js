@@ -5,6 +5,7 @@ import { login, logout, headerSelector } from "./header-dux";
 import { cartSelector, removeCartData } from "./cart/cart-dux";
 import { selectedCategory, fetchproductData, productSelector } from "./shop/product-dux";
 import './../styles/header.css';
+import { CurrencyConverter } from '../components/currencyConverter';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -118,7 +119,9 @@ const Header = () => {
                                       <td className="si-pic"><img src={product.thumbnail} alt="" /></td>
                                       <td className="si-text">
                                         <div className="product-selected">
-                                          <p><span>₹ {product.price.toLocaleString('en-IN')} x {product.qty}</span> <span>₹ {product.total.toLocaleString('en-IN')}</span></p>
+                                          <p><span><CurrencyConverter price={product.price} /> x {product.qty}</span>
+                                            {/* <span>₹ {product.total.toLocaleString('en-IN')}</span> */}
+                                          </p>
                                           <h6>{product.title}</h6>
                                         </div>
                                       </td>
@@ -131,10 +134,10 @@ const Header = () => {
                               </tbody>
                             </table>
                           </div>
-                          <div className="select-total">
+                          {/* <div className="select-total">
                             <span>total:</span>
-                            <h5>₹ {cartTotal.toLocaleString('en-IN')}</h5>
-                          </div>
+                            <h5><CurrencyConverter currencyDisplay="code" price={cartTotal} /></h5>
+                          </div> */}
                           <div className="select-button">
                             <NavLink className="primary-btn view-card" to="shop/cart">VIEW CART</NavLink>
                             <NavLink className="primary-btn checkout-btn" to="shop/checkout">Checkout</NavLink>
@@ -143,7 +146,7 @@ const Header = () => {
                       </>}
                     </div>
                   </li>
-                  <li className="cart-price">$150.00</li>
+                  <li className="cart-price"><CurrencyConverter currencyDisplay="code" price={cartTotal} /></li>
                 </ul>
               </div>
             </div>

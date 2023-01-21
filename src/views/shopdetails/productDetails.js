@@ -3,6 +3,7 @@ import OwlCarousel from 'react-owl-carousel';
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { addCartData, setCartTotal } from "../cart/cart-dux";
+import { CurrencyConverter } from '../../components/currencyConverter';
 
 
 const ProductDetails = (props) => {
@@ -70,7 +71,7 @@ const ProductDetails = (props) => {
                     </div>
                     <div className="pd-desc">
                         <p>{props.products.description}</p>
-                        <h4>₹ {props.products.price.toLocaleString('en-IN')} <span>₹ {props.products.strikeprice}</span><span>{props.products.discountPercentage}</span></h4>
+                        <h4><CurrencyConverter price={props.products.price} /> <span><CurrencyConverter price={props.products.strikeprice} /></span><span>{props.products.discountPercentage}</span></h4>
                     </div>
                     <div className="pd-color">
                         <h6>Color</h6>

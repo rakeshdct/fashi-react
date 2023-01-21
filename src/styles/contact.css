@@ -122,11 +122,20 @@
     border-radius: 5px;
     padding-left: 20px;
     padding-top: 10px;
-    margin-bottom: 35px;
 }
 
 .contact-form .leave-comment .comment-form .site-btn {
     padding: 13px 35px 11px;
+    margin-top: 35px;
+}
+
+.contact-form .leave-comment .comment-form .mandatory {
+    font-size: 13px;
+    text-align: right;
+}
+
+.contact-form .leave-comment .comment-form .mandatory span {
+    color: #d85d5c;
 }
 
 @media only screen and (max-width: 991px) {

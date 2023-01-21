@@ -1,7 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './../../styles/contact.css';
 
 const Contact = () => {
+  const initial = {
+    "name": "",
+    "email": "",
+    "comments": ""
+  }
+  const [formData, setFormData] = useState(initial);
+  const [errorMsg, setErrorMsg] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
+  const onChange = e => {
+    setFormData(
+      { ...formData, [e.target.name]: e.target.value }
+    )
+    setErrorMsg('')
+    setSuccessMsg('')
+  }
+  var emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+  const submitForm = e => {
+    e.preventDefault();
+    if (formData.name === '') return setErrorMsg("Enter name")
+    else if (formData.email === '') return setErrorMsg("Enter Email")
+    else if (emailRegex.test(formData.email) === false) return setErrorMsg('Enter valid Email address')
+    else if (formData.comments === '') return setErrorMsg("Please enter comments")
+    else { setErrorMsg(''); setFormData(initial); setSuccessMsg("Form Submited") }
+  }
+
   return (
     <>
       <div className="breacrumb-section">
@@ -21,7 +46,7 @@ const Contact = () => {
       <div className="map spad">
         <div className="container">
           <div className="map-inner">
-            <iframe title="location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48158.305462977965!2d-74.13283844036356!3d41.02757295168286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2e440473470d7%3A0xcaf503ca2ee57958!2sSaddle%20River%2C%20NJ%2007458%2C%20USA!5e0!3m2!1sen!2sbd!4v1575917275626!5m2!1sen!2sbd" height="610" style={{border:0}} allowFullScreen="">
+            <iframe title="location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48158.305462977965!2d-74.13283844036356!3d41.02757295168286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2e440473470d7%3A0xcaf503ca2ee57958!2sSaddle%20River%2C%20NJ%2007458%2C%20USA!5e0!3m2!1sen!2sbd!4v1575917275626!5m2!1sen!2sbd" height="610" style={{ border: 0 }} allowFullScreen="">
             </iframe>
             <div className="icon">
               <i className="fa fa-map-marker"></i>
@@ -75,16 +100,25 @@ const Contact = () => {
                 <div className="leave-comment">
                   <h4>Leave A Comment</h4>
                   <p>Our staff will call back later and answer your questions.</p>
-                  <form action="#" className="comment-form">
+                  <form onSubmit={submitForm} className="comment-form">
                     <div className="row">
                       <div className="col-lg-6">
-                        <input type="text" placeholder="Your name"/>
+                        <input type="text" name="name" onChange={onChange} value={formData.name} placeholder="Your name" />
                       </div>
                       <div className="col-lg-6">
-                        <input type="text" placeholder="Your email"/>
+                        <input type="text" name="email" onChange={onChange} value={formData.email} placeholder="Your email" />
                       </div>
                       <div className="col-lg-12">
-                        <textarea placeholder="Your message"></textarea>
+                        <textarea name="comments" onChange={onChange} value={formData.comments} placeholder="Your message"></textarea>
+                        <div className='mandatory'>All fields are Mandatory <span>*</span></div>
+                        {errorMsg && <div className="alert alert-danger">
+                          <strong>Error!</strong> {errorMsg}
+                        </div>
+                        }
+                        {successMsg && <div className="alert alert-success">
+                          <strong>Success!</strong> {successMsg}
+                        </div>
+                        }
                         <button type="submit" className="site-btn">Send message</button>
                       </div>
                     </div>

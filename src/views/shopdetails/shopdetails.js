@@ -7,7 +7,7 @@ import './../../styles/shop.css';
 import ProductDetails from './productDetails';
 import { useSelector } from 'react-redux';
 import { productSelector } from "../shop/product-dux";
-import ComponentPreLoader from '../componentPreLoader';
+import ComponentPreLoader from './../../components/componentPreLoader';
 
 const Shopdetails = () => {
     const { selectedProduct, productData, loading } = useSelector(productSelector);

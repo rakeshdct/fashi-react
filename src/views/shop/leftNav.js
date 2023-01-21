@@ -25,8 +25,8 @@ const LeftNav = (props) => {
     return (
         <div className="col-lg-3 col-md-6 col-sm-8 produts-sidebar-filter">
             <div className="filter-widget">
-                <h4 className="fw-title">Categories</h4>
-                <ul className="filter-catagories">
+                <h4 className="fw-title">Categories {categories}</h4>
+                <ul className="filter-catagories">                   
                     <li onClick={(e) => handleSelection("men")} className={categories === "men" ? 'active' : ''}><Link to="#">Men</Link></li>
                     <li onClick={(e) => handleSelection("women")} className={categories === "women" ? 'active' : ''}><Link to="#">Women</Link></li>
                     <li onClick={(e) => handleSelection("kids")} className={categories === "kids" ? 'active' : ''}><Link to="#">Kids</Link></li>

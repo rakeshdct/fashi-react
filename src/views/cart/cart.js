@@ -3,6 +3,7 @@ import './../../styles/cart.css';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { setCartTotal, setcartIndex, changeQtyCartData, cartSelector, removeCartData } from "./cart-dux";
+import { CurrencyConverter } from '../../components/currencyConverter';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const Cart = () => {
     dispatch(setCartTotal())
   }
   const changeQty = (e, i) => {
-    let value = e.target.value
+    let value = e.target.value.slice(0, e.target.getAttribute("maxlength"))
     if (value === '0' || value === '') {
       value = 1;
     }
@@ -71,15 +72,15 @@ const Cart = () => {
                               <td className="cart-title first-row">
                                 <h5>{product.title}</h5>
                               </td>
-                              <td className="p-price first-row">₹ {product.price.toLocaleString('en-IN')} </td>
+                              <td className="p-price first-row"><CurrencyConverter price={product.price} /></td>
                               <td className="qua-col first-row">
                                 <div className="quantity">
                                   <div className="pro-qty">
-                                    <input onChange={(e) => changeQty(e, i)} name={product.sku} type="text" value={qty[product.sku]} maxLength={4} />
+                                    <input onChange={(e) => changeQty(e, i)} name={product.sku} type="number" value={qty[product.sku]} maxLength={4} />
                                   </div>
                                 </div>
                               </td>
-                              <td className="total-price first-row">₹ {product.total.toLocaleString('en-IN')}</td>
+                              <td className="total-price first-row"><CurrencyConverter price={product.total} /></td>
                               <td className="close-td first-row"><i onClick={() => removeCart(i)} className="ti-close"></i></td>
                             </tr>
                           ))
@@ -104,10 +105,10 @@ const Cart = () => {
                     <div className="col-lg-4 offset-lg-4">
                       <div className="proceed-checkout">
                         <ul>
-                          <li className="subtotal">Subtotal <span>₹ {cartTotal.toLocaleString('en-IN')}</span></li>
-                          <li className="subtotal">9 % SGST <span>₹ {(Math.round(cartTotal * 9 / 100)).toLocaleString('en-IN')}</span></li>
-                          <li className="subtotal">9 % CGST <span>₹ {(Math.round(cartTotal * 9 / 100)).toLocaleString('en-IN')}</span></li>
-                          <li className="cart-total">Total <span>₹ {(Math.round(cartTotal + cartTotal * 18 / 100)).toLocaleString('en-IN')}</span></li>
+                          <li className="subtotal">Subtotal <span><CurrencyConverter price={cartTotal} /></span></li>
+                          <li className="subtotal">9 % SGST <span><CurrencyConverter price={cartTotal * 9 / 100} /></span></li>
+                          <li className="subtotal">9 % CGST <span><CurrencyConverter price={cartTotal * 9 / 100} /></span></li>
+                          <li className="cart-total">Grand Total <span><CurrencyConverter currencyDisplay="code" price={cartTotal + cartTotal * 18 / 100} /></span></li>
                         </ul>
                         <Link to="../shop/checkout" className="proceed-btn">PROCEED TO CHECK OUT</Link>
                       </div>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchfaqData, faqSelector } from "./faq-dux";
 import Faqsection from './faqSection'
-import ComponentPreLoader from '../componentPreLoader';
+import ComponentPreLoader from './../../components/componentPreLoader';
 import styles from './../../styles/faq.module.css'
 
 const Faq = () => {

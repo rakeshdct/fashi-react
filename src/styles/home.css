@@ -248,6 +248,11 @@
     border-radius: 2px;
 }
 
+.single-banner .inner-text h4 a,
+.single-banner .inner-text h4 a:hover {
+    color: #252525;
+}
+
 @media only screen and (max-width: 991px) {
     .banner-section {
         padding: 0 0 50px;
@@ -384,16 +389,19 @@
 .instagram-photo .insta-item .inside-text h5 a {
     color: #ffffff;
 }
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .instagram-photo .insta-item .inside-text h5{
+    .instagram-photo .insta-item .inside-text h5 {
         font-size: 12px;
     }
 }
+
 @media only screen and (max-width: 767px) {
-    .instagram-photo{
+    .instagram-photo {
         display: block;
         justify-content: normal;
     }
+
     .instagram-photo .insta-item {
         width: 50%;
         height: 300px;

@@ -4,6 +4,7 @@ import './../../styles/shop.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { addCartData, setCartTotal } from "../cart/cart-dux";
 import { pushFavouritestoproductData, selectedProductIndex, removeSelectedFavourites, productSelector } from "../shop/product-dux";
+import { CurrencyConverter } from '../../components/currencyConverter';
 
 const Favourites = () => {
     const dispatch = useDispatch();
@@ -73,8 +74,8 @@ const Favourites = () => {
                                                         <h5>{fav.title}</h5>
                                                     </Link>
                                                     <div className="product-price">
-                                                        ₹ {fav.price}
-                                                        <span>₹ {fav.strikeprice}</span>
+                                                        <CurrencyConverter price={fav.price} />
+                                                        <span> <CurrencyConverter price={fav.strikeprice} /></span>
                                                     </div>
                                                 </div>
                                             </div>

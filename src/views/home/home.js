@@ -6,7 +6,7 @@ import Singlebanner from "./singleBanner";
 import DealoftheWeek from "./dealoftheWeek";
 import Instaphoto from "./instaPhoto";
 import Latestblog from "./latestBlog";
-import PreLoader from '../pagePreLoader'
+import PreLoader from './../../components/pagePreLoader'
 import "./../../styles/home.css";
 
 const Home = () => {

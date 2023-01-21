@@ -36,14 +36,17 @@
         "singleBanners": [
             {
                 "category": "men",
+                "link": "men",
                 "imgsrc": "img/banner-1.jpg"
             },
             {
                 "category": "Women’s",
+                "link": "women",
                 "imgsrc": "img/banner-2.jpg"
             },
             {
                 "category": "Kid’s",
+                "link": "kids",
                 "imgsrc": "img/banner-3.jpg"
             }
         ],

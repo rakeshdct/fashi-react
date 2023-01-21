@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { headerSelector } from "../header-dux";
 import { addCartData, setCartTotal } from "../cart/cart-dux";
 import { selectedFavourites, selectedProductIndex } from "../shop/product-dux";
+import { CurrencyConverter } from '../../components/currencyConverter';
 
 const Product = (props) => {
     const dispatch = useDispatch();
@@ -45,8 +46,8 @@ const Product = (props) => {
                         <h5>{props.product.title}</h5>
                     </Link>
                     <div className="product-price">
-                        ₹ {props.product.price.toLocaleString('en-IN')}
-                        <span>₹ {props.product.strikeprice}</span>
+                        <CurrencyConverter price={props.product.price} />
+                        <span><CurrencyConverter price={props.product.strikeprice} /></span>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,8 @@ import LeftNav from './leftNav';
 import Product from './product';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterdProducts, selectedFilters, fetchproductData, productSelector } from "./product-dux";
-import ComponentPreLoader from '../componentPreLoader';
+import ComponentPreLoader from './../../components/componentPreLoader';
+
 
 const Shop = () => {
   const dispatch = useDispatch();

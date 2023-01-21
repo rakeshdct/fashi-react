@@ -301,7 +301,7 @@
 .inner-header .nav-right li.cart-icon:hover .cart-hover {
 	opacity: 1;
 	visibility: visible;
-	top: 60px;
+	top: 30px;
 }
 
 .inner-header .nav-right li.cart-icon a {
@@ -641,6 +641,12 @@
 	}
 }
 
+@media only screen and (max-width: 1199px) {
+	.inner-header .nav-right li.cart-icon:hover .cart-hover {
+		top: 60px;
+	}
+}
+
 @media only screen and (max-width: 991px) {
 	.inner-header .advanced-search .input-group button {
 		right: -8px;
@@ -689,6 +695,10 @@
 
 	.nav-item .nav-menu li a {
 		padding: 16px 10px 15px;
+	}
+
+	.inner-header .nav-right li.cart-icon:hover .cart-hover {
+		right: -35px;
 	}
 }
 
@@ -807,7 +817,8 @@
 		width: 270px;
 		padding: 20px;
 	}
-	.inner-header .nav-right li.cart-icon .cart-hover .select-items table tr td.si-text .product-selected p{
+
+	.inner-header .nav-right li.cart-icon .cart-hover .select-items table tr td.si-text .product-selected p {
 		font-size: 10px;
 	}
 }

@@ -81,7 +81,7 @@
 }
 
 .cart-table table tr td.qua-col .pro-qty {
-    width: 100%;
+    max-width: 57px;
     height: 46px;
     border: 2px solid #ebebeb;
     padding: 0;
@@ -231,6 +231,8 @@
     text-align: center;
 }
 
+@media only screen and (max-width: 1024px) {}
+
 @media only screen and (max-width: 991px) {
     .cart-table table tr td img {
         height: auto;
@@ -244,6 +246,15 @@
         padding-left: 10px;
         padding-right: 5px;
     }
+
+    .cart-table table tr td.total-price {
+        width: 15%;
+    }
+
+    .cart-table table tr td.p-price,
+    .cart-table table tr td.total-price {
+        font-size: 14px;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -254,22 +265,17 @@
     .cart-table {
         overflow: auto;
     }
-}
-
-/* Small Device: 320px */
-
-@media only screen and (max-width: 479px) {
 
     .cart-table table tr td.p-price,
     .cart-table table tr td.total-price {
         font-size: 9px;
     }
+}
 
+/* Small Device: 320px */
+
+@media only screen and (max-width: 479px) {
     .cart-table table tr td.cart-title h5 {
         font-size: 12px;
-    }
-
-    .cart-table table tr td.total-price {
-        width: 15%;
     }
 }

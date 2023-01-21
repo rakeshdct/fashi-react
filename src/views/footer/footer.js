@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchfooterData, footerSelector } from "./footer-dux";
 import Partnerlogo from './partnerLogo'
-import ComponentPreLoader from '../componentPreLoader';
+import ComponentPreLoader from './../../components/componentPreLoader';
 import { headerSelector } from "./../header-dux";
 import './../../styles/footer.css';
 
