@@ -18,19 +18,30 @@
         "heroSections": [
             {
                 "imgsrc": "../img/hero-1.jpg",
-                "category": "Bag,kids",
+                "category": "Dress,Women",
                 "day": "Black friday",
                 "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore",
                 "sale": "Sale",
-                "offer": "50%"
+                "offer": "50%",
+                "link": "women"
             },
             {
                 "imgsrc": "../img/hero-2.jpg",
-                "category": "Bag,kids",
+                "category": "Dress,Kids",
                 "day": "Black friday",
                 "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore",
                 "sale": "Sale",
-                "offer": "50%"
+                "offer": "50%",
+                "link": "kids"
+            },
+            {
+                "imgsrc": "../img/hero-3.jpg",
+                "category": "Dress,Men",
+                "day": "Black friday",
+                "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+                "sale": "Sale",
+                "offer": "50%",
+                "link": "men"
             }
         ],
         "singleBanners": [

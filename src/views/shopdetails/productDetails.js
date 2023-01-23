@@ -3,6 +3,7 @@ import OwlCarousel from 'react-owl-carousel';
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { addCartData, setCartTotal } from "../cart/cart-dux";
+import { cartProductsSKUs, checkCart, checkCartFavourites } from "../shop/product-dux";
 import { CurrencyConverter } from '../../components/currencyConverter';
 
 
@@ -12,6 +13,9 @@ const ProductDetails = (props) => {
     const addToCart = (d) => {
         dispatch(addCartData(d))
         dispatch(setCartTotal())
+        dispatch(cartProductsSKUs(d.sku))
+        dispatch(checkCart())
+        dispatch(checkCartFavourites())
     }
     const passImage = (imgurl) => {
         document.getElementById("product-big-img").src = imgurl;
@@ -104,7 +108,10 @@ const ProductDetails = (props) => {
                         {/* <div className="pro-qty">
                             <input type="text" value={qty} onChange={(e) => changeQty(e)} maxLength={4} />
                         </div> */}
-                        <Link onClick={() => addToCart(props.products)} to="#" className="primary-btn pd-cart">Add To Cart</Link>
+                        {props.products.cart ? <Link to="../shop/cart" className="primary-btn pd-cart">View Cart</Link> :
+                            <Link onClick={() => addToCart(props.products)} to="#" className="primary-btn pd-cart">Add To Cart</Link>
+                        }
+
                     </div>
                     <ul className="pd-tags">
                         <li><span>CATEGORY</span>: {props.products.category}</li>

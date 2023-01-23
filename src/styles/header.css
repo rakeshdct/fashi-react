@@ -202,15 +202,17 @@
 	border: 1px solid #ebebeb;
 }
 
-.inner-header .advanced-search .category-btn {
+.inner-header .advanced-search .category-btn,
+.inner-header .advanced-search select {
 	max-width: 30%;
+	width: 30%;
 	float: left;
 	background: transparent;
 	border: none;
 	padding-left: 23px;
 	padding-top: 11px;
 	padding-bottom: 13px;
-	padding-right: 60px;
+	/* padding-right: 60px; */
 	font-size: 16px;
 	color: #252525;
 	position: relative;
@@ -236,8 +238,15 @@
 	color: #b2b2b2;
 }
 
-.inner-header .advanced-search .input-group {
+.inner-header .advanced-search .search {
 	max-width: 70%;
+	height: 100%;
+	float: left;
+	width: 70%;
+	position: relative;
+}
+
+.inner-header .advanced-search .input-group {
 	height: 100%;
 }
 
@@ -246,7 +255,7 @@
 	height: 100%;
 	border: none;
 	font-size: 16px;
-	color: #d1d1d1;
+	color: #212529;
 	padding-left: 20px;
 }
 
@@ -259,7 +268,34 @@
 	border: 1px solid #e7ab3c;
 	background: #e7ab3c;
 	padding: 12px 16px 12px;
+	cursor: default;
+}
+
+.inner-header .advanced-search .productResult {
+	background: #fff;
+	position: absolute;
+	z-index: 2;
+	width: calc(100% - 35px);
+	padding: 10px 0;
+	border: 1px solid #ebebeb;
+}
+
+.inner-header .advanced-search .productResult:empty:before {
+	content: 'No result found';
+	display: block;
+	text-align: center;
+}
+
+.inner-header .advanced-search .productResult a {
+	padding: 5px 20px;
+	color: #636363;
+	display: block;
+}
+
+.inner-header .advanced-search .productResult a:hover {
+	background-color: #eee;
 	cursor: pointer;
+	color: #636363;
 }
 
 .inner-header .nav-right {
@@ -606,10 +642,6 @@
 /* ------------------------------ Responsive Media Styles ---------------------------- */
 
 @media only screen and (min-width: 1200px) and (max-width: 1920px) {
-	.inner-header .advanced-search .input-group button {
-		right: -14px;
-	}
-
 	.nav-item .nav-menu li a {
 		padding: 16px 45px 15px;
 	}
@@ -626,10 +658,6 @@
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.inner-header .advanced-search .category-btn {
 		max-width: 36%;
-	}
-
-	.inner-header .advanced-search .input-group {
-		max-width: 64%;
 	}
 
 	.nav-item .nav-menu li a {
@@ -681,10 +709,6 @@
 		padding-right: 25px;
 	}
 
-	.inner-header .advanced-search .input-group {
-		max-width: 60%;
-	}
-
 	.inner-header .nav-right li {
 		margin-left: 8px;
 	}
@@ -699,6 +723,25 @@
 
 	.inner-header .nav-right li.cart-icon:hover .cart-hover {
 		right: -35px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.inner-header .advanced-search .productResult {
+		left: 0;
+		width: calc(100%);
+	}
+
+	.inner-header .advanced-search .search {
+		position: initial;
+	}
+
+	.inner-header .advanced-search .input-group button {
+		right: 0;
+	}
+
+	.inner-header .advanced-search {
+		position: relative;
 	}
 }
 

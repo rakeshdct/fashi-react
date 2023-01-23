@@ -1111,6 +1111,10 @@
     padding-bottom: 50px;
 }
 
+.related-products .hide {
+    display: none;
+}
+
 .related-products .section-title {
     margin-bottom: 50px;
 }

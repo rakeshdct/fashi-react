@@ -30,9 +30,6 @@ const Shop = () => {
       filters: new Set(),
     })
   }, [productData.products]);
-  const handleAddFavoutites = useCallback(event => {
-
-  },[])
   const handleFilterChange = useCallback(event => {
     setState(previousState => {
       let filters;
@@ -116,7 +113,7 @@ const Shop = () => {
                     //loading ? <ComponentPreLoader /> : productData.products.map((product, i) => (<Product key={i} index={i} product={product} /> ))
                     // loading ? <ComponentPreLoader /> :
                     //   intial ? productData.products.map((product, i) => (<Product key={i} index={i} product={product} />)) : state.products.map((product, i) => (<Product key={i} index={i} product={product} />))
-                    loading ? <ComponentPreLoader /> : filterdProduct.products === undefined ? <ComponentPreLoader /> : filterdProduct.products.map((product, i) => (<Product addFavouties={handleAddFavoutites} key={i} index={i} product={product} />))
+                    loading ? <ComponentPreLoader /> : filterdProduct.products === undefined ? <ComponentPreLoader /> : filterdProduct.products.map((product, i) => (<Product class="col-lg-4 col-sm-6" key={i} index={i} product={product} />))
 
                   }
                 </div>

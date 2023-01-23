@@ -3,6 +3,7 @@ import './../../styles/cart.css';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { setCartTotal, setcartIndex, changeQtyCartData, cartSelector, removeCartData } from "./cart-dux";
+import { removeCartSKUs, checkCartFavourites } from "../shop/product-dux";
 import { CurrencyConverter } from '../../components/currencyConverter';
 
 const Cart = () => {
@@ -13,9 +14,11 @@ const Cart = () => {
     cartQuantities[product.sku] = product.qty
   ))
   const [qty, setQty] = useState(cartQuantities);
-  const removeCart = (i) => {
+  const removeCart = (i, sku) => {
     dispatch(removeCartData(i))
     dispatch(setCartTotal())
+    dispatch(removeCartSKUs(sku))
+    dispatch(checkCartFavourites())
   }
   const changeQty = (e, i) => {
     let value = e.target.value.slice(0, e.target.getAttribute("maxlength"))
@@ -81,7 +84,7 @@ const Cart = () => {
                                 </div>
                               </td>
                               <td className="total-price first-row"><CurrencyConverter price={product.total} /></td>
-                              <td className="close-td first-row"><i onClick={() => removeCart(i)} className="ti-close"></i></td>
+                              <td className="close-td first-row"><i onClick={() => removeCart(i, product.sku)} className="ti-close"></i></td>
                             </tr>
                           ))
                         }

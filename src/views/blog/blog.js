@@ -10,7 +10,7 @@ const Blog = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcrumb-text">
-                <Link to="./"><i className="fa fa-home"></i> Home</Link>
+                <Link to="../"><i className="fa fa-home"></i> Home</Link>
                 <span>Blog</span>
               </div>
             </div>

@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import './../../styles/checkout.css';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { cartSelector, submitCartData } from "../cart/cart-dux";
+import { cartSelector, submitCartData, setCartTotal } from "../cart/cart-dux";
+import { clearCartProductsSKUs, checkCartFavourites } from "../shop/product-dux";
 import { CurrencyConverter } from '../../components/currencyConverter';
 import { countries } from './country'
 import PreLoader from '../../components/pagePreLoader';
@@ -50,7 +51,7 @@ const Checkout = () => {
     if (formData.phone.length < 10) return setErrorMsg("Enter 10 digit phone no")
     if (formData.email === '') return setErrorMsg("Enter Email")
     if (emailRegex.test(formData.email) === false) return setErrorMsg('Enter valid Email address')
-    else { setloading(true); setErrorMsg(''); setTimeout(function () { setFormData(initial); dispatch(submitCartData()); setloading(false); }, 1000) }
+    else { setloading(true); setErrorMsg(''); setTimeout(function () { setFormData(initial); dispatch(submitCartData()); dispatch(setCartTotal()); dispatch(clearCartProductsSKUs()); dispatch(checkCartFavourites()); setloading(false); }, 1000) }
   }
   return (
     <>

@@ -25,12 +25,15 @@
 	font-size: 16px;
 	line-height: 30px;
 }
-.footer-left ul li a{
-    color: #b2b2b2;
+
+.footer-left ul li a {
+	color: #b2b2b2;
 }
-.footer-left ul li a:hover{
-    color: white;
+
+.footer-left ul li a:hover {
+	color: white;
 }
+
 .footer-left .footer-social {
 	padding-top: 25px;
 }
@@ -150,6 +153,19 @@
 	cursor: pointer;
 }
 
+.newslatter-item .subscribe-form button+span {
+	padding: 5px 0 0;
+	display: block;
+}
+
+.newslatter-item .subscribe-form button+span.error {
+	color: #f00;
+}
+
+.newslatter-item .subscribe-form button+span.success {
+	color: #0f0;
+}
+
 .copyright-reserved {
 	border-top: 1px solid #303030;
 	padding: 15px 0;
@@ -178,10 +194,11 @@
 	float: right;
 }
 
-@media only screen and (max-width: 767px){
-	.copyright-reserved .copyright-text{
+@media only screen and (max-width: 767px) {
+	.copyright-reserved .copyright-text {
 		width: 100%;
 	}
+
 	.copyright-reserved .payment-pic {
 		float: none;
 		text-align: center;

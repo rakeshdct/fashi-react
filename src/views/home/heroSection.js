@@ -1,8 +1,14 @@
 import React from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { selectedCategory } from "../shop/product-dux";
 
 const HeroSection = (props) => {
+    const dispatch = useDispatch();
+    const handleSelection = (catagory) => {
+        dispatch(selectedCategory(catagory));
+    }
     return (
         <section className="hero-section">
             <OwlCarousel className='hero-items owl-carousel' {...props.heroSectionOwlConfig}>
@@ -14,7 +20,7 @@ const HeroSection = (props) => {
                                     <span>{heroSection.category}</span>
                                     <h1>{heroSection.day}</h1>
                                     <p>{heroSection.desc}</p>
-                                    <Link to="#" className="primary-btn">Shop Now</Link>
+                                    <Link onClick={(e) => handleSelection(heroSection.link)} to="./shop" className="primary-btn">Shop Now</Link>
                                 </div>
                             </div>
                             <div className="off-card">

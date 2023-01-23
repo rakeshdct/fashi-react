@@ -43,8 +43,8 @@ const DealoftheWeek = () => {
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed<br /> do ipsum dolor sit amet,
                             consectetur adipisicing elit </p>
                         <div className="product-price">
-                            $35.00
-                            <span>/ HanBag</span>
+                            ₹350.00
+                            <span>/ Dress</span>
                         </div>
                     </div>
                     <div className="countdown-timer" id="countdown">

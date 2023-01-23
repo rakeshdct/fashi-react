@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { Link } from "react-router-dom";
 import './../../styles/contact.css';
+import PreLoader from '../../components/pagePreLoader';
 
 const Contact = () => {
   const initial = {
@@ -10,6 +12,7 @@ const Contact = () => {
   const [formData, setFormData] = useState(initial);
   const [errorMsg, setErrorMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
+  const [loader, setloader] = useState(false);
   const onChange = e => {
     setFormData(
       { ...formData, [e.target.name]: e.target.value }
@@ -24,17 +27,18 @@ const Contact = () => {
     else if (formData.email === '') return setErrorMsg("Enter Email")
     else if (emailRegex.test(formData.email) === false) return setErrorMsg('Enter valid Email address')
     else if (formData.comments === '') return setErrorMsg("Please enter comments")
-    else { setErrorMsg(''); setFormData(initial); setSuccessMsg("Form Submited") }
+    else { setloader(true); setTimeout(function () { setErrorMsg(''); setFormData(initial); setSuccessMsg("Form Submited"); setloader(false); }, 1000) }
   }
 
   return (
     <>
+      {loader && <PreLoader />}
       <div className="breacrumb-section">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcrumb-text">
-                <a href="./"><i className="fa fa-home"></i> Home</a>
+                <Link to="../"><i className="fa fa-home"></i> Home</Link>
                 <span>Contact</span>
               </div>
             </div>

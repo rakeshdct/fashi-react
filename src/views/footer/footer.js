@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchfooterData, footerSelector } from "./footer-dux";
 import Partnerlogo from './partnerLogo'
 import ComponentPreLoader from './../../components/componentPreLoader';
+import PreLoader from '../../components/pagePreLoader';
 import { headerSelector } from "./../header-dux";
 import './../../styles/footer.css';
 
@@ -11,15 +12,31 @@ import './../../styles/footer.css';
 const Footer = () => {
     const dispatch = useDispatch();
     const { footerData, loading } = useSelector(footerSelector);
-
+    const [state, setState] = useState('')
+    const [errorMsg, setErrorMsg] = useState('')
+    const [successMsg, setsuccessMsg] = useState('')
+    const [loader, setloader] = useState(false);
     useEffect(() => {
         dispatch(fetchfooterData());
     }, [dispatch]);
     const { isLoggin } = useSelector(headerSelector);
+    const onChange = e => {
+        setState(e.target.value)
+        setErrorMsg('')
+        setsuccessMsg('')
+    }
+    var emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    const submitForm = e => {
+        e.preventDefault();
+        if (state === "") return setErrorMsg("Enter email")
+        else if (emailRegex.test(state) === false) return setErrorMsg('Enter valid Email address')
+        else { setloader(true); setTimeout(function () { setsuccessMsg('Email subscribed for mailers'); setloader(false); }, 1000) }
+    }
     return (
         <>
             <div className="partner-logo">
                 <div className="container">
+                    {loader && <PreLoader />}
                     {
                         loading ? <ComponentPreLoader /> : <Partnerlogo partnerLogosOwlConfig={footerData.partnerLogosOwlConfig} partnerLogos={footerData.partnerLogos} />
                     }
@@ -31,7 +48,7 @@ const Footer = () => {
                         <div className="col-lg-3">
                             <div className="footer-left">
                                 <div className="footer-logo">
-                                    <a href="./"><img src="img/footer-logo.png" alt="" /></a>
+                                    <Link to="../"><img src="img/footer-logo.png" alt="" /></Link>
                                 </div>
                                 <ul>
                                     <li>Address: 60-49 Road 11378 New York</li>
@@ -72,9 +89,11 @@ const Footer = () => {
                             <div className="newslatter-item">
                                 <h5>Join Our Newsletter Now</h5>
                                 <p>Get E-mail updates about our latest shop and special offers.</p>
-                                <form action="#" className="subscribe-form">
-                                    <input type="text" placeholder="Enter Your Mail" />
-                                    <button type="button">Subscribe</button>
+                                <form onSubmit={submitForm} className="subscribe-form">
+                                    <input onChange={onChange} type="text" value={state} placeholder="Enter Your Mail" />
+                                    <button type="submit">Subscribe</button>
+                                    {errorMsg && <span className='error'>{errorMsg}</span>}
+                                    {successMsg && <span className='success'>{successMsg}</span>}
                                 </form>
                             </div>
                         </div>

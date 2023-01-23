@@ -2,26 +2,36 @@ import { React, useState, useEffect } from 'react'
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { login, logout, headerSelector } from "./header-dux";
-import { cartSelector, removeCartData } from "./cart/cart-dux";
-import { selectedCategory, fetchproductData, productSelector } from "./shop/product-dux";
+import { cartSelector, removeCartData, setCartTotal } from "./cart/cart-dux";
+import { selectedCategory, productSelector, removeCartSKUs, checkCart, checkCartFavourites, selectedProductIndex, fetchproductData, filterdProducts } from "./shop/product-dux";
 import './../styles/header.css';
 import { CurrencyConverter } from '../components/currencyConverter';
 
 const Header = () => {
   const dispatch = useDispatch();
   const { isLoggin } = useSelector(headerSelector);
-  const { favouriteData } = useSelector(productSelector);
+  const { favouriteData, categories, productData } = useSelector(productSelector);
   const { cartData, cartTotal } = useSelector(cartSelector);
   const [user, setUser] = useState('');
-
+  const [search, setSearch] = useState('');
   useEffect(() => {
     if (localStorage.getItem("auth") === 'true') {
       setUser(localStorage.getItem("user"))
       dispatch(login())
     }
   }, [isLoggin, dispatch]);
-  const removeCart = (i) => {
+  useEffect(() => {
+    dispatch(fetchproductData(categories));
+  }, [dispatch, categories]);
+  useEffect(() => {
+    dispatch(filterdProducts({ products: productData.products }))
+  }, [dispatch, productData]);
+  const removeCart = (i, sku) => {
     dispatch(removeCartData(i))
+    dispatch(setCartTotal())
+    dispatch(removeCartSKUs(sku))
+    dispatch(checkCart())
+    dispatch(checkCartFavourites())
   }
   function toggleLogin() {
     dispatch(logout())
@@ -39,8 +49,11 @@ const Header = () => {
     setShowMeSubNav(!showMeSubNav);
   }
   const handleSelection = (catagory) => {
-    dispatch(fetchproductData(catagory));
     dispatch(selectedCategory(catagory));
+  }
+  const productIndex = (i) => {
+    dispatch(selectedProductIndex(i))
+    setSearch('')
   }
   return (
     <>
@@ -80,10 +93,32 @@ const Header = () => {
               </div>
               <div className="col-lg-7 col-md-7">
                 <div className="advanced-search">
-                  <button type="button" className="category-btn">All Categories</button>
-                  <div className="input-group">
-                    <input type="text" placeholder="What do you need?" />
-                    <button type="button"><i className="ti-search"></i></button>
+                  <select value={categories} onChange={(e) => handleSelection(e.target.value)}>
+                    <option value="men">Men</option>
+                    <option value="women">Women</option>
+                    <option value="kids">Kids</option>
+                  </select>
+                  {/* <button type="button" className="category-btn">Men</button> */}
+                  <div className='search'>
+                    <div className="input-group">
+                      <input type="text" placeholder="What do you need?" value={search} onChange={e => setSearch(e.target.value)} />
+                      <button type="button"><i className="ti-search"></i></button>
+                    </div>
+                    {
+                      search.length > 0 &&
+                      <div className='productResult'>
+                        {productData.products.filter((val) => {
+                          if (search === '') {
+                            return val;
+                          } else if (val.title.toLowerCase().includes(search.toLowerCase())) {
+                            return val;
+                          }
+                          return false
+                        }).map((product, i) => (
+                          <Link onClick={() => productIndex(i)} to="../shop/shop-details" key={i}>{product.title} </Link>
+                        ))}
+                      </div>
+                    }
                   </div>
                 </div>
               </div>
@@ -126,7 +161,7 @@ const Header = () => {
                                         </div>
                                       </td>
                                       <td className="si-close">
-                                        <i onClick={() => removeCart(i)} className="ti-close"></i>
+                                        <i onClick={() => removeCart(i, product.sku)} className="ti-close"></i>
                                       </td>
                                     </tr>
                                   ))
@@ -146,7 +181,7 @@ const Header = () => {
                       </>}
                     </div>
                   </li>
-                  <li className="cart-price"><CurrencyConverter currencyDisplay="code" price={cartTotal} /></li>
+                  {cartTotal !== 0 && <li className="cart-price"><CurrencyConverter currencyDisplay="code" price={cartTotal} /></li>}
                 </ul>
               </div>
             </div>
@@ -207,7 +242,7 @@ const Header = () => {
                         <li><NavLink to="shop/checkout">Checkout</NavLink></li>
                         <li><NavLink to="blog/blog-details">Blog Details</NavLink></li>
                         <li><NavLink to="faq">Faq</NavLink></li>
-                        <li><NavLink to="login">Login</NavLink></li>
+                        {!isLoggin && <li><NavLink to="login">Login</NavLink></li>}
                       </ul>
                     </li>
                   </ul>

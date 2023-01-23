@@ -1,7 +1,10 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import Product from '../shop/product';
+import { useSelector } from 'react-redux';
+import { productSelector } from "../shop/product-dux";
 
 const RelatedProducts = () => {
+    const { productData, selectedProduct } = useSelector(productSelector);
     return (
         <div className="related-products spad">
             <div className="container">
@@ -13,104 +16,11 @@ const RelatedProducts = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-lg-3 col-sm-6">
-                        <div className="product-item">
-                            <div className="pi-pic">
-                                <img src="../img/products/women-1.jpg" alt="" />
-                                <div className="sale">Sale</div>
-                                <div className="icon">
-                                    <i className="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                    <li className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
-
-                                </ul>
-                            </div>
-                            <div className="pi-text">
-                                <div className="catagory-name">Coat</div>
-                                <Link to="#">
-                                    <h5>Pure Pineapple</h5>
-                                </Link>
-                                <div className="product-price">
-                                    $14.00
-                                    <span>$35.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-3 col-sm-6">
-                        <div className="product-item">
-                            <div className="pi-pic">
-                                <img src="../img/products/women-2.jpg" alt="" />
-                                <div className="icon">
-                                    <i className="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                    <li className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
-
-                                </ul>
-                            </div>
-                            <div className="pi-text">
-                                <div className="catagory-name">Shoes</div>
-                                <Link to="#">
-                                    <h5>Guangzhou sweater</h5>
-                                </Link>
-                                <div className="product-price">
-                                    $13.00
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-3 col-sm-6">
-                        <div className="product-item">
-                            <div className="pi-pic">
-                                <img src="../img/products/women-3.jpg" alt="" />
-                                <div className="icon">
-                                    <i className="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                    <li className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
-
-                                </ul>
-                            </div>
-                            <div className="pi-text">
-                                <div className="catagory-name">Towel</div>
-                                <Link to="#">
-                                    <h5>Pure Pineapple</h5>
-                                </Link>
-                                <div className="product-price">
-                                    $34.00
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-3 col-sm-6">
-                        <div className="product-item">
-                            <div className="pi-pic">
-                                <img src="../img/products/women-4.jpg" alt="" />
-                                <div className="icon">
-                                    <i className="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>
-                                    <li className="quick-view"><Link to="../shop/shop-details">+ Quick View</Link></li>
-
-                                </ul>
-                            </div>
-                            <div className="pi-text">
-                                <div className="catagory-name">Towel</div>
-                                <Link to="#">
-                                    <h5>Converse Shoes</h5>
-                                </Link>
-                                <div className="product-price">
-                                    $34.00
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {
+                        productData.products.map((product, i) => (
+                            selectedProduct === i ? <Product class="col-lg-3 col-sm-6 hide" key={i} index={i} product={product} /> : <Product class="col-lg-3 col-sm-6" key={i} index={i} product={product} />
+                        ))
+                    }
                 </div>
             </div>
         </div>
