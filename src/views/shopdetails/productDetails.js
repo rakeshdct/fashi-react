@@ -44,7 +44,7 @@ const ProductDetails = (props) => {
                     <img id="product-big-img" src={props.products.thumbnail} alt="" />
                 </div>
                 <div className="product-thumbs">
-                    <OwlCarousel className='product-thumbs-track ps-slider owl-carousel"' {...props.psSliderOwlConfig}>
+                    <OwlCarousel key={`carousel_${props.products.id}`} className='product-thumbs-track ps-slider owl-carousel"' {...props.psSliderOwlConfig}>
                         {props.products.images.map((image, i) => (
                             <div key={i} className="pt">
                                 <img onClick={(e) => passImage(e.target.getAttribute("src"))} src={image} alt="" /></div>

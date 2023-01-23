@@ -115,7 +115,7 @@ const Header = () => {
                           }
                           return false
                         }).map((product, i) => (
-                          <Link onClick={() => productIndex(i)} to="../shop/shop-details" key={i}>{product.title} </Link>
+                          <Link onClick={() => productIndex(product.id)} to="../shop/shop-details" key={product.id}>{product.title} </Link>
                         ))}
                       </div>
                     }
