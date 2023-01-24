@@ -22,12 +22,24 @@ const Cart = () => {
   }
   const changeQty = (e, i) => {
     let value = e.target.value.slice(0, e.target.getAttribute("maxlength"))
-    if (value === '0' || value === '') {
-      value = 1;
-    }
+    // if (value === '0' || value === '') {
+    //   value = 1;
+    // }
     const quantities = {};
     quantities[e.target.name] = value;
     setQty({ ...qty, ...quantities });
+    // dispatch(setcartIndex(i))
+    // dispatch(changeQtyCartData(parseInt(value)))
+    // dispatch(setCartTotal())
+  }
+  const blurQty = (e, i) => {
+    let value = e.target.value.slice(0, e.target.getAttribute("maxlength"))
+    if (value === '0' || value === '') {
+      value = 1;
+    }
+     const quantities = {};
+     quantities[e.target.name] = value;
+     setQty({ ...qty, ...quantities });
     dispatch(setcartIndex(i))
     dispatch(changeQtyCartData(parseInt(value)))
     dispatch(setCartTotal())
@@ -79,7 +91,7 @@ const Cart = () => {
                               <td className="qua-col first-row">
                                 <div className="quantity">
                                   <div className="pro-qty">
-                                    <input onChange={(e) => changeQty(e, i)} name={product.sku} type="number" value={qty[product.sku]} maxLength={4} />
+                                    <input onBlur={(e) => blurQty(e, i)} onChange={(e) => changeQty(e, i)} name={product.sku} type="number" value={qty[product.sku]} maxLength={4} />
                                   </div>
                                 </div>
                               </td>

@@ -2,8 +2,8 @@ import { React, useState, useEffect } from 'react'
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { login, logout, headerSelector } from "./header-dux";
-import { cartSelector, removeCartData, setCartTotal } from "./cart/cart-dux";
-import { selectedCategory, productSelector, removeCartSKUs, checkCart, checkCartFavourites, selectedProductIndex, fetchproductData, filterdProducts } from "./shop/product-dux";
+import { cartSelector, removeCartData, setCartTotal, submitCartData } from "./cart/cart-dux";
+import { selectedCategory, productSelector, removeCartSKUs, checkCart, checkCartFavourites, selectedProductIndex, fetchproductData, filterdProducts, clearCartProductsSKUs } from "./shop/product-dux";
 import './../styles/header.css';
 import { CurrencyConverter } from '../components/currencyConverter';
 
@@ -37,6 +37,7 @@ const Header = () => {
     dispatch(logout())
     localStorage.setItem('auth', false);
     localStorage.setItem('user', '');
+    dispatch(submitCartData()); dispatch(setCartTotal()); dispatch(clearCartProductsSKUs()); dispatch(checkCartFavourites());
   }
   const [showMeNav, setShowMeNav] = useState(false);
   function toggleNav(e) {
