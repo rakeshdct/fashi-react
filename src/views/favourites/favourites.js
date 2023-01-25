@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from "react-router-dom";
 import './../../styles/shop.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { addCartData, setCartTotal } from "../cart/cart-dux";
-import { pushFavouritestoproductData, selectedProductIndex, removeSelectedFavourites, productSelector, cartProductsSKUs, checkCartFavourites, removeFavouritSKUs } from "../shop/product-dux";
+import { selectedProductIndex, removeSelectedFavourites, productSelector, cartProductsSKUs, checkCartFavourites, removeFavouritSKUs } from "../shop/product-dux";
 import { CurrencyConverter } from '../../components/currencyConverter';
 
 const Favourites = () => {
     const dispatch = useDispatch();
     const { favouriteData } = useSelector(productSelector);
-    useEffect(() => {
-        dispatch(pushFavouritestoproductData(favouriteData))
-    }, [dispatch, favouriteData])
     const addToCart = (d) => {
         dispatch(addCartData(d))
         dispatch(cartProductsSKUs(d.sku))
@@ -69,7 +66,7 @@ const Favourites = () => {
                                                     <ul>
                                                         {fav.cart ? <li className="w-icon active"><Link title="Go to Cart" to="../shop/cart"><i className="fa fa-shopping-cart"></i></Link></li> :
                                                             <li onClick={() => addToCart(fav)} className="w-icon active"><Link title="Add to Cart" to="#"><i className="fa fa-cart-plus"></i></Link></li>}
-                                                        <li onClick={() => productIndex(i)} className="quick-view"><Link to="../shop/shop-details">Quick View</Link></li>
+                                                        <li onClick={() => productIndex(i)} className="quick-view"><Link to="../shop/favourites-details">Quick View</Link></li>
                                                     </ul>
                                                 </div>
                                                 <div className="pi-text">

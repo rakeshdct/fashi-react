@@ -1,12 +1,11 @@
 import { React, useState, useEffect } from 'react'
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { login, logout, headerSelector } from "./header-dux";
 import { cartSelector, removeCartData, setCartTotal, submitCartData } from "./cart/cart-dux";
 import { selectedCategory, productSelector, removeCartSKUs, checkCart, checkCartFavourites, selectedProductIndex, fetchproductData, filterdProducts, clearCartProductsSKUs } from "./shop/product-dux";
 import './../styles/header.css';
 import { CurrencyConverter } from '../components/currencyConverter';
-import { useLocation } from 'react-router-dom';
 
 const Header = () => {
   const location = useLocation()
@@ -23,12 +22,12 @@ const Header = () => {
     }
   }, [isLoggin, dispatch]);
   useEffect(() => {
-    if (location.pathname !== '/shop' && location.pathname !== '/shop/favourites' && location.pathname !== '/shop/shop-details') {
+    if (location.pathname !== '/shop' && location.pathname !== '/shop/shop-details') {
       dispatch(fetchproductData(categories));
     }
   }, [dispatch, categories, location]);
   useEffect(() => {
-    if (location.pathname !== '/shop' && location.pathname !== '/shop/favourites' && location.pathname !== '/shop/shop-details') {
+    if (location.pathname !== '/shop' && location.pathname !== '/shop/shop-details') {
       dispatch(filterdProducts({ products: productData.products }))
     }
   }, [dispatch, productData, location]);

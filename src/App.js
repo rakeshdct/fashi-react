@@ -18,6 +18,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { headerSelector } from "./views/header-dux";
+import Favouritedetails from './views/shopdetails/favouritedetails';
 
 function App() {
   const { isLoggin } = useSelector(headerSelector);
@@ -27,6 +28,7 @@ function App() {
       <Route path='/shop' element={<Shop />} />
       <Route path='/shop/shop-details' element={<Shopdetails />} />
       <Route path='/shop/favourites' element={!isLoggin ? <Login /> : <Favourites />} />
+      <Route path='/shop/favourites-details' element={<Favouritedetails />} />
       <Route path='/blog' element={<Blog />} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/blog/blog-details' element={<Blogdetails />} />
