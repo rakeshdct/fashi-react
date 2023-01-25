@@ -6,8 +6,10 @@ import { cartSelector, removeCartData, setCartTotal, submitCartData } from "./ca
 import { selectedCategory, productSelector, removeCartSKUs, checkCart, checkCartFavourites, selectedProductIndex, fetchproductData, filterdProducts, clearCartProductsSKUs } from "./shop/product-dux";
 import './../styles/header.css';
 import { CurrencyConverter } from '../components/currencyConverter';
+import { useLocation } from 'react-router-dom';
 
 const Header = () => {
+  const location = useLocation()
   const dispatch = useDispatch();
   const { isLoggin } = useSelector(headerSelector);
   const { favouriteData, categories, productData } = useSelector(productSelector);
@@ -21,11 +23,16 @@ const Header = () => {
     }
   }, [isLoggin, dispatch]);
   useEffect(() => {
-    dispatch(fetchproductData(categories));
-  }, [dispatch, categories]);
+    if (location.pathname !== '/shop' && location.pathname !== '/shop/favourites' && location.pathname !== '/shop/shop-details') {
+      dispatch(fetchproductData(categories));
+    }
+  }, [dispatch, categories, location]);
   useEffect(() => {
-    dispatch(filterdProducts({ products: productData.products }))
-  }, [dispatch, productData]);
+    if (location.pathname !== '/shop' && location.pathname !== '/shop/favourites' && location.pathname !== '/shop/shop-details') {
+      dispatch(filterdProducts({ products: productData.products }))
+    }
+  }, [dispatch, productData, location]);
+
   const removeCart = (i, sku) => {
     dispatch(removeCartData(i))
     dispatch(setCartTotal())
