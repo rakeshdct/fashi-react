@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 axios.defaults.baseURL = "https://identitytoolkit.googleapis.com/v1"
-const API_KEY = "AIzaSyBO-NoCw1HEzs8QrbFFfNeLGxnGEAYUDJk"
+const API_KEY = process.env.REACT_APP_API_KEY
 const REGISTER_URL = `/accounts:signUp?key=${API_KEY}`
 const LOGIN_URL = `/accounts:signInWithPassword?key=${API_KEY}`;
 const SEND_VERIFICATION_EMAIL = `/accounts:sendOobCode?key=${API_KEY}`
