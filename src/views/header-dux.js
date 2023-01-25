@@ -11,16 +11,16 @@ const headerSlice = createSlice({
         login: (state) => {
             state.isLoggin = true;
         },
-        logout: (state) => {
+        logoutState: (state) => {
             state.isLoggin = false;
         },
     },
 });
 
-  // Action creators are generated for each case reducer function
-  export const { login, logout } = headerSlice.actions;
+// Action creators are generated for each case reducer function
+export const { login, logoutState } = headerSlice.actions;
 
-  // A selector
+// A selector
 export const headerSelector = (state) => state.headerState;
 
 export default headerSlice.reducer;

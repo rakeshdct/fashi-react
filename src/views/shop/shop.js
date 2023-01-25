@@ -10,8 +10,8 @@ import ComponentPreLoader from './../../components/componentPreLoader';
 
 const Shop = () => {
   const dispatch = useDispatch();
-  const { filterdProduct, categories, productData, loading } = useSelector(productSelector);  
-  const [targetValue, settargetValue] = useState()
+  const { filterdProduct, categories, productData, loading } = useSelector(productSelector);
+  const [targetValue, settargetValue] = useState("")
   useEffect(() => {
     dispatch(fetchproductData(categories));
   }, [dispatch, categories]);
@@ -21,15 +21,17 @@ const Shop = () => {
     filters: new Set()
   })
   useEffect(() => {
-    dispatch(selectedFilters(targetValue))
-    dispatch(filterdProducts({ products: state.products }))
-  }, [dispatch, targetValue, state]);
-  useEffect(() => {
+    settargetValue("")
     setState({
       products: productData.products,
       filters: new Set(),
     })
   }, [productData.products]);
+  useEffect(() => {
+    dispatch(selectedFilters(targetValue))
+    dispatch(filterdProducts({ products: state.products }))
+  }, [dispatch, targetValue, state]);
+
   const handleFilterChange = useCallback(event => {
     setState(previousState => {
       let filters;

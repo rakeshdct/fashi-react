@@ -1,30 +1,54 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { login } from "./header-dux";
+import { LoginApi } from '../services/Api'
+import { storeUserData } from '../services/Storage'
+// import { isAuthenticated } from '../services/Auth';
 
 import './../styles/login.css';
+import PreLoader from '../components/pagePreLoader';
 
 const Login = () => {
+  const initial = {
+    "email": "",
+    "password": ""
+  }
+
   const navigate = useNavigate()
-  const dispatch = useDispatch();  
-  const [user, setuser] = useState('');
-  const [pwd, setpwd] = useState('');
+  const dispatch = useDispatch();
+  const [formData, setFormData] = useState(initial);
+  const [loader, setLoader] = useState(false);
   const [errMsg, setErrMsg] = useState('');
-
-  useEffect(() => {
-    setErrMsg('');
-  }, [user, pwd])
-
+  var emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+  const onChangeField = (e) => {
+    setErrMsg('')
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (user === '') return setErrMsg('Enter Username')
-    else if (pwd === '') return setErrMsg('Enter Password')
-    else if (pwd !== 'password') return setErrMsg('Invalid Credentails')
-    else { dispatch(login());localStorage.setItem('auth',true);localStorage.setItem('user',user); navigate('../'); }
+    if (formData.email === '') return setErrMsg('Enter Email')
+    else if (emailRegex.test(formData.email) === false) return setErrMsg('Enter valid Email address')
+    else if (formData.password === '') return setErrMsg('Enter Password')
+    else {
+      setLoader(true);
+      LoginApi(formData).then((response) => {
+        storeUserData(response.data.idToken, response.data.displayName);
+        dispatch(login());
+        navigate('../');
+      }).catch((err) => {
+        if (err.code === "ERR_BAD_REQUEST") {
+          setErrMsg("Invalid Credentials.")
+        }
+      }).finally(() => {
+        setLoader(false)
+      })
+    }
   }
+
   return (
     <>
+      {loader && <PreLoader />}
       <div className="breacrumb-section">
         <div className="container">
           <div className="row">
@@ -47,12 +71,12 @@ const Login = () => {
                 <h2>Login</h2>
                 <form onSubmit={handleSubmit} >
                   <div className="group-input">
-                    <label htmlFor="username">Username or email address *</label>
-                    <input type="text" id="username" autoComplete='off' onChange={(e) => setuser(e.target.value)} value={user} />
+                    <label htmlFor="username">Email address *</label>
+                    <input type="text" id="username" autoComplete='off' name='email' value={formData.email} onChange={onChangeField} />
                   </div>
                   <div className="group-input">
                     <label htmlFor="password">Password *</label>
-                    <input type="password" id="password" onChange={(e) => setpwd(e.target.value)} value={pwd} />
+                    <input type="password" id="password" name='password' value={formData.password} onChange={onChangeField} />
                     {errMsg && <div className="alert alert-danger">
                       <strong>Error!</strong> {errMsg}
                     </div>
@@ -60,11 +84,11 @@ const Login = () => {
                   </div>
                   <div className="group-input gi-check">
                     <div className="gi-more">
-                      <label htmlFor="save-pass">
+                      {/* <label htmlFor="save-pass">
                         Save Password
                         <input type="checkbox" id="save-pass" />
                         <span className="checkmark"></span>
-                      </label>
+                      </label> */}
                       <Link to="../login/forgot-password" className="forget-pass">Forget your Password</Link>
                     </div>
                   </div>

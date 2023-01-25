@@ -1,11 +1,12 @@
 import { React, useState, useEffect } from 'react'
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { login, logout, headerSelector } from "./header-dux";
+import { login, logoutState, headerSelector } from "./header-dux";
 import { cartSelector, removeCartData, setCartTotal, submitCartData } from "./cart/cart-dux";
 import { selectedCategory, productSelector, removeCartSKUs, checkCart, checkCartFavourites, selectedProductIndex, fetchproductData, filterdProducts, clearCartProductsSKUs } from "./shop/product-dux";
 import './../styles/header.css';
 import { CurrencyConverter } from '../components/currencyConverter';
+import { isAuthenticated, logout } from '../services/Auth';
 
 const Header = () => {
   const location = useLocation()
@@ -16,9 +17,11 @@ const Header = () => {
   const [user, setUser] = useState('');
   const [search, setSearch] = useState('');
   useEffect(() => {
-    if (localStorage.getItem("auth") === 'true') {
-      setUser(localStorage.getItem("user"))
-      dispatch(login())
+    if (localStorage.getItem("idToken") !== '') {
+      if (isAuthenticated()) {
+        setUser(localStorage.getItem("user"))
+        dispatch(login())
+      }
     }
   }, [isLoggin, dispatch]);
   useEffect(() => {
@@ -40,9 +43,8 @@ const Header = () => {
     dispatch(checkCartFavourites())
   }
   function toggleLogin() {
-    dispatch(logout())
-    localStorage.setItem('auth', false);
-    localStorage.setItem('user', '');
+    dispatch(logoutState())
+    logout()
     dispatch(submitCartData()); dispatch(setCartTotal()); dispatch(clearCartProductsSKUs()); dispatch(checkCartFavourites());
   }
   const [showMeNav, setShowMeNav] = useState(false);
