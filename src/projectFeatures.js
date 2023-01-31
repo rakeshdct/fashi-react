@@ -4,6 +4,7 @@
 //Using spread operator unpack the objects and pass the keys, values to owl carousel config.
 //After login conditional rendering of componenets
 //Implemented react redux toolkit
+//Implemented react redux toolkit persist (https://github.com/rt2zz/redux-persist)
 //Using Json fetch get the data to be painted for home page
 //login page validation
 //On page refresh maintain login
