@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom";
 import PreLoader from '../components/pagePreLoader';
 import './../styles/login.css';
 import { RegisterApi, SendVerificationMail } from '../services/Api'
 
 const Register = () => {
+  const name = useRef(null), email = useRef(null), password = useRef(null), retypepassword = useRef(null);
   const initial = {
     "displayname": "",
     "email": "",
@@ -45,12 +46,12 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSuccessMsg('')
-    if (formData.displayname === '') return setErrMsg('Enter Name')
-    else if (formData.email === '') return setErrMsg('Enter email')
-    else if (emailRegex.test(formData.email) === false) return setErrMsg('Enter valid Email address')
-    else if (formData.password === '') return setErrMsg('Enter Password')
-    else if (formData.retypepassword === '') return setErrMsg('Enter Confirm  Password')
-    else if (formData.password !== formData.retypepassword) return setErrMsg('Password and confirm Password not matched')
+    if (formData.displayname === '') { setErrMsg('Enter Name'); name.current.focus(); }
+    else if (formData.email === '') { setErrMsg('Enter email'); email.current.focus(); }
+    else if (emailRegex.test(formData.email) === false) { setErrMsg('Enter valid Email address'); email.current.focus(); }
+    else if (formData.password === '') { setErrMsg('Enter Password'); password.current.focus(); }
+    else if (formData.retypepassword === '') { setErrMsg('Enter Confirm  Password'); retypepassword.current.focus(); }
+    else if (formData.password !== formData.retypepassword) { setErrMsg('Password and confirm Password not matched'); password.current.focus(); }
     else {
       setLoader(true);
       setErrMsg('')
@@ -61,9 +62,11 @@ const Register = () => {
         setSuccessMsg('')
         setIdToken('')
         if (err.response.data.error.message === "EMAIL_EXISTS") {
-          setErrMsg("Already this email has been registered!")
+          setErrMsg("Already this email has been registered!");
+          email.current.focus();
         } else if (String(err.response.data.error.message).includes('WEAK_PASSWORD')) {
-          setErrMsg("Password should be at least 6 characters!")
+          setErrMsg("Password should be at least 6 characters!");
+          password.current.focus();
         }
       }).finally(() => {
         setLoader(false)
@@ -101,19 +104,19 @@ const Register = () => {
                 <form onSubmit={handleSubmit} >
                   <div className="group-input">
                     <label htmlFor="displayname">Name *</label>
-                    <input name='displayname' value={formData.displayname} onChange={onChangeField} type="text" id="displayname" />
+                    <input name='displayname' ref={name} value={formData.displayname} onChange={onChangeField} type="text" id="displayname" />
                   </div>
                   <div className="group-input">
                     <label htmlFor="username">Email address *</label>
-                    <input name='email' value={formData.email} type="text" onChange={onChangeField} id="username" />
+                    <input name='email' ref={email} value={formData.email} type="text" onChange={onChangeField} id="username" />
                   </div>
                   <div className="group-input">
                     <label htmlFor="pass">Password *</label>
-                    <input name='password' value={formData.password} onChange={onChangeField} type="password" id="pass" />
+                    <input name='password' ref={password} value={formData.password} onChange={onChangeField} type="password" id="pass" />
                   </div>
                   <div className="group-input">
                     <label htmlFor="con-pass">Confirm Password *</label>
-                    <input name='retypepassword' value={formData.retypepassword} onChange={onChangeField} type="password" id="con-pass" />
+                    <input name='retypepassword' ref={retypepassword} value={formData.retypepassword} onChange={onChangeField} type="password" id="con-pass" />
                     {errMsg && <div className="alert alert-danger">
                       <strong>Error!</strong> {errMsg}
                     </div>

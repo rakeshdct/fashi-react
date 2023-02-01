@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Link } from "react-router-dom";
 import './../../styles/contact.css';
 import PreLoader from '../../components/pagePreLoader';
 
 const Contact = () => {
+  const name = useRef(null), email = useRef(null), comments = useRef(null);
   const initial = {
     "name": "",
     "email": "",
@@ -23,10 +24,10 @@ const Contact = () => {
   var emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
   const submitForm = e => {
     e.preventDefault();
-    if (formData.name === '') return setErrorMsg("Enter name")
-    else if (formData.email === '') return setErrorMsg("Enter Email")
-    else if (emailRegex.test(formData.email) === false) return setErrorMsg('Enter valid Email address')
-    else if (formData.comments === '') return setErrorMsg("Please enter comments")
+    if (formData.name === '') { setErrorMsg("Enter name"); name.current.focus(); }
+    else if (formData.email === '') { setErrorMsg("Enter Email"); email.current.focus(); }
+    else if (emailRegex.test(formData.email) === false) { setErrorMsg('Enter valid Email address'); email.current.focus(); }
+    else if (formData.comments === '') { setErrorMsg("Please enter comments"); comments.current.focus(); }
     else { setloader(true); setTimeout(function () { setErrorMsg(''); setFormData(initial); setSuccessMsg("Form Submited"); setloader(false); }, 1000) }
   }
 
@@ -107,13 +108,13 @@ const Contact = () => {
                   <form onSubmit={submitForm} className="comment-form">
                     <div className="row">
                       <div className="col-lg-6">
-                        <input type="text" name="name" onChange={onChange} value={formData.name} placeholder="Your name" />
+                        <input type="text" name="name" ref={name} onChange={onChange} value={formData.name} placeholder="Your name" />
                       </div>
                       <div className="col-lg-6">
-                        <input type="text" name="email" onChange={onChange} value={formData.email} placeholder="Your email" />
+                        <input type="text" name="email" ref={email} onChange={onChange} value={formData.email} placeholder="Your email" />
                       </div>
                       <div className="col-lg-12">
-                        <textarea name="comments" onChange={onChange} value={formData.comments} placeholder="Your message"></textarea>
+                        <textarea name="comments" ref={comments} onChange={onChange} value={formData.comments} placeholder="Your message"></textarea>
                         <div className='mandatory'>All fields are Mandatory <span>*</span></div>
                         {errorMsg && <div className="alert alert-danger">
                           <strong>Error!</strong> {errorMsg}

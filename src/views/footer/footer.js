@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchfooterData, footerSelector } from "./footer-dux";
@@ -10,6 +10,7 @@ import './../../styles/footer.css';
 
 
 const Footer = () => {
+    const email = useRef(null);
     const dispatch = useDispatch();
     const { footerData, loading } = useSelector(footerSelector);
     const [state, setState] = useState('')
@@ -28,9 +29,9 @@ const Footer = () => {
     var emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     const submitForm = e => {
         e.preventDefault();
-        if (state === "") return setErrorMsg("Enter email")
-        else if (emailRegex.test(state) === false) return setErrorMsg('Enter valid Email address')
-        else { setloader(true); setTimeout(function () { setsuccessMsg('Email subscribed for mailers'); setloader(false); }, 1000) }
+        if (state === "") { setErrorMsg("Enter email"); email.current.focus(); }
+        else if (emailRegex.test(state) === false) { setErrorMsg('Enter valid Email address'); email.current.focus(); }
+        else { setloader(true); setTimeout(function () { setsuccessMsg('Email subscribed for mailers'); setloader(false); setState(''); }, 1000) }
     }
     return (
         <>
@@ -90,7 +91,7 @@ const Footer = () => {
                                 <h5>Join Our Newsletter Now</h5>
                                 <p>Get E-mail updates about our latest shop and special offers.</p>
                                 <form onSubmit={submitForm} className="subscribe-form">
-                                    <input onChange={onChange} type="text" value={state} placeholder="Enter Your Mail" />
+                                    <input ref={email} onChange={onChange} type="text" value={state} placeholder="Enter Your Mail" />
                                     <button type="submit">Subscribe</button>
                                     {errorMsg && <span className='error'>{errorMsg}</span>}
                                     {successMsg && <span className='success'>{successMsg}</span>}

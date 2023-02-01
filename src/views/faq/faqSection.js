@@ -16,7 +16,7 @@ const Faqsection = (props) => {
             </div>
             <div id="collapseOne" className={[styles.collapse, styles.show].join(" ")} data-parent="#accordionExample" style={{ display: isShowing ? "block" : "none" }}>
                 <div className={styles.cardBody}>
-                    <p>{props.answer}</p>
+                    <p dangerouslySetInnerHTML={{ __html: props.answer }} />
                 </div>
             </div>
         </div>

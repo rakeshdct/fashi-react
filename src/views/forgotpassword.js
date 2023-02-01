@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Link } from "react-router-dom";
 import PreLoader from '../components/pagePreLoader';
 import './../styles/login.css';
 import { ForgotApi } from '../services/Api'
 
 function Forgotpassword() {
+    const email = useRef(null);
     const [formData, setFormData] = useState('');
     const [loader, setLoader] = useState(false);
     const [errMsg, setErrMsg] = useState('');
@@ -17,8 +18,8 @@ function Forgotpassword() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setSuccessMsg('')
-        if (formData === '') return setErrMsg('Enter Email')
-        else if (emailRegex.test(formData) === false) return setErrMsg('Enter valid Email address')
+        if (formData === '') { setErrMsg('Enter Email'); email.current.focus(); }
+        else if (emailRegex.test(formData) === false) { setErrMsg('Enter valid Email address'); email.current.focus(); }
         else {
             setErrMsg('')
             setLoader(true);
@@ -27,7 +28,8 @@ function Forgotpassword() {
                 setFormData('')
             }).catch((err) => {
                 if (err.response.data.error.message === "EMAIL_NOT_FOUND") {
-                    setErrMsg("EMAIL NOT FOUND")
+                    setErrMsg("EMAIL NOT FOUND");
+                    email.current.focus();
                 }
             }).finally(() => {
                 setLoader(false)
@@ -61,7 +63,7 @@ function Forgotpassword() {
                                 <form onSubmit={handleSubmit} >
                                     <div className="group-input">
                                         <label htmlFor="username">Email address *</label>
-                                        <input value={formData} onChange={onChange} type="text" id="username" />
+                                        <input ref={email} value={formData} onChange={onChange} type="text" id="username" />
                                         {errMsg && <div className="alert alert-danger">
                                             <strong>Error!</strong> {errMsg}
                                         </div>

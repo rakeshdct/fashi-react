@@ -13,8 +13,8 @@
           "answer":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
        },
        {
-          "question":"What is the meaning of Lorem ipsum?",
-          "answer":"Literally it does not mean anything. It is a sequence of words without a sense of Latin derivation that make up a text also known as filler text, fictitious, blind or placeholder."
+          "question":"Implemented React features",
+          "answer":"<ul><li>Passing data from parent to child component using props.<\/li><li>Handled null for singleBanners.<\/li><li>Restrict instaPhotos to 6.<\/li><li>Using spread operator unpack the objects and pass the keys and values to owl carousel config.<\/li><li>Using firebase implemented the register, login authentication and forgot password pages.<\/li><li>After login conditional rendering of componenets.<\/li><li>Implemented login, forgot password, register, contact and checkout page validations.<\/li><li>Implemented redux toolkit and redux toolkit persist (<a target='_blank' href='https://github.com/rt2zz/redux-persist'>https://github.com/rt2zz/redux-persist<\/a>).<\/li><li>Using Json fetch get the data and painted the content for home, shop, faq pages.<\/li><li>On page refresh maintain login, redux states.<\/li><li>ProductDetails componenet Using memo will cause React to skip rendering a component if its props have not changed.<\/li><li>JS set method is used in Brand, Color and Tags filter to get unique values.<\/li><li>toLocaleString added for price localization.<\/li><liReact Hooks implemented - UseState, UseEffect, UseRef>.<\/li><\/ul>"
        }
     ]
  }

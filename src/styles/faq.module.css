@@ -10,7 +10,7 @@
 .faqAccordin .card {
 	border: none;
 	margin-bottom: 22px;
-    position: relative;
+	position: relative;
 }
 
 .faqAccordin .card .cardHeading {
@@ -23,7 +23,7 @@
 .faqAccordin .card .cardHeading a {
 	padding-left: 42px;
 	display: block;
-	color:black;
+	color: black;
 }
 
 .faqAccordin .card .cardBody {
@@ -34,6 +34,16 @@
 
 .faqAccordin .card .cardBody p {
 	margin-bottom: 0;
+}
+
+.faqAccordin .card .cardBody p a,
+.faqAccordin .card .cardBody p a:hover {
+	color: #636363;
+	text-decoration: underline;
+}
+
+.faqAccordin .card .cardBody p ul {
+	margin: 0 0 0 20px;
 }
 
 .faqAccordin .cardHeading a:after,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { login } from "./header-dux";
@@ -10,6 +10,7 @@ import './../styles/login.css';
 import PreLoader from '../components/pagePreLoader';
 
 const Login = () => {
+  const email = useRef(null), password = useRef(null);
   const initial = {
     "email": "",
     "password": ""
@@ -27,9 +28,9 @@ const Login = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.email === '') return setErrMsg('Enter Email')
-    else if (emailRegex.test(formData.email) === false) return setErrMsg('Enter valid Email address')
-    else if (formData.password === '') return setErrMsg('Enter Password')
+    if (formData.email === '') { setErrMsg('Enter Email'); email.current.focus(); }
+    else if (emailRegex.test(formData.email) === false) { setErrMsg('Enter valid Email address'); email.current.focus(); }
+    else if (formData.password === '') { setErrMsg('Enter Password'); password.current.focus(); }
     else {
       setLoader(true);
       LoginApi(formData).then((response) => {
@@ -38,12 +39,14 @@ const Login = () => {
         navigate('../');
       }).catch((err) => {
         if (err.code === "ERR_BAD_REQUEST") {
-          setErrMsg("Invalid Credentials.")
+          setErrMsg("Invalid Credentials.");
+          email.current.focus();
         }
       }).finally(() => {
         setLoader(false)
       })
     }
+
   }
 
   return (
@@ -72,11 +75,11 @@ const Login = () => {
                 <form onSubmit={handleSubmit} >
                   <div className="group-input">
                     <label htmlFor="username">Email address *</label>
-                    <input type="text" id="username" autoComplete='off' name='email' value={formData.email} onChange={onChangeField} />
+                    <input type="text" id="username" autoComplete='off' ref={email} name='email' value={formData.email} onChange={onChangeField} />
                   </div>
                   <div className="group-input">
                     <label htmlFor="password">Password *</label>
-                    <input type="password" id="password" name='password' value={formData.password} onChange={onChangeField} />
+                    <input type="password" id="password" ref={password} name='password' value={formData.password} onChange={onChangeField} />
                     {errMsg && <div className="alert alert-danger">
                       <strong>Error!</strong> {errMsg}
                     </div>
