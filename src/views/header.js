@@ -7,6 +7,7 @@ import { selectedCategory, productSelector, removeCartSKUs, checkCart, checkCart
 import './../styles/header.css';
 import { CurrencyConverter } from '../components/currencyConverter';
 import { isAuthenticated, logout } from '../services/Auth';
+import ErrorHtml from '../components/errorHtml';
 
 const Header = () => {
   const location = useLocation()
@@ -16,6 +17,7 @@ const Header = () => {
   const { cartData, cartTotal } = useSelector(cartSelector);
   const [user, setUser] = useState('');
   const [search, setSearch] = useState('');
+  const [searchError, setsearchError] = useState('false');
   useEffect(() => {
     if (localStorage.getItem("idToken") !== '') {
       if (isAuthenticated()) {
@@ -64,6 +66,18 @@ const Header = () => {
     dispatch(selectedProductIndex(i))
     setSearch('')
   }
+  const headerSearch = (e) => {
+    try {
+      if(productData.products !== undefined){
+        setSearch(e.target.value)
+      }else{
+        throw new Error()
+      }
+      
+    } catch (error) {
+      setsearchError('true')
+    }
+  }
   return (
     <>
       <header className="header-section">
@@ -109,24 +123,31 @@ const Header = () => {
                   </select>
                   {/* <button type="button" className="category-btn">Men</button> */}
                   <div className='search'>
-                    <div className="input-group">
-                      <input type="text" placeholder="What do you need?" value={search} onChange={e => setSearch(e.target.value)} />
-                      <button type="button"><i className="ti-search"></i></button>
-                    </div>
+                    {searchError === 'false' &&
+                      <>
+                        <div className="input-group">
+                          <input type="text" placeholder="What do you need?" value={search} onChange={headerSearch} />
+                          <button type="button"><i className="ti-search"></i></button>
+                        </div>
+                        {
+                          search.length > 0 &&
+                          <div className='productResult'>
+                            {productData.products.filter((val) => {
+                              if (search === '') {
+                                return val;
+                              } else if (val.title.toLowerCase().includes(search.toLowerCase())) {
+                                return val;
+                              }
+                              return false
+                            }).map((product, i) => (
+                              <Link onClick={() => productIndex(product.id)} to="../shop/shop-details" key={product.id}>{product.title} </Link>
+                            ))}
+                          </div>
+                        }
+                      </>
+                    }
                     {
-                      search.length > 0 &&
-                      <div className='productResult'>
-                        {productData.products.filter((val) => {
-                          if (search === '') {
-                            return val;
-                          } else if (val.title.toLowerCase().includes(search.toLowerCase())) {
-                            return val;
-                          }
-                          return false
-                        }).map((product, i) => (
-                          <Link onClick={() => productIndex(product.id)} to="../shop/shop-details" key={product.id}>{product.title} </Link>
-                        ))}
-                      </div>
+                      searchError === 'true' && <ErrorHtml />
                     }
                   </div>
                 </div>

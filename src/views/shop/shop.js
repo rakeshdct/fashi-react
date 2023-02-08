@@ -6,6 +6,7 @@ import Product from './product';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterdProducts, selectedFilters, fetchproductData, productSelector } from "./product-dux";
 import ComponentPreLoader from './../../components/componentPreLoader';
+import ErrorBoundry from '../../components/errorBoundry';
 
 
 const Shop = () => {
@@ -90,9 +91,12 @@ const Shop = () => {
       <section className="product-shop spad">
         <div className="container">
           <div className="row">
-            {!loading && <LeftNav details={productData.products} onFilterChange={handleFilterChange} />}
-            <div className="col-lg-9">
-              {/* <div className="product-show-option">
+            <ErrorBoundry>
+              {!loading && <LeftNav details={productData.products} onFilterChange={handleFilterChange} />}
+            </ErrorBoundry>
+            <ErrorBoundry>
+              <div className='col-lg-9'>
+                {/* <div className="product-show-option">
                 <div className="row">
                   <div className="col-lg-7 col-md-7">
                     <div className="select-option">
@@ -109,24 +113,25 @@ const Shop = () => {
                   </div>
                 </div>
               </div> */}
-              <div className="product-list">
-                <div className="row">
-                  {
-                    //loading ? <ComponentPreLoader /> : productData.products.map((product, i) => (<Product key={i} index={i} product={product} /> ))
-                    // loading ? <ComponentPreLoader /> :
-                    //   intial ? productData.products.map((product, i) => (<Product key={i} index={i} product={product} />)) : state.products.map((product, i) => (<Product key={i} index={i} product={product} />))
-                    loading ? <ComponentPreLoader /> : filterdProduct.products === undefined ? <ComponentPreLoader /> : filterdProduct.products.map((product, i) => (<Product class="col-lg-4 col-sm-6" key={i} index={i} product={product} />))
-
-                  }
+                <div className="product-list">
+                  <div className="row">
+                    {
+                      //loading ? <ComponentPreLoader /> : productData.products.map((product, i) => (<Product key={i} index={i} product={product} /> ))
+                      // loading ? <ComponentPreLoader /> :
+                      //   intial ? productData.products.map((product, i) => (<Product key={i} index={i} product={product} />)) : state.products.map((product, i) => (<Product key={i} index={i} product={product} />))
+                      productData.products !== undefined ?
+                        loading ? null : filterdProduct.products === undefined ? <ComponentPreLoader /> : filterdProduct.products.map((product, i) => (<Product class="col-lg-4 col-sm-6" key={i} index={i} product={product} />)) : null
+                    }
+                  </div>
                 </div>
-              </div>
-              {/* <div className="loading-more">
+                {/* <div className="loading-more">
                 <i className="icon_loading"></i>
                 <Link to="#">
                   Loading More
                 </Link>
               </div> */}
-            </div>
+              </div>
+            </ErrorBoundry>
           </div>
         </div>
       </section>

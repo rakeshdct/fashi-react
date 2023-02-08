@@ -7,6 +7,7 @@ import DealoftheWeek from "./dealoftheWeek";
 import Instaphoto from "./instaPhoto";
 import Latestblog from "./latestBlog";
 import PreLoader from './../../components/pagePreLoader'
+import ErrorBoundry from "../../components/errorBoundry"
 import "./../../styles/home.css";
 
 const Home = () => {
@@ -29,14 +30,22 @@ const Home = () => {
         <PreLoader />
       ) : (
         <>
-          <HeroSection
-            heroSectionOwlConfig={homeData.heroSectionOwlConfig}
-            heroSections={homeData.heroSections}
-          />
-          {homeData.singleBanners != null && <Singlebanner singleBanners={homeData.singleBanners} />}
+          <ErrorBoundry>
+            <HeroSection
+              heroSectionOwlConfig={homeData.heroSectionOwlConfig}
+              heroSections={homeData.heroSections}
+            />
+          </ErrorBoundry>
+          <ErrorBoundry>
+            {<Singlebanner singleBanners={homeData.singleBanners} />}
+          </ErrorBoundry>
           <DealoftheWeek />
-          <Instaphoto instaPhotos={homeData.instaPhotos} />
-          <Latestblog latestBlogs={homeData.latestBlogs} benefitItems={homeData.benefitItems} />
+          <ErrorBoundry>
+            <Instaphoto instaPhotos={homeData.instaPhotos} />
+          </ErrorBoundry>
+          <ErrorBoundry>
+            <Latestblog latestBlogs={homeData.latestBlogs} benefitItems={homeData.benefitItems} />
+          </ErrorBoundry>
         </>
       )}
     </>

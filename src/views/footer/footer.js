@@ -6,6 +6,7 @@ import Partnerlogo from './partnerLogo'
 import ComponentPreLoader from './../../components/componentPreLoader';
 import PreLoader from '../../components/pagePreLoader';
 import { headerSelector } from "./../header-dux";
+import ErrorBoundry from "../../components/errorBoundry"
 import './../../styles/footer.css';
 
 
@@ -35,14 +36,16 @@ const Footer = () => {
     }
     return (
         <>
-            <div className="partner-logo">
-                <div className="container">
-                    {loader && <PreLoader />}
-                    {
-                        loading ? <ComponentPreLoader /> : <Partnerlogo partnerLogosOwlConfig={footerData.partnerLogosOwlConfig} partnerLogos={footerData.partnerLogos} />
-                    }
+            <ErrorBoundry>
+                <div className="partner-logo">
+                    <div className="container">
+                        {loader && <PreLoader />}
+                        {
+                            loading ? <ComponentPreLoader /> : <Partnerlogo partnerLogosOwlConfig={footerData.partnerLogosOwlConfig} partnerLogos={footerData.partnerLogos} />
+                        }
+                    </div>
                 </div>
-            </div>
+            </ErrorBoundry>
             <footer className="footer-section">
                 <div className="container">
                     <div className="row">

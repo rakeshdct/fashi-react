@@ -215,6 +215,23 @@ ol {
 	width: 100%;
 }
 
+.errorBoundary h2 {
+	margin: 0 0 20px;
+}
+
+.errorBoundary {
+	text-align: center;
+	margin: 40px auto;
+}
+
+.errorBoundary.html {
+	margin: 16px 0 0 0;
+}
+
+.errorBoundary.html h4 {
+	font-size: 13px;
+}
+
 /* Chrome, Safari, Edge, Opera Hide Arrows From Input Number */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

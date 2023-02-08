@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import BenifitItems from './benifitItems'
+import ErrorBoundry from "../../components/errorBoundry"
 
 const Latestblog = (props) => {
     return (
@@ -39,7 +40,9 @@ const Latestblog = (props) => {
 
                     )}
                 </div>
-                <BenifitItems benefitItems={props.benefitItems} />
+                <ErrorBoundry>
+                    <BenifitItems benefitItems={props.benefitItems} />
+                </ErrorBoundry>
             </div>
         </section>
 
